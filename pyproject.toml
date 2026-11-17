@@ -1,0 +1,17 @@
+[build-system]
+requires = []
+build-backend = "_build"
+backend-path = ["."]
+
+[project]
+name = "traceanchor"
+version = "0.1.0"
+description = "Host-driven evidence, managed analysis and independent reconstruction"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "TraceAnchor contributors"}]
+dependencies = []
+
+[project.scripts]
+traceanchor = "traceanchor.cli:main"

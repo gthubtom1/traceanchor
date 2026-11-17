@@ -1,0 +1,680 @@
+{
+  "schema_version": 1,
+  "anchor_policy": "Source line numbers refer only to the exact commit in each blob URL. Local line numbers are intentionally replaced by modules, symbols and frozen contract sections because local code evolves.",
+  "qualification_policy": "Mappings describe design provenance, not passing acceptance. Core/service/process/analysis qualifications belong to their actual test records. Host protocol isolation uses a stub dispatcher and is not real service end-to-end.",
+  "mechanisms": [
+    {
+      "id": "TA-001",
+      "title": "One service authority behind thin adapters",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "rea",
+          "path": "src/composition/directAnalysis.ts",
+          "lines": [
+            21,
+            91
+          ],
+          "symbol": "direct analysis composition",
+          "url": "https://github.com/morluto/rea/blob/05be423acbdf3a56673bdbd3004e4b500c0f5217/src/composition/directAnalysis.ts#L21-L91"
+        }
+      ],
+      "local": [
+        {
+          "module": "traceanchor/service.py",
+          "symbol": "dispatch"
+        },
+        {
+          "module": "traceanchor/mcp.py",
+          "symbol": "serve, _dispatch"
+        },
+        {
+          "module": "traceanchor/cli.py",
+          "symbol": "CLI dispatch adapter"
+        }
+      ],
+      "contract": [
+        "Product and architecture",
+        "Service and CLI surface",
+        "A02",
+        "A14"
+      ],
+      "rationale": "One deterministic owner for effect admission and result semantics across CLI and MCP.",
+      "differences": "Python standard library, no provider factory, no upstream API compatibility and no internal model loop. Group membership grants no execution effect.",
+      "tests": [
+        {
+          "path": "tests/test_mcp.py",
+          "symbol": "test_success_dispatch_root_operation_and_arguments",
+          "level": "stub-dispatch protocol isolation"
+        },
+        {
+          "path": "docs/IMPLEMENTATION-CONTRACT.md",
+          "symbol": "A02, A14",
+          "level": "core/service integration gate owned by main"
+        }
+      ],
+      "limitations": "Operation-specific validation and authorization remain service responsibilities; transport tests alone do not qualify them.",
+      "maintenance": "Core maintainer owns dispatch; host maintainer updates allowlists and integration checks together.",
+      "falsification": "An adapter can bypass dispatch, fabricate a verdict, or mutate generic execution records: reopen the decision and block release.",
+      "implemented_test_paths": [
+        "tests/test_service.py",
+        "tests/test_mcp.py"
+      ]
+    },
+    {
+      "id": "TA-002",
+      "title": "Evidence identity distinct from authority and uncertainty",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "rea",
+          "path": "src/domain/evidence.ts",
+          "lines": [
+            132,
+            184
+          ],
+          "symbol": "evidenceAuthoritySchema, evidenceBaseSchema",
+          "url": "https://github.com/morluto/rea/blob/05be423acbdf3a56673bdbd3004e4b500c0f5217/src/domain/evidence.ts#L132-L184"
+        }
+      ],
+      "local": [
+        {
+          "module": "traceanchor/core.py",
+          "symbol": "Store, source and object identity"
+        },
+        {
+          "module": "traceanchor/service.py",
+          "symbol": "capture, unknown and report operations"
+        }
+      ],
+      "contract": [
+        "Core record contract",
+        "A05",
+        "A08",
+        "A12"
+      ],
+      "rationale": "Byte integrity, producer authority, inferred facts and missing observations answer different questions.",
+      "differences": "SQLite durable history and private content-addressed blobs rather than an in-memory evidence ledger; imported declarations do not automatically become locally executed facts.",
+      "tests": [
+        {
+          "path": "docs/IMPLEMENTATION-CONTRACT.md",
+          "symbol": "A05, A08, A12",
+          "level": "core/service qualification gate owned by main"
+        }
+      ],
+      "limitations": "A digest proves integrity within its trust boundary, not truth, exhaustive coverage or an authenticated external producer.",
+      "maintenance": "Core maintainer maintains schema revisions, import integrity, coverage and trust semantics.",
+      "falsification": "A self-consistent imported payload can obtain a local runtime pass without a trusted run/comparator chain.",
+      "implemented_test_paths": [
+        "tests/test_core.py",
+        "tests/test_regressions.py"
+      ]
+    },
+    {
+      "id": "TA-003",
+      "title": "Separate finite acceptance dimensions and negative controls",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "reverse",
+          "path": "skills/reconstruction/references/differential-validation.md",
+          "lines": [
+            5,
+            21
+          ],
+          "symbol": "frozen validation boundary and wrong-variant control",
+          "url": "https://github.com/gthubtom1/reverse-skill/blob/ce675096e6a2cd4789a76f9bd618feddc2b6f333/skills/reconstruction/references/differential-validation.md#L5-L21"
+        },
+        {
+          "source": "craft",
+          "path": "crates/engine/src/workspace.rs",
+          "lines": [
+            251,
+            338
+          ],
+          "symbol": "CheckResult and good",
+          "url": "https://github.com/storytold/craft-anything/blob/e3af36f2f355284c81f5a387852e3171d5ec1ccc/crates/engine/src/workspace.rs#L251-L338"
+        }
+      ],
+      "local": [
+        {
+          "module": "traceanchor/comparison.py",
+          "symbol": "compare_observations"
+        },
+        {
+          "module": "traceanchor/service.py",
+          "symbol": "spec.freeze, capture, compare, verify"
+        }
+      ],
+      "contract": [
+        "Frozen first-release capability matrix paragraphs 3-4",
+        "A06",
+        "A07"
+      ],
+      "rationale": "Build, artifact presence and pictures do not establish stateful behavioral equivalence.",
+      "differences": "Five explicit dimensions with blocking obligations; no averaged score or generic Ready result substitutes for acceptance. General browser/desktop visual equivalence remains unsupported; deterministic PPM comparison is narrow.",
+      "tests": [
+        {
+          "path": "docs/IMPLEMENTATION-CONTRACT.md",
+          "symbol": "A06, A07",
+          "level": "comparison and real independent-run gates owned by main"
+        }
+      ],
+      "limitations": "Pass is limited to frozen inputs and obligations, not all possible behavior or a clean-machine qualification.",
+      "maintenance": "Comparator maintainer versions normalization; core maintainer binds scope and prevents missing-dimension passes.",
+      "falsification": "A wrong-but-builds or right-picture/wrong-behavior candidate passes a requested blocking obligation.",
+      "implemented_test_paths": [
+        "tests/test_comparison.py",
+        "tests/test_service.py",
+        "tests/test_acceptance_integrity.py"
+      ]
+    },
+    {
+      "id": "TA-004",
+      "title": "Result-affecting identity freshness",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "craft",
+          "path": "crates/ai/src/rebuild/kept_check.rs",
+          "lines": [
+            19,
+            69
+          ],
+          "symbol": "KeptChecks saved results and reuse key",
+          "url": "https://github.com/storytold/craft-anything/blob/e3af36f2f355284c81f5a387852e3171d5ec1ccc/crates/ai/src/rebuild/kept_check.rs#L19-L69"
+        }
+      ],
+      "local": [
+        {
+          "module": "traceanchor/core.py",
+          "symbol": "source revisions"
+        },
+        {
+          "module": "traceanchor/service.py",
+          "symbol": "spec and verdict freshness"
+        }
+      ],
+      "contract": [
+        "Core record contract",
+        "A08",
+        "A13"
+      ],
+      "rationale": "Retain costly evidence without relabeling old observations as current execution.",
+      "differences": "Bind source/candidate/spec/fixtures/tool/environment/comparator identities, recursively invalidate linked parents, preserve historical run identities. Do not rely on only path, size and timestamp.",
+      "tests": [
+        {
+          "path": "docs/IMPLEMENTATION-CONTRACT.md",
+          "symbol": "A08, A13",
+          "level": "freshness and subtask qualification gate owned by main"
+        }
+      ],
+      "limitations": "Unmodeled environment effects remain a stated coverage limit; source hashes are not exhaustive environment snapshots.",
+      "maintenance": "Core maintainer owns freshness dependencies and migration compatibility.",
+      "falsification": "Any result-affecting change preserves a current passing verdict or mutates historical observation identity.",
+      "implemented_test_paths": [
+        "tests/test_regressions.py",
+        "tests/test_acceptance_integrity.py"
+      ]
+    },
+    {
+      "id": "TA-005",
+      "title": "Owned process cancellation and bounded cleanup",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "reverse",
+          "path": "skills/scripts/process-lease.ps1",
+          "lines": [
+            193,
+            294
+          ],
+          "symbol": "lease start, ownership and observed cleanup",
+          "url": "https://github.com/gthubtom1/reverse-skill/blob/ce675096e6a2cd4789a76f9bd618feddc2b6f333/skills/scripts/process-lease.ps1#L193-L294"
+        },
+        {
+          "source": "craft",
+          "path": "crates/platform/src/process.rs",
+          "lines": [
+            815,
+            953
+          ],
+          "symbol": "supervision deadline and cleanup",
+          "url": "https://github.com/storytold/craft-anything/blob/e3af36f2f355284c81f5a387852e3171d5ec1ccc/crates/platform/src/process.rs#L815-L953"
+        }
+      ],
+      "local": [
+        {
+          "module": "traceanchor/process.py",
+          "symbol": "run_process"
+        },
+        {
+          "module": "traceanchor/winjob.py",
+          "symbol": "Windows Job Object ownership"
+        }
+      ],
+      "contract": [
+        "Module ownership/API seams for concurrent implementation",
+        "A09",
+        "A10"
+      ],
+      "rationale": "A cancelled client, an exited parent and a fully cleaned resource family are distinct states.",
+      "differences": "One stdlib process owner, explicit on_start receipt and bounded cleanup; no inherited protocol stdin. Platform limits remain explicit instead of universal containment claims.",
+      "tests": [
+        {
+          "path": "tests/test_process.py",
+          "symbol": "run_process regression suite",
+          "level": "real owned synthetic process tests; results recorded by process implementer"
+        }
+      ],
+      "limitations": "POSIX detached-descendant containment differs from Windows Job Object guarantees. A cleanup attempt is not automatically cleanup complete.",
+      "maintenance": "Process maintainer owns per-platform qualification and ownership-before-execution.",
+      "falsification": "A controlled descendant survives cleanup while result claims complete, or target executes before ownership is established.",
+      "implemented_test_paths": [
+        "tests/test_process.py"
+      ]
+    },
+    {
+      "id": "TA-006",
+      "title": "Bounded MCP stdio transport",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "craft",
+          "path": "crates/mcp/src/lib.rs",
+          "lines": [
+            268,
+            327
+          ],
+          "symbol": "handle_line and notifications/cancelled",
+          "url": "https://github.com/storytold/craft-anything/blob/e3af36f2f355284c81f5a387852e3171d5ec1ccc/crates/mcp/src/lib.rs#L268-L327"
+        },
+        {
+          "source": "seep",
+          "path": "Tool/mcp/test_stdio_smoke.py",
+          "lines": [
+            90,
+            119
+          ],
+          "symbol": "stdin ownership smoke assertions",
+          "url": "https://github.com/angusdevgo/Seep-Reverse-Lab/blob/1ea9399ccb4dd8db5849a5ff62d963bf4abbe35e/Tool/mcp/test_stdio_smoke.py#L90-L119"
+        }
+      ],
+      "local": [
+        {
+          "module": "traceanchor/mcp.py",
+          "symbol": "serve, _serve, tools, TOOL_GROUPS"
+        }
+      ],
+      "contract": [
+        "Module ownership/API seams for concurrent implementation",
+        "Service and CLI surface",
+        "A14"
+      ],
+      "rationale": "A responsive transport must preserve full frames, typed failure and cancellation while executing admitted work.",
+      "differences": "At most two workers, no pending call queue, complete-frame rejection at 1 MiB, duplicate-key rejection, EOF cancellation and one-second aggregate join. Unexpected failures use RPC error; service TraceError uses isError. MCP host group names and schema are independent.",
+      "tests": [
+        {
+          "path": "tests/test_mcp.py",
+          "symbol": "ProtocolTests",
+          "level": "real threads/framing with stub dispatcher; not real service end-to-end"
+        }
+      ],
+      "limitations": "Cancellation is cooperative; a stuck Python service thread is daemonized and not force-killed. Service must own process cleanup. A flooding peer can consume reader CPU but not an unbounded submission queue.",
+      "maintenance": "Host maintainer checks official MCP lifecycle/schema changes and service integration before changing supported versions.",
+      "falsification": "A truncated prefix is parsed, a third worker is admitted, EOF never returns, or malformed group arguments reach dispatch.",
+      "implemented_test_paths": [
+        "tests/test_mcp.py"
+      ]
+    },
+    {
+      "id": "TA-007",
+      "title": "Preview-first project-local host transaction",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "reverse",
+          "path": "skills/scripts/bootstrap-reverse.ps1",
+          "lines": [
+            540,
+            731
+          ],
+          "symbol": "Claude/Codex server writers and host selection",
+          "url": "https://github.com/gthubtom1/reverse-skill/blob/ce675096e6a2cd4789a76f9bd618feddc2b6f333/skills/scripts/bootstrap-reverse.ps1#L540-L731"
+        },
+        {
+          "source": "seep",
+          "path": "setup/install-pi.ps1",
+          "lines": [
+            67,
+            129
+          ],
+          "symbol": "backup and copy deployment boundaries",
+          "url": "https://github.com/angusdevgo/Seep-Reverse-Lab/blob/1ea9399ccb4dd8db5849a5ff62d963bf4abbe35e/setup/install-pi.ps1#L67-L129"
+        }
+      ],
+      "local": [
+        {
+          "module": "traceanchor/hosts.py",
+          "symbol": "install_host, uninstall_host"
+        },
+        {
+          "module": "docs/hosts.md",
+          "symbol": "configuration and recovery contract"
+        }
+      ],
+      "contract": [
+        "Module ownership/API seams for concurrent implementation",
+        "A14",
+        "A15"
+      ],
+      "rationale": "Avoid accidental global changes and give uninstall an evidence-backed ownership boundary.",
+      "differences": "Only explicit apply writes project files. Exact original-byte backup in receipt; before/after digests, exclusive product-writer lock, atomic individual replacements, readback, conflict-preserving rollback and conservative interrupted-transaction handling. No host installation or activation.",
+      "tests": [
+        {
+          "path": "tests/test_hosts.py",
+          "symbol": "HostsTests",
+          "level": "synthetic temporary projects with real filesystem transactions"
+        }
+      ],
+      "limitations": "External editors do not share our lock; the final OS rename race is not eliminated. Official Codex schema and project-config tests were statically inspected after webpage fetch failures; true host end-to-end is still not run. See docs/hosts.md.",
+      "maintenance": "Host maintainer rechecks official documentation and scoped real-host workflows separately.",
+      "falsification": "An external same-name entry, missing receipt or changed configuration is overwritten; rollback loses preexisting user bytes.",
+      "implemented_test_paths": [
+        "tests/test_hosts.py",
+        "tests/test_cli.py"
+      ]
+    },
+    {
+      "id": "TA-008",
+      "title": "Immutable original, derived diagnostic and independent candidate roles",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "seep",
+          "path": "Tool/skill/exe-reverse/scripts/pepatch.py",
+          "lines": [
+            385,
+            419
+          ],
+          "symbol": "write, reopen and byte readback",
+          "url": "https://github.com/angusdevgo/Seep-Reverse-Lab/blob/1ea9399ccb4dd8db5849a5ff62d963bf4abbe35e/Tool/skill/exe-reverse/scripts/pepatch.py#L385-L419"
+        }
+      ],
+      "local": [
+        {
+          "module": "traceanchor/core.py",
+          "symbol": "source identity and derived objects"
+        },
+        {
+          "module": "traceanchor/service.py",
+          "symbol": "source.derive, capture, verify"
+        }
+      ],
+      "contract": [
+        "Frozen first-release capability matrix paragraph 5",
+        "A05"
+      ],
+      "rationale": "A successful diagnostic byte edit answers a different question than independent reconstruction.",
+      "differences": "Explicit expected bytes and immutable parent/derived identity; original file is not modified in place. Separate candidate identity and same-side comparison rejection.",
+      "tests": [
+        {
+          "path": "docs/IMPLEMENTATION-CONTRACT.md",
+          "symbol": "A05",
+          "level": "core/service identity qualification gate owned by main"
+        }
+      ],
+      "limitations": "Byte-range derivation is not a general patching or access-recovery product; derived observations do not establish original behavior without justification.",
+      "maintenance": "Core maintainer preserves parent links, full digests and role admission across imports and revisions.",
+      "falsification": "A derived object overwrites original evidence or is silently labeled an independent candidate.",
+      "implemented_test_paths": [
+        "tests/test_service.py",
+        "tests/test_acceptance_integrity.py"
+      ]
+    },
+    {
+      "id": "TA-009",
+      "title": "Method guidance without a second controller",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "reverse",
+          "path": "plugins/reverse-skill/skills/reverse-skill-router/SKILL.md",
+          "lines": [
+            8,
+            20
+          ],
+          "symbol": "thin router delegation",
+          "url": "https://github.com/gthubtom1/reverse-skill/blob/ce675096e6a2cd4789a76f9bd618feddc2b6f333/plugins/reverse-skill/skills/reverse-skill-router/SKILL.md#L8-L20"
+        },
+        {
+          "source": "seep",
+          "path": "packages/seep-lab/lib/index.js",
+          "lines": [
+            191,
+            202
+          ],
+          "symbol": "content directory mounting",
+          "url": "https://github.com/angusdevgo/Seep-Reverse-Lab/blob/1ea9399ccb4dd8db5849a5ff62d963bf4abbe35e/packages/seep-lab/lib/index.js#L191-L202"
+        }
+      ],
+      "local": [
+        {
+          "module": "skills/traceanchor/SKILL.md",
+          "symbol": "host workflow guidance"
+        }
+      ],
+      "contract": [
+        "Product and architecture",
+        "A02",
+        "A16"
+      ],
+      "rationale": "Let the current host reason while deterministic service checks effects, identities, budgets and verdicts.",
+      "differences": "Original concise guidance, no upstream skill/prompt text, private installed-root lookup, bootstrap or additional model session. Skill discovery is distinct from MCP activation.",
+      "tests": [
+        {
+          "path": "tests/test_hosts.py",
+          "symbol": "ProvenanceTests",
+          "level": "static contract and public-path checks only"
+        }
+      ],
+      "limitations": "Static skill text does not prove a host actually discovered or obeyed it; real-host end-to-end remains separate.",
+      "maintenance": "Host maintainer keeps examples aligned with grouped tools and service signatures.",
+      "falsification": "Guidance authorizes new effects, trusts target instructions or silently starts another model/controller.",
+      "implemented_test_paths": [
+        "tests/test_hosts.py"
+      ]
+    },
+    {
+      "id": "TA-010",
+      "title": "L1/L2/L3 retention and promotion-before-cleanup",
+      "adoption": "original",
+      "sources": [],
+      "local": [
+        {
+          "module": "traceanchor/lifecycle.py",
+          "symbol": "material budgets, promotion and storage cleanup"
+        },
+        {
+          "module": "traceanchor/core.py",
+          "symbol": "material metadata and leases"
+        }
+      ],
+      "contract": [
+        "Storage lifecycle and budgets (blocking)",
+        "A10",
+        "A11"
+      ],
+      "rationale": "Original product requirement: retain essential evidence without preserving every large working tree forever.",
+      "differences": "Not attributed to a matching upstream implementation. L1 protected; L2 requires acceptance/archive checks; L3 requires terminal owner and no references/leases; unknown ownership preserved.",
+      "tests": [
+        {
+          "path": "docs/IMPLEMENTATION-CONTRACT.md",
+          "symbol": "A10, A11",
+          "level": "real storage qualification gate owned by main"
+        }
+      ],
+      "limitations": "Only registered product-owned material is managed. Old arbitrary folders and complete upstream copies are not automatic cleanup targets.",
+      "maintenance": "Lifecycle maintainer owns reference/lease consistency, quotas, preview and resumable cleanup.",
+      "falsification": "Automatic cleanup removes L1, active/referenced/recovery material or unregistered content, or archive references break after L2/L3 removal.",
+      "implemented_test_paths": [
+        "tests/test_core.py",
+        "tests/test_regressions.py",
+        "tests/test_acceptance_integrity.py"
+      ]
+    },
+    {
+      "id": "TA-011",
+      "title": "Independent baseline and future static-review governance",
+      "adoption": "original",
+      "sources": [],
+      "local": [
+        {
+          "module": "docs/provenance/baselines.json",
+          "symbol": "three independent baseline classes"
+        },
+        {
+          "module": "UPSTREAM-REVIEW-PROMPT.md",
+          "symbol": "static review handoff"
+        },
+        {
+          "module": "docs/provenance/review-template.md",
+          "symbol": "review and archive record"
+        }
+      ],
+      "contract": [
+        "A01",
+        "A17",
+        "A19"
+      ],
+      "rationale": "Preserve reproducible mechanism lineage while allowing an independent product to decline upstream changes.",
+      "differences": "No automatic sync, merge, installation, execution, publication, or permanent source mirror. Only sanitized mechanisms and immutable public blob links are published.",
+      "tests": [
+        {
+          "path": "tests/test_hosts.py",
+          "symbol": "ProvenanceTests",
+          "level": "static mapping, decision and prompt consistency"
+        }
+      ],
+      "limitations": "Static provenance tests check traceability and required fields, not semantic correctness of every research conclusion or full public-history audit.",
+      "maintenance": "Release maintainer preserves research history and review outcomes; implementation owner alone updates product influence after acceptance.",
+      "falsification": "A fetch changes research/influence baselines automatically, a review executes upstream instructions, or archived findings depend only on deleted absolute paths.",
+      "implemented_test_paths": [
+        "tests/test_hosts.py"
+      ]
+    },
+    {
+      "id": "TA-012",
+      "title": "Observation gaps and bounded task-specific routing",
+      "adoption": "original",
+      "sources": [],
+      "local": [
+        {
+          "module": "traceanchor/service.py",
+          "symbol": "observability.set, plan, subtask.create, subtask.result"
+        }
+      ],
+      "contract": [
+        "Frozen first-release capability matrix paragraphs 1-7",
+        "A02",
+        "A03",
+        "A04",
+        "A13"
+      ],
+      "rationale": "Original frozen product requirement: six modes, multi-target diagnosis, explicit missing runtime/server conditions and finite developer subtasks.",
+      "differences": "No keyword grants execution. Static clues stay inferred; startup/UI/function/verified remain separate; child evidence invalidation reaches the parent. Unsupported dynamic targets stay explicit.",
+      "tests": [
+        {
+          "path": "docs/IMPLEMENTATION-CONTRACT.md",
+          "symbol": "A02, A03, A04, A13",
+          "level": "service and runtime-observation qualification gate owned by main"
+        }
+      ],
+      "limitations": "Current first-release adapters do not provide arbitrary desktop, Android or browser runtime automation.",
+      "maintenance": "Core maintainer owns mode/effect admission and reachability; adapter maintainer qualifies any new observation surface.",
+      "falsification": "Target keywords grant effects, missing server becomes pass, or a development subtask silently becomes a full reconstruction project.",
+      "implemented_test_paths": [
+        "tests/test_service.py",
+        "tests/test_http.py",
+        "tests/test_acceptance_integrity.py"
+      ]
+    }
+  ],
+  "source_to_mechanisms": {
+    "reverse": [
+      "TA-003",
+      "TA-005",
+      "TA-007",
+      "TA-009"
+    ],
+    "rea": [
+      "TA-001",
+      "TA-002"
+    ],
+    "craft": [
+      "TA-003",
+      "TA-004",
+      "TA-005",
+      "TA-006"
+    ],
+    "seep": [
+      "TA-006",
+      "TA-007",
+      "TA-008",
+      "TA-009"
+    ]
+  },
+  "local_to_mechanisms": {
+    "traceanchor/core.py": [
+      "TA-002",
+      "TA-004",
+      "TA-008",
+      "TA-010"
+    ],
+    "traceanchor/service.py": [
+      "TA-001",
+      "TA-002",
+      "TA-003",
+      "TA-004",
+      "TA-008",
+      "TA-012"
+    ],
+    "traceanchor/cli.py": [
+      "TA-001"
+    ],
+    "traceanchor/mcp.py": [
+      "TA-001",
+      "TA-006"
+    ],
+    "traceanchor/comparison.py": [
+      "TA-003"
+    ],
+    "traceanchor/process.py": [
+      "TA-005"
+    ],
+    "traceanchor/winjob.py": [
+      "TA-005"
+    ],
+    "traceanchor/hosts.py": [
+      "TA-007"
+    ],
+    "docs/hosts.md": [
+      "TA-007"
+    ],
+    "skills/traceanchor/SKILL.md": [
+      "TA-009"
+    ],
+    "traceanchor/lifecycle.py": [
+      "TA-010"
+    ],
+    "docs/provenance/baselines.json": [
+      "TA-011"
+    ],
+    "UPSTREAM-REVIEW-PROMPT.md": [
+      "TA-011"
+    ],
+    "docs/provenance/review-template.md": [
+      "TA-011"
+    ]
+  }
+}

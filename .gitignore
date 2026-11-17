@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.validation/
+dist/
+*.egg-info/
+.traceanchor/
+.mcp.json
+.codex/
+.traceanchor-hosts/
+.env
+.env.*
+*.sqlite3*

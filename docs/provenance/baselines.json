@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "study_date": "2026-11-18",
+  "execution_scope": "Static source research only; no upstream scripts, tests, installers, providers, binaries or samples executed.",
+  "baseline_policy": "research_baseline is immutable historical input; review_baselines append independently; product_influence_baselines change only with an accepted mechanism decision and local verification. A newer upstream commit updates none automatically.",
+  "sources": [
+    {
+      "id": "reverse",
+      "url": "https://github.com/gthubtom1/reverse-skill",
+      "research_baseline": "ce675096e6a2cd4789a76f9bd618feddc2b6f333",
+      "review_baselines": [],
+      "product_influence_baselines": ["ce675096e6a2cd4789a76f9bd618feddc2b6f333"],
+      "license_layers": [
+        {"path": "LICENSE", "lines": [1, 21], "identity": "MIT"},
+        {"path": "CTF-Sandbox-Orchestrator/LICENSE", "lines": [1, 3], "identity": "GPL-3.0 component; not covered by root MIT"}
+      ],
+      "report": "research-summary.md#reverse",
+      "distribution": "Mechanism study only; no upstream code, prompts, skill text, assets or runtime included."
+    },
+    {
+      "id": "rea",
+      "url": "https://github.com/morluto/rea",
+      "research_baseline": "05be423acbdf3a56673bdbd3004e4b500c0f5217",
+      "review_baselines": [],
+      "product_influence_baselines": ["05be423acbdf3a56673bdbd3004e4b500c0f5217"],
+      "license_layers": [
+        {"path": "LICENSE", "lines": [1, 21], "identity": "MIT"},
+        {"path": "THIRD_PARTY_NOTICES.md", "lines": [14, 24], "identity": "Separate per-component notices and derived tables"},
+        {"path": ".gitmodules", "lines": [1, 15], "identity": "Five gitlink contents not acquired/read; their licenses are not inferred from root MIT"}
+      ],
+      "report": "research-summary.md#rea",
+      "distribution": "Mechanism study only; no REA implementation, generated catalog, derived tables, native runtime or gitlinks included."
+    },
+    {
+      "id": "craft",
+      "url": "https://github.com/storytold/craft-anything",
+      "research_baseline": "e3af36f2f355284c81f5a387852e3171d5ec1ccc",
+      "review_baselines": [],
+      "product_influence_baselines": ["e3af36f2f355284c81f5a387852e3171d5ec1ccc"],
+      "license_layers": [
+        {"path": "Cargo.toml", "lines": [1, 10], "identity": "MIT OR Apache-2.0 at fixed snapshot; historical GitHub Apache-only field is incomplete"},
+        {"path": "NOTICE", "lines": [1, 8], "identity": "Root attribution and brand exceptions"},
+        {"path": "assets/app-icon/LICENSE.txt", "lines": [1, 10], "identity": "Separate icon terms"},
+        {"path": "docs/brand/LICENSE-brand.txt", "lines": [1, 42], "identity": "Brand not open-source"},
+        {"path": "ATTRIBUTION.md", "lines": [3, 52], "identity": "Font, icon and other asset/component notices apply separately"}
+      ],
+      "report": "research-summary.md#craft",
+      "distribution": "Mechanism study only; no Rust implementation, vendor patch, assets, brand or prompt content included."
+    },
+    {
+      "id": "seep",
+      "url": "https://github.com/angusdevgo/Seep-Reverse-Lab",
+      "research_baseline": "1ea9399ccb4dd8db5849a5ff62d963bf4abbe35e",
+      "review_baselines": [],
+      "product_influence_baselines": ["1ea9399ccb4dd8db5849a5ff62d963bf4abbe35e"],
+      "license_layers": [
+        {"path": "LICENSE", "lines": [1, 3], "identity": "GPL-3.0 root text"},
+        {"path": "packages/seep-lab/package.json", "lines": [41, 41], "identity": "GPL-3.0-or-later package declaration"},
+        {"path": "Tool/skill/softseep/SKILL.md", "lines": [1, 9], "identity": "Embedded skill declares MIT; separate layer"},
+        {"path": "Tool/skill/webseep/PROVENANCE.md", "lines": [31, 44], "identity": "Some upstream Web material license unresolved; not imported"}
+      ],
+      "report": "research-summary.md#seep",
+      "distribution": "Mechanism study only; no mirrored sources, archives, cases, credentials, skill text, binaries or assets included. Embedded mirrors are not treated as independently identified sources."
+    }
+  ]
+}

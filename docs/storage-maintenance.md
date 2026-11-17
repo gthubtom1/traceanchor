@@ -1,6 +1,6 @@
 # 存储生命周期与离线维护
 
-适用版本：**0.1.0 候选版**。本地资格见 [qualification.json](qualification.json)，隔离包维护实测见 [install-qualification.json](install-qualification.json)，合同见 [实施契约](IMPLEMENTATION-CONTRACT.md)。bash 块均为独立单命令；替换路径/ID，占位解释见 [README](../README.md)。
+适用版本：**0.1.0 有限能力首版**。本地资格见 [qualification.json](qualification.json)，隔离包维护实测见 [install-qualification.json](install-qualification.json)，合同见 [实施契约](IMPLEMENTATION-CONTRACT.md)。bash 块均为独立单命令；替换路径/ID，占位解释见 [README](../README.md)。
 
 ## 1. 程序、宿主接线与业务数据分离
 

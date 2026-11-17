@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 — first release candidate
+## 0.1.0 — first finite-capability release
 
 Independent stdlib-only core, SQLite ownership, full source snapshots, explicit task modes and observation gaps, bounded Windows Job execution, host-driven finite reconstruction, five separate comparisons, current-verdict invalidation, linked development subtasks, three-tier storage governance, CLI/MCP and project-local host configuration.
 

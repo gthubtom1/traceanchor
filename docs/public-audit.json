@@ -2,12 +2,13 @@
   "schema_version": 1,
   "status": "pass",
   "inventory": {
+    ".gitattributes": "c06acf0f44c350862b6be9be4ecf2352532b92965a0407b2e8ce20c7b9fe7838",
     ".github/workflows/qualification.yml": "c1cae991897b212cae9f7ec0e1fbb0aec549eaecfac9457e884bca07a804a659",
     ".gitignore": "8a28aebcf0e2f69f7a2ec843b53483e17c202bce84b781147238b4d105bfe758",
     "_build.py": "4d614e1493bb01c254d36d8a02eac216da731f07d9a7fe749e809deb7bb6da7e",
-    "CHANGELOG.md": "e482d741f488c2425abbfc169e98810896ab889ccad96f3374cbcc772d46569f",
-    "docs/architecture.md": "f63f27361ffcb924c7e93e480bba66b82b73de072089e194b4c063f43ee1b8de",
-    "docs/completion-gates.json": "9b98b249cd4b3144f301fbca483018329c9f7261a453386daab7b44ec2abbfa8",
+    "CHANGELOG.md": "3e4a3ce23300174d79cd56d5c3533346ea5466d3ac22c82397021c5ecfc5f381",
+    "docs/architecture.md": "4e88488b6d9c2e2df94179e7a2d0852c4d92122556ba7bf6f4d3698169aa7f41",
+    "docs/completion-gates.json": "5e611a3df5ab38dc94f1a131d8c7d7412f65821fc250cf57d7527ae919732aae",
     "docs/dependencies.json": "644ef47ef713c174cf587f637aadf4f7cc1b848d040bf9ad46e575ad9cf59226",
     "docs/hosts.md": "2a7e7cf79e06b1c176e471fefd27ec4fff15e09281bb3b21e16c7c37943ee697",
     "docs/IMPLEMENTATION-CONTRACT.md": "8deeb43cde999ab03cd7510b13128819d13700b0470601da380e4aa9a83426b8",
@@ -20,13 +21,15 @@
     "docs/provenance/research-summary.md": "65923b5c1b6005ad6c4520bdefeaab55299d6b664af66a7ec6ad96509c15c28e",
     "docs/provenance/review-template.md": "247c04a1df34404ddb7420e0174320a74cd6434cf567fd09360b544ef5550fea",
     "docs/qualification.json": "b0d9ee36debe4aae67c85db5de4745548281c8f6229064f28ad7e688bb14cb2a",
-    "docs/release-policy.md": "aecddfaa8a908134eb4842fdcab2f97574b58f132d0a8b335da5663e15f211e2",
+    "docs/release-policy.md": "6a80dbf72dea87700937bc1a150a6cbe78a4665fa3358857aaecd7fea816790f",
+    "docs/release-verification.json": "3be940bd2d7785ee4127a7181b2edbfc54ad6ca7dcd9e17463e958ad1f0d76ea",
     "docs/requirements-map.json": "5f8bebd3d05b4c28a6cdc9028fc9e6484f64322aca3abee01b9ecfa88744c696",
-    "docs/storage-maintenance.md": "d0f6cd74c5299bd31069e444f8db3456c6c8e440766afacd519cadad676eebe9",
-    "docs/support.md": "ee30269beeebf34105c2d6cfe298acc15ae25ad60d396ea51edb13aea1e4c3c6",
+    "docs/storage-maintenance.md": "3438dfb1c345855ea542ab267b9d9b6a2b6123d501f4867d3a11fcfd3c4bfc61",
+    "docs/support.md": "02dc6624786bacfe08768b33d4beed13b27930d80b6be3bb2cc952a5a1f877e7",
     "LICENSE": "a62637507904c152710bcbbdd764fdb19e0e29f2151dc96b7eb1e4a6075eba84",
     "pyproject.toml": "048eb262f09274c0a0ea7ad6f7ccf53df44cda335ec9c151ea8db082cca3e513",
-    "README.md": "1e8b4e0eef0300f8f9ba497463122ac152c3f0305e7f591bd5a6d40cd0abcab4",
+    "README.md": "e8f276caf8b310b5e9e746dc851184e2259706aa38cc123f0582ca0af9f5203e",
+    "SHA256SUMS": "f984735e9ce8393f25ecf629637f6da177659d7b0b470a95a5b028b5ab314fea",
     "skills/traceanchor/SKILL.md": "09edc63b0eaf59a4da96ee72be9beac60e5c930f6c1c3d0f39661f629f21527b",
     "tests/__init__.py": "90a082e2b0a19412c3c41dac3e627674dea2b4dafa291cd9e0f717c7125607e9",
     "tests/test_acceptance_integrity.py": "dd83f65e67fe472c7a234ab0c7479753a180d4039763e127c8dcd6d517f64200",
@@ -63,18 +66,20 @@
   },
   "artifacts": {
     "traceanchor-0.1.0-py3-none-any.whl": {
-      "sha256": "6f9380a663fbe35aa5234517160413a5610048b0b0756cd0f3c7e5ca2a41f8c4",
-      "size": 146163,
+      "sha256": "7d2296391340c044d044b5e473f4ea49459a00346c05cde1930eae3a59fc5024",
+      "size": 146323,
       "files": 40
     },
     "traceanchor-0.1.0.tar.gz": {
-      "sha256": "7fbc2a984185cdb9f326093fc7bea7eee30d831ce2041b299ea3fd36452e7feb",
-      "size": 166957,
+      "sha256": "bc9d8f31b3b07fd41e5dce20df0f74a2dd737430548cbd3b19799e611c7e5426",
+      "size": 167166,
       "files": 56
     }
   },
   "git_history": {
-    "status": "not-run"
+    "status": "checked",
+    "commits": 1,
+    "distinct_blobs": 59
   },
   "issues": [],
   "scope": "Explicit product tree excluding .git/.validation/dist/env/cache; common private path/key/token patterns and artifact inventory. Human review of origin, data and license is still required.",

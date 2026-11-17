@@ -1,10 +1,18 @@
 # TraceAnchor
 
-**0.1.0 候选版：宿主驱动的逆向分析、证据管理与有限行为重建工作台。**
+**0.1.0：宿主驱动的逆向分析、证据管理与有限行为重建工作台。**
+
+[源码仓库](https://github.com/gthubtom1/traceanchor) · [发布与下载](https://github.com/gthubtom1/traceanchor/releases) · [问题反馈](https://github.com/gthubtom1/traceanchor/issues)
+
+获取源码（运行目录由你选择，不要求研究目录）：
+
+```bash
+git clone https://github.com/gthubtom1/traceanchor.git
+```
 
 模型宿主负责分析问题和编写独立候选；确定性核心负责操作效果、预算、运行生命周期、证据及判定。没有内部第二模型循环，也没有产品自行发起的付费模型 API 请求。
 
-当前是候选产品，不是正式发布公告。本地完整资格及逐项结果见 [docs/qualification.json](docs/qualification.json)，隔离包安装维护旅程见 [docs/install-qualification.json](docs/install-qualification.json)。远程发布与下载核对另见发布记录；本地资格不替代远程成功。
+实际发布状态以 GitHub Release 和 docs/release-verification.json 为准。本地完整资格及逐项结果见 [docs/qualification.json](docs/qualification.json)，隔离包安装维护旅程见 [docs/install-qualification.json](docs/install-qualification.json)。远程发布与下载核对另见发布记录；本地资格不替代远程成功。
 
 ## 1. 支持范围与前置条件
 

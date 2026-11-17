@@ -1,6 +1,6 @@
 # 支持矩阵、诊断与已知限制
 
-适用版本：**0.1.0 候选版**。本篇基于实际实现描述能力；完整本地测试见 [qualification.json](qualification.json)，实际隔离包旅程见 [install-qualification.json](install-qualification.json)。本地通过不替代远程发布核对。安装与完整 JSON 流程见 [README](../README.md)。
+适用版本：**0.1.0 有限能力首版**。本篇基于实际实现描述能力；完整本地测试见 [qualification.json](qualification.json)，实际隔离包旅程见 [install-qualification.json](install-qualification.json)。本地通过不替代远程发布核对。安装与完整 JSON 流程见 [README](../README.md)。
 
 ## 1. 资格等级怎么读
 
@@ -132,6 +132,6 @@ cleanup / 数据是否保留 / 是否已停写者：[填写]
 
 ## 8. 维护与效果声明
 
-0.1.0 尚处候选，破坏性 schema 变化、兼容范围和停用计划须在发布记录明确说明，不用版本号暗示长期承诺。运行依赖为标准库不等于零维护成本；成熟外部工具以后只能作为明确可选适配，经真实资格后增加支持声明。
+0.1.0 为首个有限能力版本，破坏性 schema 变化、兼容范围和停用计划须在发布记录明确说明，不用版本号暗示长期承诺。运行依赖为标准库不等于零维护成本；成熟外部工具以后只能作为明确可选适配，经真实资格后增加支持声明。
 
 当前 demo 证明的只是三组自建计数器序列及明确义务。没有受控模型成本/正确性/恢复/磁盘/资源对照时，不声称优于上游、简单脚本或其他产品。没有新增付费模型循环；宿主推理的外部成本不计为产品“免费模型”。发布门见 [release-policy.md](release-policy.md)。

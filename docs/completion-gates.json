@@ -191,10 +191,10 @@
     {
       "id": "A19",
       "requirement": "Public file/history review and complete clean artifacts",
-      "status": "pending-public-history-audit",
+      "status": "pass",
       "evidence": [
-        "public-content-audit",
-        "artifact-content-and-checksum-audit"
+        "public-audit.json",
+        "../SHA256SUMS"
       ],
       "scope": "Frozen initial capability; unsupported adapters are not granted runtime qualification"
     },

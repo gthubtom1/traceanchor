@@ -2,7 +2,7 @@
 
 ## 1. 当前状态
 
-**TraceAnchor 0.1.0 是候选版，本文不是发布通过回执。** 用户已启用实施交接修订2的产品实施/发布授权，但发布仍须通过验收门；授权不是验收结果。各发布阶段实际状态以 release-verification.json 为准。
+**TraceAnchor 0.1.0 的发布状态由实际资格与发布回执决定。** 用户已启用实施交接修订2的产品实施/发布授权，但发布仍须通过验收门；授权不是验收结果。各发布阶段实际状态以 release-verification.json 为准。
 
 阶段性 144 项测试、后来修复的专项回归、demo 有限通过、打包成功都不是整个 Goal 完成。本地已生成 [qualification.json](qualification.json)，绑定实际候选内容及测试环境，并保存 [安装维护实测](install-qualification.json)；这些记录不替代公开检查和远程门。公共 URL 仅在实际创建/核对后写入发布记录，不使用臆造下载地址。
 

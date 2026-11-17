@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "version": "0.1.1",
-  "full_goal_complete": false,
+  "full_goal_complete": true,
   "gates": [
     {
       "id": "A01",
@@ -191,7 +191,7 @@
     {
       "id": "A19",
       "requirement": "Public file/history review and complete clean artifacts",
-      "status": "pending-remote",
+      "status": "pass-in-declared-scope",
       "evidence": [
         "public-audit.json",
         "../SHA256SUMS"
@@ -201,7 +201,7 @@
     {
       "id": "A20",
       "requirement": "Actual GitHub repository/push/CI/Release/download verification",
-      "status": "pending-remote",
+      "status": "pass-in-declared-scope",
       "evidence": [
         "release-verification.json"
       ],
@@ -226,5 +226,6 @@
     "Windows conditional symlink-creation branches require OS privilege; passing a test that conservatively handles missing privilege does not grant every link type qualification",
     "CAS quota is not an OS sandbox or whole-workspace disk quota",
     "Reconcile preserves abandoned/unknown cleanup; it does not blindly replay effects or manufacture cleanup proof"
-  ]
+  ],
+  "release": "https://github.com/gthubtom1/traceanchor/releases/tag/v0.1.1"
 }

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "product": "TraceAnchor 0.1.0",
   "authority": "IMPLEMENTATION-CONTRACT.md A01-A20; original authorized handoff revision 2 section 12 remains the completion gate",
-  "status": "local-qualification-complete-public-and-remote-gates-separate",
+  "status": "released-and-verified-in-declared-first-version-scope",
   "requirements": [
     {
       "id": "A01",
@@ -274,9 +274,10 @@
       ],
       "verification": [
         "public-content-audit",
-        "artifact-content-and-checksum-audit"
+        "artifact-content-and-checksum-audit",
+        "docs/release-verification.json"
       ],
-      "status": "pending"
+      "status": "verified"
     },
     {
       "id": "A20",
@@ -286,9 +287,10 @@
         "docs/release-policy.md"
       ],
       "verification": [
-        "release-status-record"
+        "release-status-record",
+        "docs/release-verification.json"
       ],
-      "status": "not-started-local-gates-first"
+      "status": "verified"
     }
   ],
   "deferred": [

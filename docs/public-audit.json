@@ -8,7 +8,7 @@
     "_build.py": "4d614e1493bb01c254d36d8a02eac216da731f07d9a7fe749e809deb7bb6da7e",
     "CHANGELOG.md": "3e4a3ce23300174d79cd56d5c3533346ea5466d3ac22c82397021c5ecfc5f381",
     "docs/architecture.md": "4e88488b6d9c2e2df94179e7a2d0852c4d92122556ba7bf6f4d3698169aa7f41",
-    "docs/completion-gates.json": "5e611a3df5ab38dc94f1a131d8c7d7412f65821fc250cf57d7527ae919732aae",
+    "docs/completion-gates.json": "44c4fded28500211fc935d47af5893e25f8a4b56aee2e0d32ab2021e5dc1110e",
     "docs/dependencies.json": "644ef47ef713c174cf587f637aadf4f7cc1b848d040bf9ad46e575ad9cf59226",
     "docs/hosts.md": "2a7e7cf79e06b1c176e471fefd27ec4fff15e09281bb3b21e16c7c37943ee697",
     "docs/IMPLEMENTATION-CONTRACT.md": "8deeb43cde999ab03cd7510b13128819d13700b0470601da380e4aa9a83426b8",
@@ -22,8 +22,8 @@
     "docs/provenance/review-template.md": "247c04a1df34404ddb7420e0174320a74cd6434cf567fd09360b544ef5550fea",
     "docs/qualification.json": "b0d9ee36debe4aae67c85db5de4745548281c8f6229064f28ad7e688bb14cb2a",
     "docs/release-policy.md": "6a80dbf72dea87700937bc1a150a6cbe78a4665fa3358857aaecd7fea816790f",
-    "docs/release-verification.json": "3be940bd2d7785ee4127a7181b2edbfc54ad6ca7dcd9e17463e958ad1f0d76ea",
-    "docs/requirements-map.json": "5f8bebd3d05b4c28a6cdc9028fc9e6484f64322aca3abee01b9ecfa88744c696",
+    "docs/release-verification.json": "a8786498804ba42c2da70db6d7656f0f584971a31c308c0f05f0d4eab34bfa8a",
+    "docs/requirements-map.json": "1da6df99b575253d5f7d16b77c75b1eda38d0adedbccdd16ecf910e728967245",
     "docs/storage-maintenance.md": "3438dfb1c345855ea542ab267b9d9b6a2b6123d501f4867d3a11fcfd3c4bfc61",
     "docs/support.md": "02dc6624786bacfe08768b33d4beed13b27930d80b6be3bb2cc952a5a1f877e7",
     "LICENSE": "a62637507904c152710bcbbdd764fdb19e0e29f2151dc96b7eb1e4a6075eba84",
@@ -78,8 +78,8 @@
   },
   "git_history": {
     "status": "checked",
-    "commits": 1,
-    "distinct_blobs": 59
+    "commits": 2,
+    "distinct_blobs": 70
   },
   "issues": [],
   "scope": "Explicit product tree excluding .git/.validation/dist/env/cache; common private path/key/token patterns and artifact inventory. Human review of origin, data and license is still required.",

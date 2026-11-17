@@ -1,6 +1,6 @@
 # 架构、合同与实际能力
 
-适用版本：**TraceAnchor 0.1.0 有限能力首版**。本篇解释实现及冻结边界，不代替 [实施契约](IMPLEMENTATION-CONTRACT.md) 及实际生成的 [qualification.json](qualification.json)。用法见 [README](../README.md)。
+适用版本：**TraceAnchor 0.1.1 有限能力首版**。本篇解释实现及冻结边界，不代替 [实施契约](IMPLEMENTATION-CONTRACT.md) 及实际生成的 [qualification.json](qualification.json)。用法见 [README](../README.md)。
 
 ## 1. 一套核心权威，宿主负责推理
 

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "product": "TraceAnchor 0.1.0",
+  "product": "TraceAnchor 0.1.1",
   "authority": "IMPLEMENTATION-CONTRACT.md A01-A20; original authorized handoff revision 2 section 12 remains the completion gate",
-  "status": "released-and-verified-in-declared-first-version-scope",
+  "status": "0.1.1-local-pass-remote-pending",
   "requirements": [
     {
       "id": "A01",
@@ -15,7 +15,7 @@
         "tests/test_hosts.py"
       ],
       "scope": "Full private research stays outside public product; fixed public anchors retained",
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A02",
@@ -28,7 +28,7 @@
         "tests/test_analysis.py"
       ],
       "scope": "Mode is explicit; target declaration does not confer runtime adapter",
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A03",
@@ -42,7 +42,7 @@
         "tests/test_http.py"
       ],
       "scope": "Self-created loopback fixtures, no real accounts or targets",
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A04",
@@ -56,7 +56,7 @@
         "tests/test_service.py",
         "tests/test_process.py"
       ],
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A05",
@@ -71,7 +71,7 @@
         "tests/test_acceptance_integrity.py"
       ],
       "scope": "Known same-content and derivation rejected; provenance is not a mathematical proof of independent authorship",
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A06",
@@ -85,7 +85,7 @@
         "tools/qualify.py"
       ],
       "scope": "Finite counter protocol, signed/error/reset/empty inputs; no global software equivalence",
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A07",
@@ -98,7 +98,7 @@
         "tests/test_acceptance_integrity.py"
       ],
       "scope": "Visual P3/P6 PPM comparator; capture P3 text only. Binary stdout preserved but blocks text acceptance",
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A08",
@@ -112,7 +112,7 @@
         "tests/test_regressions.py",
         "tests/test_acceptance_integrity.py"
       ],
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A09",
@@ -128,7 +128,7 @@
         "tests/test_mcp.py"
       ],
       "scope": "Windows Job qualification; POSIX detached descendants unresolved, cleanup unknown",
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A10",
@@ -145,7 +145,7 @@
         "tests/test_http.py"
       ],
       "scope": "Managed CAS hard/temp budgets; no OS filesystem/CPU/RSS quota on external executable writes. That isolation remains deferred, not claimed",
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A11",
@@ -159,7 +159,7 @@
         "tests/test_regressions.py",
         "tests/test_acceptance_integrity.py"
       ],
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A12",
@@ -175,7 +175,7 @@
         "tests/test_acceptance_integrity.py"
       ],
       "scope": "Schema 1 only; newer schemas rejected, no invented upgrade migration. Offline DB restore is not external side-effect rollback",
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A13",
@@ -187,7 +187,7 @@
         "tests/test_service.py",
         "tests/test_acceptance_integrity.py"
       ],
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A14",
@@ -205,7 +205,7 @@
         "Real Claude Code host model workflow",
         "Real Codex host model workflow"
       ],
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A15",
@@ -221,7 +221,7 @@
         "tests/test_regressions.py",
         "docs/qualification.json"
       ],
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A16",
@@ -238,7 +238,7 @@
         "tests/test_hosts.py",
         "public-content-audit"
       ],
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A17",
@@ -250,7 +250,7 @@
       "verification": [
         "tests/test_hosts.py"
       ],
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A18",
@@ -262,7 +262,7 @@
         "docs/qualification.json"
       ],
       "scope": "Engineering measurements only. Paid model effectiveness study not run; no superiority claim",
-      "status": "locally-verified-in-stated-scope"
+      "status": "locally-requalified-unchanged-scope"
     },
     {
       "id": "A19",
@@ -277,7 +277,7 @@
         "artifact-content-and-checksum-audit",
         "docs/release-verification.json"
       ],
-      "status": "verified"
+      "status": "pending-remote"
     },
     {
       "id": "A20",
@@ -290,7 +290,7 @@
         "release-status-record",
         "docs/release-verification.json"
       ],
-      "status": "verified"
+      "status": "pending-remote"
     }
   ],
   "deferred": [

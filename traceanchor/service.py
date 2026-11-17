@@ -15,7 +15,7 @@ from pathlib import Path
 from .core import Store, TraceError, canonical, child_path, digest, new_id, no_links, parse_json, read_regular, value_digest
 from . import lifecycle
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 MODES = {"analysis", "protocol", "reconstruct", "diagnose-modify", "version-diff", "dev-subtask"}
 TARGETS = {"desktop", "native", "apk", "extension", "javascript", "web", "protocol", "development-component", "file"}
 EFFECTS = {"read", "execute", "network", "derive", "write-candidate"}
@@ -637,7 +637,7 @@ def dispatch(root, operation, args, cancel=None):
         identity = new_id("run")
         resource = "case-execution:" + case_id
         store.acquire(resource, identity)
-        started = time.monotonic()
+        started = time.perf_counter()
         admitted = False
         try:
             previous = _all(store, "run", case_id)
@@ -660,7 +660,7 @@ def dispatch(root, operation, args, cancel=None):
             raise
         finally:
             if admitted:
-                elapsed = time.monotonic() - started
+                elapsed = time.perf_counter() - started
                 store.update("run", identity, {"cleanup": {"state": "complete"}, "elapsed_seconds": elapsed, "reserved_seconds": elapsed})
             store.release(resource, identity)
     if operation == "capture":

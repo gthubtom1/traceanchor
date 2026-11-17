@@ -38,8 +38,8 @@ def main():
         return completed.stdout
     def call(label,operation,data):
         return json.loads(run(label,[python,'-I','-B','-m','traceanchor','--workspace',workspace,'call',operation],json.dumps(data).encode()))
-    wheel=ROOT/'dist/traceanchor-0.1.0-py3-none-any.whl'
-    sdist=ROOT/'dist/traceanchor-0.1.0.tar.gz'
+    wheel=ROOT/'dist/traceanchor-0.1.1-py3-none-any.whl'
+    sdist=ROOT/'dist/traceanchor-0.1.1.tar.gz'
     if not wheel.is_file() or not sdist.is_file():raise RuntimeError('Build wheel and sdist first')
     code_manifest={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'traceanchor').glob('*.py'))}
     workspace=work/'workspace'
@@ -107,7 +107,7 @@ def main():
     assert imported['effects_reset']==['read'] and not imported['verdicts_current']
     run('rollback-reinstall-local-wheel',[python,'-I','-m','pip','install','--no-index','--no-deps','--no-cache-dir','--force-reinstall',wheel])
     call('final-data-preserved','case.get',{'case_id':case['id']})
-    report={'schema_version':1,'version':'0.1.0','status':'pass','scope':'Same machine, newly created isolated venv; not a clean-machine or cross-version upgrade qualification','platform':sys.platform,'python':list(sys.version_info[:3]),'network_downloads':False,'global_config_modified':False,'steps':steps,'installed_demo':demo_status,'implementation_sha256':code_manifest,'not_run':['Different-version package/schema upgrade (no earlier release exists)','Real Claude/Codex host workflows','Other operating systems'],'limitations':['Database restore is offline and does not roll back source files or foreign effects','Same-version reinstall and local artifact recovery are not proof of arbitrary future upgrades']}
+    report={'schema_version':1,'version':'0.1.1','status':'pass','scope':'Same machine, newly created isolated venv; not a clean-machine or cross-version upgrade qualification','platform':sys.platform,'python':list(sys.version_info[:3]),'network_downloads':False,'global_config_modified':False,'steps':steps,'installed_demo':demo_status,'implementation_sha256':code_manifest,'not_run':['Different-version package/schema upgrade (no earlier release exists)','Real Claude/Codex host workflows','Other operating systems'],'limitations':['Database restore is offline and does not roll back source files or foreign effects','Same-version reinstall and local artifact recovery are not proof of arbitrary future upgrades']}
     output=Path(args.output)
     if not output.is_absolute():output=ROOT/output
     output.parent.mkdir(parents=True,exist_ok=True)

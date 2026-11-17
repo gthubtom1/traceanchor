@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-17T21:26:53.567527+00:00",
+  "generated_at": "2026-11-17T21:46:26.829413+00:00",
   "environment": {
     "python": "3.12.0",
     "implementation": "CPython",
@@ -8,15 +8,15 @@
     "architecture": "AMD64",
     "os_release": "10"
   },
-  "artifact_directory": ".validation/qualification-fea634f6fd9e",
+  "artifact_directory": ".validation/qualification-06be46e5bbe2",
   "model_calls": 0,
   "build_install_release": "not-run; owned by separate release qualification",
   "source_identity": {
-    "sha256": "819d58f411b501694a38d91f6bdee9894da9cf0c302dcd0d3927ce0f334ce617",
+    "sha256": "a65c9ede50943ae6a032bb063c59588a46b9dc89d6ed6766e7921a8b4ffcb812",
     "files": {
       ".github/workflows/qualification.yml": "c1cae991897b212cae9f7ec0e1fbb0aec549eaecfac9457e884bca07a804a659",
-      "_build.py": "4d614e1493bb01c254d36d8a02eac216da731f07d9a7fe749e809deb7bb6da7e",
-      "pyproject.toml": "048eb262f09274c0a0ea7ad6f7ccf53df44cda335ec9c151ea8db082cca3e513",
+      "_build.py": "d151dc7091c6ee1a1854b460cda3f2fafce8b7207332934484c664b9bc36e2e4",
+      "pyproject.toml": "975538f38b3d4020a74ebf701d2f86be475ed8e00b38e0ac8896e92510a5b4b7",
       "tests/__init__.py": "90a082e2b0a19412c3c41dac3e627674dea2b4dafa291cd9e0f717c7125607e9",
       "tests/test_acceptance_integrity.py": "dd83f65e67fe472c7a234ab0c7479753a180d4039763e127c8dcd6d517f64200",
       "tests/test_analysis.py": "592c38c2a34e5a30a1ef4986969cc16238e5aacda2d779070d0208b56b6222a2",
@@ -24,15 +24,15 @@
       "tests/test_comparison.py": "d0636da52405fa5c66012c3a3c88e0c61ae899732353110074c408b6a12fb82f",
       "tests/test_core.py": "2bcf31c52a3d84b65f415a46949a33213fa8fa370579bc3766444b0d77bd3a0b",
       "tests/test_hosts.py": "8a57bac9a53167b5bd0b12a66df75a6f85fd99d1459717d084d3864964384df1",
-      "tests/test_http.py": "78e1f71e78e4af9d4589bb90d170041db6c128da62f2bd8001a50ec462507dbd",
+      "tests/test_http.py": "3f001f439802376c7891b2d155e2cb8fb51800c3456ff37228d63f7a3b273b3d",
       "tests/test_mcp.py": "bafd25f18ce6c958bfcd6588832a1c970552c6c01c8728c66abb62e296bb48bb",
       "tests/test_process.py": "7f90993e3cfabdcc91e0fe8a5f0b6cc6a38bf06a610e7949da5bcdda508aa128",
       "tests/test_regressions.py": "d5b0402bf1cf18877bf5bafeecc6722c12b8511e17af4e9676ca34c156749ad7",
       "tests/test_service.py": "46c19f94a172be61d0a3b5cb19643ff3364c03169556bd61d5805441dc1537d2",
-      "tools/install_journey.py": "c54442cbe25c3ebcd8faa4dd547e20b6369801aadcf20f5d89b3a098c86b6988",
+      "tools/install_journey.py": "7abb4a7cc2eed1804fdb83691668a67a8863975e23fe503727fd83ea3c8f42ad",
       "tools/public_audit.py": "8267425497971e3a272cf44c53957ddb93a15559516626b586f1cd723eeb9d36",
       "tools/qualify.py": "e687fb3b0de16d9b90495f24454ae62aac5e7f35312e6ec3f32e1e4d848aaf75",
-      "traceanchor/__init__.py": "48023dda4aca2a41249a5fa7aa80c502401a1d5c5b6fa4ba0c2ebfd07b97fb8c",
+      "traceanchor/__init__.py": "da676b04369f6babdda3563b186a55ea3b41e758479b352da72dda756305697a",
       "traceanchor/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
       "traceanchor/analysis.py": "9ae4e6b23ee6590b370df838656d9fa7f6c127c58776cc6c5e9095999f01ebd1",
       "traceanchor/cli.py": "d51d12cd67e9655ad9bfff9b15f7283bb114744e853b964df9065119c7c55e1d",
@@ -46,7 +46,7 @@
       "traceanchor/maintenance.py": "30c0b83a76334b132355b0df5e8ec13c81b914788fe672632d2e93e77d145c39",
       "traceanchor/mcp.py": "6e8850d7830f0597ed6a8404ce999b30b51406f954a96ac327a6eefabf96d9dc",
       "traceanchor/process.py": "20986bfdddeb350dab3ffe9bff64dd47d3b978e928439bd2994568d3d892262f",
-      "traceanchor/service.py": "a9f95cde2b1f578f6c51dd935fe0277a5d653d908447171faf54fa1b8a628933",
+      "traceanchor/service.py": "0af33d083462d09b7e7fb6790cf9f2550c3f0f9ac9ac227802d81154bf0e42a3",
       "traceanchor/winjob.py": "5a42c6c844f779d2f3a964232b7d5b819d4f44b7556b2b21c2768ff729e03f81"
     },
     "scope": "Python product/tests, build configuration, qualifier and CI; not dependencies or documentation"
@@ -63,7 +63,7 @@
     "skipped": 0,
     "expected_failures": 0,
     "unexpected_successes": 0,
-    "elapsed_seconds": 27.356259,
+    "elapsed_seconds": 28.158854,
     "outcomes": [
       {
         "id": "tests.test_acceptance_integrity.IntegrityTests.test_child_refresh_and_reviewed_result_can_replace_stale_dependency",
@@ -701,16 +701,16 @@
     "naive_files": {
       "before_bytes": 151552,
       "after_bytes": 49152,
-      "write_seconds": 0.000368,
-      "cleanup_seconds": 0.000198
+      "write_seconds": 0.000418,
+      "cleanup_seconds": 0.000205
     },
     "cas_objects": {
       "before_bytes": 102400,
       "after_bytes": 49152,
       "registered_before_bytes": 102400,
       "registered_after_bytes": 49152,
-      "registration_seconds": 0.054016,
-      "cleanup_seconds": 0.015851,
+      "registration_seconds": 0.060646,
+      "cleanup_seconds": 0.016679,
       "estimated_reclaim_bytes": 53248,
       "actual_reclaimed_bytes": 53248
     },
@@ -734,13 +734,13 @@
   },
   "demo": {
     "status": "passed",
-    "elapsed_seconds": 6.37844,
-    "artifact_directory": ".validation/qualification-fea634f6fd9e/demo",
+    "elapsed_seconds": 6.579263,
+    "artifact_directory": ".validation/qualification-06be46e5bbe2/demo",
     "summary": {
       "status": "passed-finite-scope",
-      "case_id": "case_fd05e36c522c4e7fab42f9cf1f7fd189",
-      "negative_control": "verdict_f540297e865845e8afa354b8d7d4558b",
-      "final_verdict": "verdict_c79eba1519c840c7bcd0050113bd017e",
+      "case_id": "case_941a2e19f84c4afa8dbfbe6ad40bd5a9",
+      "negative_control": "verdict_f17ef444e7474a71b24fab99b8be5eb6",
+      "final_verdict": "verdict_36e578901f0047238663dc529709c75f",
       "disposition": "accepted",
       "fixtures": 3,
       "actual_process_runs": 12,
@@ -759,23 +759,23 @@
     "timing": {
       "raw_subprocess": {
         "samples_seconds": [
-          0.018372,
-          0.017506,
-          0.016554
+          0.016815,
+          0.016497,
+          0.016938
         ],
-        "median_seconds": 0.017506
+        "median_seconds": 0.016815
       },
       "managed_runner": {
         "samples_seconds": [
-          0.067134,
-          0.065519,
-          0.055995
+          0.067365,
+          0.067314,
+          0.065621
         ],
-        "median_seconds": 0.065519
+        "median_seconds": 0.067314
       }
     },
-    "median_overhead_seconds": 0.048013,
-    "median_managed_over_raw_ratio": 3.743,
+    "median_overhead_seconds": 0.050499,
+    "median_managed_over_raw_ratio": 4.003,
     "output_equal": true,
     "stdout_bytes": 4096,
     "stderr_bytes": 14,

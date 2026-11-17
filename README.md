@@ -1,6 +1,8 @@
 # TraceAnchor
 
-**0.1.0：宿主驱动的逆向分析、证据管理与有限行为重建工作台。**
+**0.1.1：宿主驱动的逆向分析、证据管理与有限行为重建工作台。**
+
+`0.1.1` 修正发布后发现的 Windows 短 HTTP 请求计时精度问题；原判据保留并加强，旧版标签和发行字节保持不变。详情见 [CHANGELOG](CHANGELOG.md)。
 
 [源码仓库](https://github.com/gthubtom1/traceanchor) · [发布与下载](https://github.com/gthubtom1/traceanchor/releases) · [问题反馈](https://github.com/gthubtom1/traceanchor/issues)
 
@@ -58,7 +60,7 @@ Linux/macOS 用自己的绝对路径和 `环境目录/bin/python` 替换；这�
 为什么：从明确的本地产物安装，不依赖尚未公布的远程仓库或包索引。文件名须与实际取得的候选包一致。
 
 ```bash
-"C:/[工具目录]/traceanchor-env/Scripts/python.exe" -m pip install --no-index --no-deps "C:/[安装包目录]/traceanchor-0.1.0-py3-none-any.whl"
+"C:/[工具目录]/traceanchor-env/Scripts/python.exe" -m pip install --no-index --no-deps "C:/[安装包目录]/traceanchor-0.1.1-py3-none-any.whl"
 ```
 
 ### 2.3 从本地源码安装

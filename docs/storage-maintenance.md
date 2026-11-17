@@ -1,6 +1,6 @@
 # 存储生命周期与离线维护
 
-适用版本：**0.1.0 有限能力首版**。本地资格见 [qualification.json](qualification.json)，隔离包维护实测见 [install-qualification.json](install-qualification.json)，合同见 [实施契约](IMPLEMENTATION-CONTRACT.md)。bash 块均为独立单命令；替换路径/ID，占位解释见 [README](../README.md)。
+适用版本：**0.1.1 有限能力首版**。本地资格见 [qualification.json](qualification.json)，隔离包维护实测见 [install-qualification.json](install-qualification.json)，合同见 [实施契约](IMPLEMENTATION-CONTRACT.md)。bash 块均为独立单命令；替换路径/ID，占位解释见 [README](../README.md)。
 
 ## 1. 程序、宿主接线与业务数据分离
 
@@ -209,12 +209,12 @@ CLI 输入上限 4 MiB，MCP 帧上限 1 MiB；Base64 会膨胀体积。大 expo
 "C:/[工具目录]/traceanchor-env/Scripts/python.exe" -m traceanchor --workspace "C:/[工作目录]/evidence" doctor
 ```
 
-再用新目录运行 demo、检查旧项目 report/freshness，必要时重验。没有受测 migration 时，不让新包改唯一工作副本。0.1.0 拒绝写入不兼容 schema，不承诺未来格式自动降级。
+再用新目录运行 demo、检查旧项目 report/freshness，必要时重验。没有受测 migration 时，不让新包改唯一工作副本。0.1.1 拒绝写入不兼容 schema，不承诺未来格式自动降级。
 
 ### 同版本重装
 
 ```bash
-"C:/[工具目录]/traceanchor-env/Scripts/python.exe" -m pip install --no-index --no-deps --force-reinstall "C:/[安装包目录]/traceanchor-0.1.0-py3-none-any.whl"
+"C:/[工具目录]/traceanchor-env/Scripts/python.exe" -m pip install --no-index --no-deps --force-reinstall "C:/[安装包目录]/traceanchor-0.1.1-py3-none-any.whl"
 ```
 
 仅重装包，不重建数据库。解释器路径变化时，项目接线按 hosts 的 receipt-backed 重装，默认先预览，再显式 apply；用户修改冲突时保持用户字节。

@@ -4,6 +4,7 @@ from pathlib import Path
 import tempfile
 import threading
 import unittest
+from unittest import mock
 
 from traceanchor.core import Store, TraceError
 from traceanchor.http_observer import observe
@@ -85,7 +86,10 @@ class HttpTests(unittest.TestCase):
             case=dispatch(store.root,'case.create',{'objective':'one HTTP request','allowed_effects':['read','network'],'budgets':{'max_runs':1}})
             source=dispatch(store.root,'source.add',{'case_id':case['id'],'path':str(path)})
             args={'case_id':case['id'],'source_id':source['id'],'url':self.url+'/data'}
-            dispatch(store.root,'observe.http',args)
+            # Real loopback I/O, but force the coarse clock to one tick. Runtime
+            # budget accounting must use the independent high-resolution clock.
+            with mock.patch('traceanchor.service.time.monotonic',return_value=123.0):
+                dispatch(store.root,'observe.http',args)
             with self.assertRaises(TraceError) as error:dispatch(store.root,'observe.http',args)
             self.assertEqual(error.exception.code,'task-budget')
             runs=store.list('run',case['id'])

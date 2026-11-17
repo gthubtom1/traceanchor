@@ -1,4 +1,4 @@
-# TraceAnchor 0.1.0 — frozen implementation and acceptance contract
+# TraceAnchor 0.1.1 — frozen implementation and acceptance contract
 
 Status: implementation authorized by the user's explicit Goal, research handoff revision 2, 2026-11-18. This document freezes scope before implementation; it is not a passing test record. The complete Goal completion gate remains handoff section 12. No publication before local gates and public-file review. Public name may change only for collision, without changing requirements.
 

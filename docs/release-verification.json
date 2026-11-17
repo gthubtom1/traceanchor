@@ -1,174 +1,191 @@
 {
   "schema_version": 1,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": "https://github.com/gthubtom1/traceanchor",
   "repository_created": true,
-  "push": "pass",
-  "ci": {
-    "run": "https://github.com/gthubtom1/traceanchor/actions/runs/44180817443",
-    "head": "b7ef04a4b7028be8cdb7ac038c28537990464d5a",
-    "jobs": [
-      {
-        "artifact": "linux-static-python-3.12",
-        "environment": {
-          "python": "3.12.16",
-          "implementation": "CPython",
-          "platform": "linux",
-          "architecture": "x86_64",
-          "os_release": "7.0.0-1019-azure"
+  "full_goal_complete": false,
+  "release": "pending",
+  "ci": "pending",
+  "download_verification": "pending",
+  "previous_release": {
+    "schema_version": 1,
+    "version": "0.1.0",
+    "repository": "https://github.com/gthubtom1/traceanchor",
+    "repository_created": true,
+    "push": "pass",
+    "ci": {
+      "run": "https://github.com/gthubtom1/traceanchor/actions/runs/44180817443",
+      "head": "b7ef04a4b7028be8cdb7ac038c28537990464d5a",
+      "jobs": [
+        {
+          "artifact": "linux-static-python-3.12",
+          "environment": {
+            "python": "3.12.16",
+            "implementation": "CPython",
+            "platform": "linux",
+            "architecture": "x86_64",
+            "os_release": "7.0.0-1019-azure"
+          },
+          "qualification": {
+            "status": "passed",
+            "complete_suite": true,
+            "windows_dynamic_qualified": false,
+            "critical_process_tests_passed": false,
+            "posix_dynamic_qualified": false,
+            "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+          },
+          "tests": {
+            "tests_run": 157,
+            "passed": 126,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 31
+          }
         },
-        "qualification": {
-          "status": "passed",
-          "complete_suite": true,
-          "windows_dynamic_qualified": false,
-          "critical_process_tests_passed": false,
-          "posix_dynamic_qualified": false,
-          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+        {
+          "artifact": "windows-python-3.11",
+          "environment": {
+            "python": "3.11.9",
+            "implementation": "CPython",
+            "platform": "win32",
+            "architecture": "AMD64",
+            "os_release": "10"
+          },
+          "qualification": {
+            "status": "passed",
+            "complete_suite": true,
+            "windows_dynamic_qualified": true,
+            "critical_process_tests_passed": true,
+            "posix_dynamic_qualified": false,
+            "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+          },
+          "tests": {
+            "tests_run": 157,
+            "passed": 157,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          "installed_artifact_steps": 38
         },
-        "tests": {
-          "tests_run": 157,
-          "passed": 126,
-          "failed": 0,
-          "errors": 0,
-          "skipped": 31
+        {
+          "artifact": "windows-python-3.12",
+          "environment": {
+            "python": "3.12.10",
+            "implementation": "CPython",
+            "platform": "win32",
+            "architecture": "AMD64",
+            "os_release": "2025Server"
+          },
+          "qualification": {
+            "status": "passed",
+            "complete_suite": true,
+            "windows_dynamic_qualified": true,
+            "critical_process_tests_passed": true,
+            "posix_dynamic_qualified": false,
+            "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+          },
+          "tests": {
+            "tests_run": 157,
+            "passed": 157,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          "installed_artifact_steps": 38
+        },
+        {
+          "artifact": "windows-python-3.13",
+          "environment": {
+            "python": "3.13.17",
+            "implementation": "CPython",
+            "platform": "win32",
+            "architecture": "AMD64",
+            "os_release": "2025Server"
+          },
+          "qualification": {
+            "status": "passed",
+            "complete_suite": true,
+            "windows_dynamic_qualified": true,
+            "critical_process_tests_passed": true,
+            "posix_dynamic_qualified": false,
+            "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+          },
+          "tests": {
+            "tests_run": 157,
+            "passed": 157,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          "installed_artifact_steps": 38
+        }
+      ],
+      "git_and_release_wheel_python_match": true
+    },
+    "release": "pass",
+    "download_verification": "pass",
+    "full_goal_complete": false,
+    "artifact_checksums": {
+      "traceanchor-0.1.0-py3-none-any.whl": "7d2296391340c044d044b5e473f4ea49459a00346c05cde1930eae3a59fc5024",
+      "traceanchor-0.1.0.tar.gz": "bc9d8f31b3b07fd41e5dce20df0f74a2dd737430548cbd3b19799e611c7e5426"
+    },
+    "local_release_install_steps": 38,
+    "local_tests": 157,
+    "source_snapshot_repositories_modified": false,
+    "paid_model_calls": 0,
+    "release_url": "https://github.com/gthubtom1/traceanchor/releases/tag/v0.1.0",
+    "release_commit": "b7ef04a4b7028be8cdb7ac038c28537990464d5a",
+    "download": {
+      "schema_version": 1,
+      "status": "pass",
+      "repository": "https://github.com/gthubtom1/traceanchor",
+      "tag": "v0.1.0",
+      "artifacts": {
+        "traceanchor-0.1.0-py3-none-any.whl": {
+          "sha256": "7d2296391340c044d044b5e473f4ea49459a00346c05cde1930eae3a59fc5024",
+          "size": 146323,
+          "matches_local_reviewed_artifact": true
+        },
+        "traceanchor-0.1.0.tar.gz": {
+          "sha256": "bc9d8f31b3b07fd41e5dce20df0f74a2dd737430548cbd3b19799e611c7e5426",
+          "size": 167166,
+          "matches_local_reviewed_artifact": true
         }
       },
-      {
-        "artifact": "windows-python-3.11",
-        "environment": {
-          "python": "3.11.9",
-          "implementation": "CPython",
-          "platform": "win32",
-          "architecture": "AMD64",
-          "os_release": "10"
-        },
-        "qualification": {
-          "status": "passed",
-          "complete_suite": true,
-          "windows_dynamic_qualified": true,
-          "critical_process_tests_passed": true,
-          "posix_dynamic_qualified": false,
-          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
-        },
-        "tests": {
-          "tests_run": 157,
-          "passed": 157,
-          "failed": 0,
-          "errors": 0,
-          "skipped": 0
-        },
-        "installed_artifact_steps": 38
+      "downloaded_checksum_matches_local": true,
+      "isolated_downloaded_wheel_install": "pass",
+      "doctor": "pass",
+      "demo": {
+        "status": "passed-finite-scope",
+        "case_id": "case_34efb5aa0ec34390aaea94a0cb854b59",
+        "negative_control": "verdict_0136967b006745e18d134d5d6e47f0cb",
+        "final_verdict": "verdict_606ee67a9e6648a998fe83c4151f6c24",
+        "disposition": "accepted",
+        "fixtures": 3,
+        "actual_process_runs": 12,
+        "model_calls": 0,
+        "scope": "Three frozen input sequences; not all possible programs",
+        "limitations": [
+          "Synthetic CLI/protocol task, not real desktop/APK/browser qualification",
+          "Host repair is explicit code, not an autonomous internal model"
+        ]
       },
-      {
-        "artifact": "windows-python-3.12",
-        "environment": {
-          "python": "3.12.10",
-          "implementation": "CPython",
-          "platform": "win32",
-          "architecture": "AMD64",
-          "os_release": "2025Server"
-        },
-        "qualification": {
-          "status": "passed",
-          "complete_suite": true,
-          "windows_dynamic_qualified": true,
-          "critical_process_tests_passed": true,
-          "posix_dynamic_qualified": false,
-          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
-        },
-        "tests": {
-          "tests_run": 157,
-          "passed": 157,
-          "failed": 0,
-          "errors": 0,
-          "skipped": 0
-        },
-        "installed_artifact_steps": 38
-      },
-      {
-        "artifact": "windows-python-3.13",
-        "environment": {
-          "python": "3.13.17",
-          "implementation": "CPython",
-          "platform": "win32",
-          "architecture": "AMD64",
-          "os_release": "2025Server"
-        },
-        "qualification": {
-          "status": "passed",
-          "complete_suite": true,
-          "windows_dynamic_qualified": true,
-          "critical_process_tests_passed": true,
-          "posix_dynamic_qualified": false,
-          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
-        },
-        "tests": {
-          "tests_run": 157,
-          "passed": 157,
-          "failed": 0,
-          "errors": 0,
-          "skipped": 0
-        },
-        "installed_artifact_steps": 38
-      }
-    ],
-    "git_and_release_wheel_python_match": true
-  },
-  "release": "pass",
-  "download_verification": "pass",
-  "full_goal_complete": true,
-  "artifact_checksums": {
-    "traceanchor-0.1.0-py3-none-any.whl": "7d2296391340c044d044b5e473f4ea49459a00346c05cde1930eae3a59fc5024",
-    "traceanchor-0.1.0.tar.gz": "bc9d8f31b3b07fd41e5dce20df0f74a2dd737430548cbd3b19799e611c7e5426"
-  },
-  "local_release_install_steps": 38,
-  "local_tests": 157,
-  "source_snapshot_repositories_modified": false,
-  "paid_model_calls": 0,
-  "release_url": "https://github.com/gthubtom1/traceanchor/releases/tag/v0.1.0",
-  "release_commit": "b7ef04a4b7028be8cdb7ac038c28537990464d5a",
-  "download": {
-    "schema_version": 1,
-    "status": "pass",
-    "repository": "https://github.com/gthubtom1/traceanchor",
-    "tag": "v0.1.0",
-    "artifacts": {
-      "traceanchor-0.1.0-py3-none-any.whl": {
-        "sha256": "7d2296391340c044d044b5e473f4ea49459a00346c05cde1930eae3a59fc5024",
-        "size": 146323,
-        "matches_local_reviewed_artifact": true
-      },
-      "traceanchor-0.1.0.tar.gz": {
-        "sha256": "bc9d8f31b3b07fd41e5dce20df0f74a2dd737430548cbd3b19799e611c7e5426",
-        "size": 167166,
-        "matches_local_reviewed_artifact": true
-      }
+      "platform": "win32",
+      "python": [
+        3,
+        12,
+        0
+      ],
+      "scope": "Actual GitHub release download, local-reviewed checksum match, same-machine fresh venv install and finite demo; not a clean machine or model-effectiveness qualification"
     },
-    "downloaded_checksum_matches_local": true,
-    "isolated_downloaded_wheel_install": "pass",
-    "doctor": "pass",
-    "demo": {
-      "status": "passed-finite-scope",
-      "case_id": "case_34efb5aa0ec34390aaea94a0cb854b59",
-      "negative_control": "verdict_0136967b006745e18d134d5d6e47f0cb",
-      "final_verdict": "verdict_606ee67a9e6648a998fe83c4151f6c24",
-      "disposition": "accepted",
-      "fixtures": 3,
-      "actual_process_runs": 12,
-      "model_calls": 0,
-      "scope": "Three frozen input sequences; not all possible programs",
-      "limitations": [
-        "Synthetic CLI/protocol task, not real desktop/APK/browser qualification",
-        "Host repair is explicit code, not an autonomous internal model"
-      ]
-    },
-    "platform": "win32",
-    "python": [
-      3,
-      12,
-      0
+    "attestation_policy": "Post-build evidence is outside immutable artifacts. Later evidence commits do not replace published bytes; release tag points to the tested implementation.",
+    "post_release_status": "known-http-clock-precision-gap",
+    "failed_post_release_runs": [
+      "https://github.com/gthubtom1/traceanchor/actions/runs/44181646817",
+      "https://github.com/gthubtom1/traceanchor/actions/runs/44181966915"
     ],
-    "scope": "Actual GitHub release download, local-reviewed checksum match, same-machine fresh venv install and finite demo; not a clean machine or model-effectiveness qualification"
+    "previously_reported_complete_before_followup_failure": true
   },
-  "attestation_policy": "Post-build evidence is outside immutable artifacts. Later evidence commits do not replace published bytes; release tag points to the tested implementation."
+  "correction": "Use perf_counter for HTTP accounting; preserve >0 assertion and add frozen-coarse-clock negative control"
 }

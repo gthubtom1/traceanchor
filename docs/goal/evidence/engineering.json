@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-18T00:06:48.757453+00:00",
+  "generated_at": "2026-11-18T00:19:05.539448+00:00",
   "environment": {
     "python": "3.12.0",
     "implementation": "CPython",
@@ -8,11 +8,11 @@
     "architecture": "AMD64",
     "os_release": "10"
   },
-  "artifact_directory": ".validation/qualification-028d4e034dfa",
+  "artifact_directory": ".validation/qualification-a661598a8c7d",
   "model_calls": 0,
   "build_install_release": "not-run; owned by separate release qualification",
   "source_identity": {
-    "sha256": "b87d5d11ba8a1027c5faf1dc656a352a4d724d6946ed849cf3d1cfd3494f649e",
+    "sha256": "02eec62dc9ff87d8ed3e0abf172f864edeb10ab1e7f378c8b8e42c0d69e618a7",
     "files": {
       ".github/workflows/qualification.yml": "c1cae991897b212cae9f7ec0e1fbb0aec549eaecfac9457e884bca07a804a659",
       "_build.py": "441798509ee190526a89c428c73f670a03a5a5dbd5ca5de9780b9c80a06a9f52",
@@ -40,7 +40,7 @@
       "tools/claims.py": "f3a15c745eec8abc9221db9c109ab7e94eca734ad8d742a7ea00f89dc5ad2d3c",
       "tools/install_journey.py": "adf85cf0f37b9d20717a3a94c970e44fe3e7988ba71a31208f96b2cec573da1a",
       "tools/public_audit.py": "814573446d8b997aa0ef6c56f6893a5b77e24cdcc3c97b3be65f312d27a3cfbc",
-      "tools/qualify.py": "963b4212fe863cc0fe8278284b70b6f3b17c0f6f76ab62127090df1d330e090b",
+      "tools/qualify.py": "4439c93cf381a04a3b8473ec5089e4f9211c7ce6ec3ec3e4427e4294598faee0",
       "tools/qualify_apk.py": "1f3f891dcfa52e9fc9dd66d3b4974c6ccdc226ed1a36a04d051516c3dc46a37e",
       "tools/qualify_development.py": "597efe9edf425dc69f6c90a4fe9f6a4d4a90934f45d546e2b959887ee254cb3e",
       "tools/qualify_professional.py": "3485f3f858556a4a48e10a346f1c37316b74655080150d0ea5a58ff7581c5692",
@@ -49,10 +49,10 @@
       "traceanchor/__init__.py": "5f964509ccb30eca19479df1c5e35fe72edea2b20513c52490eb7c2740a359f0",
       "traceanchor/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
       "traceanchor/analysis.py": "9ae4e6b23ee6590b370df838656d9fa7f6c127c58776cc6c5e9095999f01ebd1",
-      "traceanchor/apk_adapter.py": "3d9f344eb1983abfbdf6441e330da7e3e8f34568d44b640409ec2b5a4d483690",
+      "traceanchor/apk_adapter.py": "f182f31a9f0ae76c6a7bb29a981944eb6363a7672caeca2ca3857bd908dde4d3",
       "traceanchor/cli.py": "51916e598536ea3b7c2cebbf40337baaf4297e269ae8c5db54b40846fd651e06",
       "traceanchor/comparison.py": "605853aab874bf3f18c9628aec4a0bb6453e9557ae5e7bfec529b31a0a9a7fea",
-      "traceanchor/core.py": "787d2976c8522fa804845463a9e9dcf046d662c78e33f713291c87acb25f3753",
+      "traceanchor/core.py": "dc0de4467078a5125ade0ce8a3bb6df9fd721e323ac5a2dafa59784ed478a9df",
       "traceanchor/demo.py": "ad1a72a091a2520eeffda21b7751e1fbcd33c3a7d689daf7e6327a3fbd91ca43",
       "traceanchor/exchange.py": "e73188a3c5219c1a4db5c248c3e0da413420f5dc8a4396f987c59f98b3bde050",
       "traceanchor/hosts.py": "fcb793b0690ddc72f30878f9ade65a699288a33b287115ff15cf84b735d52001",
@@ -60,14 +60,14 @@
       "traceanchor/knowledge.py": "00e8d8a01ef4c45c6fa5805107ea969dc215bfc760f8399069569fe0b54c66f3",
       "traceanchor/lifecycle.py": "c62d02c5ba1b8d8ab40115e6fa72377d41c4cebbe49a57e1f648527326c022c2",
       "traceanchor/maintenance.py": "f84390d92b48fd5c5a6d5bbf22cdbea3f4d6443b4c3b9824f5c28fb7fd63cfa1",
-      "traceanchor/mcp.py": "3cc01a2e6b2b5bc30f3235557597683868ba1e9e7e9d08589bcb3146d750f2a7",
+      "traceanchor/mcp.py": "46b9abe9a5d85981816c69465a648022340217b6f8de4696b61329efded0a8bf",
       "traceanchor/process.py": "20986bfdddeb350dab3ffe9bff64dd47d3b978e928439bd2994568d3d892262f",
       "traceanchor/professional.py": "f64682dfa59b1d280ab22d0da3b59c5aa3fcd46d14d8c4f2f39e75bfef440013",
       "traceanchor/service.py": "db788dfd3eef6f14bd14b450e6cf81ace8642602359977a443068fc549ebd1cf",
       "traceanchor/tool_runner.py": "84aac5aed279943609a65b43f2d5888af492113a9ed4f8d1534522f0905801f6",
       "traceanchor/web_adapter.py": "abe2204b3aa072abc8ce784451e132be55be9188eaa073c84810690881299fe4",
       "traceanchor/winjob.py": "5a42c6c844f779d2f3a964232b7d5b819d4f44b7556b2b21c2768ff729e03f81",
-      "traceanchor/workspace.py": "1e91db52177ca918690286a9be0ec2f585d740a00cfdcb189cd0061319877a51",
+      "traceanchor/workspace.py": "b2e9d2f5070b1db98470174df0692ad7e7116596da6089fc0fc0af40e687b853",
       "traceanchor/resources/inspect_web.cjs": "5a6ad9d1ec25aa7db91c9b724bfe8cf28c0770c32ab7d6345cde18603cccf780",
       "examples/apk/AndroidManifest.xml": "96e924830ace60268fbf3590b91420adbe967f1f6fb2ac21e19905a145cbaf7c",
       "examples/apk/src/study/shipping/ShipmentSession.java": "700dc977fc9305c553cec200fc59874837d7a236a689e218e3c679f3df45abba",
@@ -77,7 +77,7 @@
       "examples/native/parcel.c": "58594ee14f6f55a39e82f55c8fe5832a8690583c0e66815fc2663cb94e8379e2",
       "examples/reconstruction/candidate_v1.py": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
       "examples/reconstruction/candidate_v2.py": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
-      "examples/reconstruction/README.md": "37980e41f8e1aeafac8ddace1a9101064da82b959dceb83ce6a9643b9f304437",
+      "examples/reconstruction/README.md": "bcdf855f3590296ab69699d2193fe8f8845a60b063ae0a8305b2eb91bc93f595",
       "examples/web/reservation.mjs": "12c4fbc95e8abb09bfe48642cad5db5fbad56fb3916368bccfca808177ac14ef",
       "examples/web/scenario.json": "8aa49d9088a2ed7c6c7ba3c76472d35e0966922811fcde67744c3dcadbd20719"
     },
@@ -95,7 +95,7 @@
     "skipped": 0,
     "expected_failures": 0,
     "unexpected_successes": 0,
-    "elapsed_seconds": 45.313654,
+    "elapsed_seconds": 45.445075,
     "outcomes": [
       {
         "id": "tests.test_acceptance_integrity.IntegrityTests.test_child_refresh_and_reviewed_result_can_replace_stale_dependency",
@@ -901,16 +901,16 @@
     "naive_files": {
       "before_bytes": 151552,
       "after_bytes": 49152,
-      "write_seconds": 0.000389,
-      "cleanup_seconds": 0.000225
+      "write_seconds": 0.000387,
+      "cleanup_seconds": 0.000188
     },
     "cas_objects": {
       "before_bytes": 102400,
       "after_bytes": 49152,
       "registered_before_bytes": 102400,
       "registered_after_bytes": 49152,
-      "registration_seconds": 0.062839,
-      "cleanup_seconds": 0.017559,
+      "registration_seconds": 0.050595,
+      "cleanup_seconds": 0.016753,
       "estimated_reclaim_bytes": 53248,
       "actual_reclaimed_bytes": 53248
     },
@@ -934,13 +934,13 @@
   },
   "demo": {
     "status": "passed",
-    "elapsed_seconds": 8.108877,
-    "artifact_directory": ".validation/qualification-028d4e034dfa/demo",
+    "elapsed_seconds": 8.0491,
+    "artifact_directory": ".validation/qualification-a661598a8c7d/demo",
     "summary": {
       "status": "passed-finite-scope",
-      "case_id": "case_d8a9ac75d844498baddbc25ed74b4a8e",
-      "negative_control": "verdict_86f73781c9b342e9afd5dd7900c9999c",
-      "final_verdict": "verdict_11a0f866280a4d47b66ae5c71ef93d65",
+      "case_id": "case_47b9d9ba06084c6caa06cadeed375e44",
+      "negative_control": "verdict_9d6f4390a6c841e2841367118dd7d1b2",
+      "final_verdict": "verdict_52b4bf2d4cd34ee3aba031cac48b2c3c",
       "disposition": "accepted",
       "fixtures": 3,
       "actual_process_runs": 12,
@@ -959,23 +959,23 @@
     "timing": {
       "raw_subprocess": {
         "samples_seconds": [
-          0.017078,
-          0.017663,
-          0.016765
+          0.016794,
+          0.016449,
+          0.016815
         ],
-        "median_seconds": 0.017078
+        "median_seconds": 0.016794
       },
       "managed_runner": {
         "samples_seconds": [
-          0.065519,
-          0.055634,
-          0.056233
+          0.068205,
+          0.06749,
+          0.066697
         ],
-        "median_seconds": 0.056233
+        "median_seconds": 0.06749
       }
     },
-    "median_overhead_seconds": 0.039156,
-    "median_managed_over_raw_ratio": 3.293,
+    "median_overhead_seconds": 0.050696,
+    "median_managed_over_raw_ratio": 4.019,
     "output_equal": true,
     "stdout_bytes": 4096,
     "stderr_bytes": 14,

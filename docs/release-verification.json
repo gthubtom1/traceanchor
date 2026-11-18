@@ -5,7 +5,7 @@
   "status": "local-qualified-awaiting-actual-CI",
   "full_goal_complete": false,
   "historical_revision2_release": "history/r2-release-verification.json",
-  "current_executable_identity": "b87d5d11ba8a1027c5faf1dc656a352a4d724d6946ed849cf3d1cfd3494f649e",
+  "current_executable_identity": "02eec62dc9ff87d8ed3e0abf172f864edeb10ab1e7f378c8b8e42c0d69e618a7",
   "local_qualification": {
     "tests": 199,
     "passed": 199,
@@ -32,12 +32,12 @@
   },
   "reproducible_artifacts": {
     "traceanchor-0.2.0-py3-none-any.whl": {
-      "sha256": "557f411b1e18f9c08df0d070f5d9529214644b1505f4556872c8ae6ab4bf927e",
-      "size": 318393
+      "sha256": "97584f750e2f0be470f610294a9a400060f3e747f80d27c4fbdbfb75b3bcc98f",
+      "size": 317619
     },
     "traceanchor-0.2.0.tar.gz": {
-      "sha256": "c6c4af8d1bfce2c0aa4e03ea3ea219edb4f5d3b19514adbf9ad43c46121b8887",
-      "size": 338957
+      "sha256": "bd4c2c2401ba82d064550d09a697a512abc2f08e0bf2fdc11e48724d79b1d4d1",
+      "size": 337305
     }
   },
   "ci": {
@@ -49,5 +49,6 @@
   "download": {
     "status": "not-run"
   },
-  "artifact_policy": "Frozen pre-release bytes include explicit candidate/remote-pending status. Later out-of-band qualification/attestation records do not rewrite those artifacts or any0.1.x history."
+  "artifact_policy": "Frozen pre-release bytes include explicit candidate/remote-pending status. Later out-of-band qualification/attestation records do not rewrite those artifacts or any0.1.x history.",
+  "byte_exactness": "Existing project eol=lf applied to working tree; source archive members equal declared files, repeat build identical. Git object identity checked before push."
 }

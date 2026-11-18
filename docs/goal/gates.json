@@ -201,7 +201,7 @@
       "limits": ""
     }
   },
-  "qualification_binding": "b87d5d11ba8a1027c5faf1dc656a352a4d724d6946ed849cf3d1cfd3494f649e",
+  "qualification_binding": "02eec62dc9ff87d8ed3e0abf172f864edeb10ab1e7f378c8b8e42c0d69e618a7",
   "release_admission": "Local product gates observed. Final exact artifact audit, remote CI and downloaded artifact use still required; do not claim R3 complete.",
   "evidence_path_base": "docs/goal; input paths product-relative",
   "historical_contract": "OldA01-A20/R2 receipts under docs/history do not replace R3."

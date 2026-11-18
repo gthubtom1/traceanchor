@@ -1,20 +1,20 @@
 {
-  "disclosure": "Now-public finite replay, not a new blind-host assessment. Contains actual fixture inputs, independent comparator obligations, verdict binding and captures; raw originals retained locally.",
+  "disclosure": "Path-redacted actual inputs/verdict binding/captures. Public replay is not a new blind-host assessment. Raw local originals retained.",
   "summary": {
     "pair": "reference2-candidate1",
     "status": "fail",
-    "case_id": "case_c479ea2b23e0460e9187c732c09857dc",
-    "verdict_id": "verdict_0ec94cfd51174f329ef6292b20a12829",
+    "case_id": "case_3947086e4978400c84d1f941e3ca4513",
+    "verdict_id": "verdict_e8d63a1b66ca423599b59df4dd34a3ed",
     "candidate_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
-    "reference_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+    "reference_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
     "fixtures": 7,
     "runs": 14
   },
   "spec": {
     "acceptance_revision": 1,
-    "digest": "a8325a2fb60618c40f7313f59f76827444fe9a73fbb44a608111b0fab9056ac0",
+    "digest": "5fd906925955dcbaacd25be0f79e066894f4afeaaa3d732180ce220e1a984040",
     "evidence_ids": [
-      "observation_35125c7678d344f090e3dba34e5b872b"
+      "observation_da9a9a74af744092a74ea3a00891f6de"
     ],
     "fixtures": [
       {
@@ -131,7 +131,7 @@
         }
       ]
     },
-    "reference_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
+    "reference_id": "source_d1a942b3b6a04b17a614c2974e217a14",
     "requirements": [
       "shipping prices",
       "reservation state",
@@ -143,23 +143,23 @@
   "verdict": {
     "binding": {
       "candidate": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
-      "case_contract": "8ffb891cc719a6a0999ae1363cc62c62c906d6826a88e3a09a16052ebc9f785e",
+      "case_contract": "8b556b73e5968817554bfecd2d1115c0dd75f06c9b38549780ac4b4ea71ff2b4",
       "comparator": "605853aab874bf3f18c9628aec4a0bb6453e9557ae5e7bfec529b31a0a9a7fea",
-      "engine": "da8ca075be62f5e36e32b820261565bb0646f1f9510b6ec53292af7df344026c",
+      "engine": "ccd00d89f7abcc0968d4993ef7dbfea9c48f0e6bec00cfd91cc55bf322e47922",
       "environment": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
       "fixtures": "314b799f5e5452771c9f0bf9d8d9466ac9c2017a7ffc5d40660da017895b48df",
-      "reference": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "reference": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
       "runner": "20986bfdddeb350dab3ffe9bff64dd47d3b978e928439bd2994568d3d892262f",
-      "spec_digest": "a8325a2fb60618c40f7313f59f76827444fe9a73fbb44a608111b0fab9056ac0"
+      "spec_digest": "5fd906925955dcbaacd25be0f79e066894f4afeaaa3d732180ce220e1a984040"
     },
     "blocking_unknown_ids": [],
-    "candidate_id": "source_aaa964d65f26473196945098655bde42",
-    "created_at": 1794960260.3793635,
+    "candidate_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
+    "created_at": 1794961160.9749591,
     "current": true,
     "pairs": [
       {
         "fixture_id": "normal",
-        "left": "observation_abd982b3a6de428a80f5f62029c6fe5b",
+        "left": "observation_578e8da1ec544c7cb426c61c88263282",
         "result": {
           "differences": [
             {
@@ -286,11 +286,11 @@
           ],
           "status": "fail"
         },
-        "right": "observation_a45c92344c3d433b82a443c9d061122c"
+        "right": "observation_64c4b69ba0da4910b6659527f53bd7ad"
       },
       {
         "fixture_id": "errors",
-        "left": "observation_955da5a697304d31919710083f230530",
+        "left": "observation_057f2f0d42bc4b658abaf59a22871e58",
         "result": {
           "differences": [],
           "limitations": [],
@@ -389,11 +389,11 @@
           ],
           "status": "pass"
         },
-        "right": "observation_43a11aecd6ef4e0abd9f704ec05bcd36"
+        "right": "observation_52a6cb1254bd488ca8c59de36351a34a"
       },
       {
         "fixture_id": "remote",
-        "left": "observation_daae9cad64184e928f98ecea1e2b201d",
+        "left": "observation_a1258b6b16e142669e96b7965e2dd598",
         "result": {
           "differences": [
             {
@@ -520,11 +520,11 @@
           ],
           "status": "fail"
         },
-        "right": "observation_7c17fe48a00745d8b80af1d2f75952ab"
+        "right": "observation_8edd657ccc024234960f3ee97bd9751b"
       },
       {
         "fixture_id": "rounding-edges",
-        "left": "observation_cf73dc0bee8744d4a868c1fb4bc745d6",
+        "left": "observation_ccfbc8499c794028a0c210493acbdf23",
         "result": {
           "differences": [
             {
@@ -651,11 +651,11 @@
           ],
           "status": "fail"
         },
-        "right": "observation_7b4c9b41b7f5478594cae64089134738"
+        "right": "observation_388a308d31bd437391a1d71f0356260e"
       },
       {
         "fixture_id": "reservation-errors",
-        "left": "observation_2c83c012391b4379ba943f63f29d4e89",
+        "left": "observation_9f777347ebab48b18ee9713326cae23c",
         "result": {
           "differences": [],
           "limitations": [],
@@ -754,11 +754,11 @@
           ],
           "status": "pass"
         },
-        "right": "observation_5ac886bb49f44c23bf73b3fce5b83fd5"
+        "right": "observation_8a9bd72c1c7b45ed9fac0b5f54f004ee"
       },
       {
         "fixture_id": "parsing-boundary",
-        "left": "observation_30d7afe6cbc94ce8b7e4b0918a2da8d7",
+        "left": "observation_931163e753c84ed28666a952f18e6123",
         "result": {
           "differences": [
             {
@@ -885,11 +885,11 @@
           ],
           "status": "fail"
         },
-        "right": "observation_ebd1f8056d27424e9e96d29456869822"
+        "right": "observation_4a5e99d20cd1400a879b49fbc6df37dc"
       },
       {
         "fixture_id": "formerly-sealed-final",
-        "left": "observation_d4849f01119147bfa77535d8853bb399",
+        "left": "observation_4cc0ba8fbb14477fb30f8b389b4ab60b",
         "result": {
           "differences": [
             {
@@ -1016,15 +1016,15 @@
           ],
           "status": "fail"
         },
-        "right": "observation_609c670319d34d5e9d1915f325a12636"
+        "right": "observation_54c012233d834b3e8b651af7f8c5da5b"
       }
     ],
     "scope": "Only the frozen fixtures, observation surfaces and obligations; no global software equivalence",
-    "spec_id": "spec_c0ab64af5c0045d087dd322c36cda92c",
+    "spec_id": "spec_31dbd918527b4b0bb7ce0c9c3e4743d3",
     "status": "fail"
   },
   "observations": {
-    "observation_abd982b3a6de428a80f5f62029c6fe5b": {
+    "observation_578e8da1ec544c7cb426c61c88263282": {
       "capture": {
         "cleanup": {
           "details": [
@@ -1067,7 +1067,7 @@
         ],
         "effects": {},
         "effects_complete": true,
-        "elapsed_seconds": 0.062,
+        "elapsed_seconds": 0.063,
         "error": null,
         "exit_code": 0,
         "fixture": {
@@ -1083,11 +1083,11 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 42508,
+        "pid": 37664,
         "process_status": "succeeded",
-        "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
+        "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
         "source_role": "reference",
-        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
         "state": {
           "protocol_snapshot": {
             "available": 10,
@@ -1133,7 +1133,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 23272,
+        "target_pid": 45008,
         "utf8_complete": true,
         "visual": null
       },
@@ -1154,14 +1154,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_44a6f5ef82704912ba045be572a64360",
-      "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
-      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
-      "stderr_material": "material_f9a255afe65040c7aa1a188c7f3575a3",
-      "stdout_material": "material_c812a465591d45969490775a0b9a55fb",
+      "run_id": "run_eb9546de4aef4972a328ba57f30d8b36",
+      "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
+      "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
+      "stderr_material": "material_f33d3c5820094480a8bc597c67219926",
+      "stdout_material": "material_2233f4bce4f9492282cba3e0cc99f2dc",
       "trust": "local-managed-execution"
     },
-    "observation_a45c92344c3d433b82a443c9d061122c": {
+    "observation_64c4b69ba0da4910b6659527f53bd7ad": {
       "capture": {
         "cleanup": {
           "details": [
@@ -1220,9 +1220,9 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 7640,
+        "pid": 29756,
         "process_status": "succeeded",
-        "source_id": "source_aaa964d65f26473196945098655bde42",
+        "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
         "source_role": "candidate",
         "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
         "state": {
@@ -1270,7 +1270,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 5312,
+        "target_pid": 31924,
         "utf8_complete": true,
         "visual": null
       },
@@ -1291,14 +1291,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_c2ee63a8b1264d46864a95c73eea584b",
-      "source_id": "source_aaa964d65f26473196945098655bde42",
+      "run_id": "run_efec0f8f47a84dbfba6673bbf396ed1b",
+      "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
       "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
-      "stderr_material": "material_ad3d4558ebb940928767fc7715aeceec",
-      "stdout_material": "material_a4a902c391394104b2bb1a1a84c8c27a",
+      "stderr_material": "material_c6df9202c6c04e86bb728d2d7c68c5de",
+      "stdout_material": "material_7a60b72c022e415c9b80a5b1a79195ed",
       "trust": "local-managed-execution"
     },
-    "observation_955da5a697304d31919710083f230530": {
+    "observation_057f2f0d42bc4b658abaf59a22871e58": {
       "capture": {
         "cleanup": {
           "details": [
@@ -1353,11 +1353,11 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 34004,
+        "pid": 18996,
         "process_status": "succeeded",
-        "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
+        "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
         "source_role": "reference",
-        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
         "state": {
           "protocol_snapshot": {
             "available": 12,
@@ -1400,7 +1400,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 19140,
+        "target_pid": 23260,
         "utf8_complete": true,
         "visual": null
       },
@@ -1421,14 +1421,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_72d800ac09634cda888da652c88d0de9",
-      "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
-      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
-      "stderr_material": "material_58fcfb7760634730811a6e6298fa0b62",
-      "stdout_material": "material_bc05ebfc72fc45f9b567d20205faef40",
+      "run_id": "run_cc9fce9b807b4e7d92923fc9af46042a",
+      "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
+      "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
+      "stderr_material": "material_f65e7e2d4db647748756471962972e22",
+      "stdout_material": "material_186204b42437413db705f00fcb1ec815",
       "trust": "local-managed-execution"
     },
-    "observation_43a11aecd6ef4e0abd9f704ec05bcd36": {
+    "observation_52a6cb1254bd488ca8c59de36351a34a": {
       "capture": {
         "cleanup": {
           "details": [
@@ -1467,7 +1467,7 @@
         ],
         "effects": {},
         "effects_complete": true,
-        "elapsed_seconds": 0.094,
+        "elapsed_seconds": 0.079,
         "error": null,
         "exit_code": 0,
         "fixture": {
@@ -1483,9 +1483,9 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 15708,
+        "pid": 30644,
         "process_status": "succeeded",
-        "source_id": "source_aaa964d65f26473196945098655bde42",
+        "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
         "source_role": "candidate",
         "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
         "state": {
@@ -1530,7 +1530,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 11436,
+        "target_pid": 3244,
         "utf8_complete": true,
         "visual": null
       },
@@ -1551,14 +1551,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_319710953e084c13a5e60196217cd89e",
-      "source_id": "source_aaa964d65f26473196945098655bde42",
+      "run_id": "run_bea35d40cb134ffc808f5412b3289a8b",
+      "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
       "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
-      "stderr_material": "material_b21995ae59ff4d8f8a8a9951bcfc197d",
-      "stdout_material": "material_e8c4a43b425444fcb13236276e50577d",
+      "stderr_material": "material_fbc74a1e732844088f5f7f7b9818f0ea",
+      "stdout_material": "material_47c04442ff7240f79fe2463bca31d768",
       "trust": "local-managed-execution"
     },
-    "observation_daae9cad64184e928f98ecea1e2b201d": {
+    "observation_a1258b6b16e142669e96b7965e2dd598": {
       "capture": {
         "cleanup": {
           "details": [
@@ -1586,7 +1586,7 @@
         ],
         "effects": {},
         "effects_complete": true,
-        "elapsed_seconds": 0.062,
+        "elapsed_seconds": 0.078,
         "error": null,
         "exit_code": 0,
         "fixture": {
@@ -1602,11 +1602,11 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 25800,
+        "pid": 41836,
         "process_status": "succeeded",
-        "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
+        "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
         "source_role": "reference",
-        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
         "state": {
           "protocol_snapshot": {
             "available": 12,
@@ -1652,7 +1652,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 20952,
+        "target_pid": 1544,
         "utf8_complete": true,
         "visual": null
       },
@@ -1673,14 +1673,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_08bd14be8dd540c0a8678fb7a1690526",
-      "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
-      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
-      "stderr_material": "material_f839cd4d51994730b1f2c9fd3fdec432",
-      "stdout_material": "material_2ad815741955482680aeb4b98939240d",
+      "run_id": "run_49bdf19313194f98851516720138c97e",
+      "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
+      "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
+      "stderr_material": "material_4c7db97d46ab44e392705d664fb25743",
+      "stdout_material": "material_b449131ef0094130a676ec40257b4e02",
       "trust": "local-managed-execution"
     },
-    "observation_7c17fe48a00745d8b80af1d2f75952ab": {
+    "observation_8edd657ccc024234960f3ee97bd9751b": {
       "capture": {
         "cleanup": {
           "details": [
@@ -1708,7 +1708,7 @@
         ],
         "effects": {},
         "effects_complete": true,
-        "elapsed_seconds": 0.078,
+        "elapsed_seconds": 0.079,
         "error": null,
         "exit_code": 0,
         "fixture": {
@@ -1724,9 +1724,9 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 38864,
+        "pid": 6204,
         "process_status": "succeeded",
-        "source_id": "source_aaa964d65f26473196945098655bde42",
+        "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
         "source_role": "candidate",
         "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
         "state": {
@@ -1774,7 +1774,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 26452,
+        "target_pid": 37260,
         "utf8_complete": true,
         "visual": null
       },
@@ -1795,14 +1795,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_e37f5fd99f6544408f8e985a3105efd9",
-      "source_id": "source_aaa964d65f26473196945098655bde42",
+      "run_id": "run_4b87fc8794024491bb6c4497cb84d1a2",
+      "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
       "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
-      "stderr_material": "material_b49af80aa84046d6a6523913a118c3a6",
-      "stdout_material": "material_20b754dc060744528b78570c27f2ede2",
+      "stderr_material": "material_1899c27435fd4355b62cf3d7705ddbc9",
+      "stdout_material": "material_f779b60c24b74f5a9316d2cbca6f33fb",
       "trust": "local-managed-execution"
     },
-    "observation_cf73dc0bee8744d4a868c1fb4bc745d6": {
+    "observation_ccfbc8499c794028a0c210493acbdf23": {
       "capture": {
         "cleanup": {
           "details": [
@@ -1868,11 +1868,11 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 6628,
+        "pid": 27616,
         "process_status": "succeeded",
-        "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
+        "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
         "source_role": "reference",
-        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
         "state": {
           "protocol_snapshot": {
             "available": 12,
@@ -1929,7 +1929,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 37924,
+        "target_pid": 43368,
         "utf8_complete": true,
         "visual": null
       },
@@ -1950,14 +1950,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_f871044834c84f96952d62efc12a6f96",
-      "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
-      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
-      "stderr_material": "material_1fe6c2f863ec49ceb500ff15ab07498b",
-      "stdout_material": "material_5abf8c8073a045e39e1982ee1a29b937",
+      "run_id": "run_562237b952764d36930767fc03ed247e",
+      "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
+      "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
+      "stderr_material": "material_8655f07aa32742839b414909aea878de",
+      "stdout_material": "material_28639638bb944b499d2fe82b50f0ccf8",
       "trust": "local-managed-execution"
     },
-    "observation_7b4c9b41b7f5478594cae64089134738": {
+    "observation_388a308d31bd437391a1d71f0356260e": {
       "capture": {
         "cleanup": {
           "details": [
@@ -2009,7 +2009,7 @@
         ],
         "effects": {},
         "effects_complete": true,
-        "elapsed_seconds": 0.078,
+        "elapsed_seconds": 0.079,
         "error": null,
         "exit_code": 0,
         "fixture": {
@@ -2025,9 +2025,9 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 39680,
+        "pid": 33336,
         "process_status": "succeeded",
-        "source_id": "source_aaa964d65f26473196945098655bde42",
+        "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
         "source_role": "candidate",
         "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
         "state": {
@@ -2086,7 +2086,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 23724,
+        "target_pid": 15660,
         "utf8_complete": true,
         "visual": null
       },
@@ -2107,14 +2107,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_0305955fe9b340d1afbaab6ccf46593e",
-      "source_id": "source_aaa964d65f26473196945098655bde42",
+      "run_id": "run_7ad90691ef5a464f92fa0e68bfbfed6a",
+      "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
       "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
-      "stderr_material": "material_260b7799a5314648927eee900b057082",
-      "stdout_material": "material_9ecec3952a964b2789d3d36c5d7efeb8",
+      "stderr_material": "material_169256d845e4419a9649ea940288e222",
+      "stdout_material": "material_75cd4c7b76c4487ab6fcec77d3febff8",
       "trust": "local-managed-execution"
     },
-    "observation_2c83c012391b4379ba943f63f29d4e89": {
+    "observation_9f777347ebab48b18ee9713326cae23c": {
       "capture": {
         "cleanup": {
           "details": [
@@ -2183,11 +2183,11 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 34840,
+        "pid": 25000,
         "process_status": "succeeded",
-        "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
+        "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
         "source_role": "reference",
-        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
         "state": {
           "protocol_snapshot": {
             "available": 12,
@@ -2230,7 +2230,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 44024,
+        "target_pid": 26808,
         "utf8_complete": true,
         "visual": null
       },
@@ -2251,14 +2251,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_48047cc29ba04f49ae8e4717d0b39e89",
-      "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
-      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
-      "stderr_material": "material_206ec1cf9e3a4c399d52fa05a5f5dda7",
-      "stdout_material": "material_d17608bb44454fb09faeaa5679fe7513",
+      "run_id": "run_2b742e442fea445f920ecb0f7575120e",
+      "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
+      "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
+      "stderr_material": "material_50d062a733394086a224813056f9d106",
+      "stdout_material": "material_f40ffc352cca495ba80e02507812e8d9",
       "trust": "local-managed-execution"
     },
-    "observation_5ac886bb49f44c23bf73b3fce5b83fd5": {
+    "observation_8a9bd72c1c7b45ed9fac0b5f54f004ee": {
       "capture": {
         "cleanup": {
           "details": [
@@ -2311,7 +2311,7 @@
         ],
         "effects": {},
         "effects_complete": true,
-        "elapsed_seconds": 0.078,
+        "elapsed_seconds": 0.093,
         "error": null,
         "exit_code": 0,
         "fixture": {
@@ -2327,9 +2327,9 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 580,
+        "pid": 28776,
         "process_status": "succeeded",
-        "source_id": "source_aaa964d65f26473196945098655bde42",
+        "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
         "source_role": "candidate",
         "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
         "state": {
@@ -2374,7 +2374,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 612,
+        "target_pid": 40772,
         "utf8_complete": true,
         "visual": null
       },
@@ -2395,14 +2395,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_dbdb8d81981f4f8b826673f5c2c69d69",
-      "source_id": "source_aaa964d65f26473196945098655bde42",
+      "run_id": "run_4277199ac35c4168b1ffe97a1767e25a",
+      "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
       "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
-      "stderr_material": "material_216543e2060e47de9cad48c6942c6723",
-      "stdout_material": "material_1d15034c627c4e44aaeb6619846d1a1f",
+      "stderr_material": "material_8eb2432761fe4e55bed63e5e9c092886",
+      "stdout_material": "material_225f0cb2cb4046f0a81d6fc24c4ce1c9",
       "trust": "local-managed-execution"
     },
-    "observation_30d7afe6cbc94ce8b7e4b0918a2da8d7": {
+    "observation_931163e753c84ed28666a952f18e6123": {
       "capture": {
         "cleanup": {
           "details": [
@@ -2465,11 +2465,11 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 33976,
+        "pid": 32564,
         "process_status": "succeeded",
-        "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
+        "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
         "source_role": "reference",
-        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
         "state": {
           "protocol_snapshot": {
             "available": 8,
@@ -2526,7 +2526,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 44976,
+        "target_pid": 30304,
         "utf8_complete": true,
         "visual": null
       },
@@ -2547,14 +2547,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_5bd6ba0f7aae429d9bc4559dac9c80cd",
-      "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
-      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
-      "stderr_material": "material_be44c91e700e443a914181102c942889",
-      "stdout_material": "material_ccd6171895414c07b1ccedccb1b51f48",
+      "run_id": "run_22703579c6c44d729da95466832b93b8",
+      "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
+      "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
+      "stderr_material": "material_e981499b25f540c18e5099d3c9ddb02b",
+      "stdout_material": "material_13368c3d272647bb990ee6722ed0dd64",
       "trust": "local-managed-execution"
     },
-    "observation_ebd1f8056d27424e9e96d29456869822": {
+    "observation_4a5e99d20cd1400a879b49fbc6df37dc": {
       "capture": {
         "cleanup": {
           "details": [
@@ -2617,9 +2617,9 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 41140,
+        "pid": 15888,
         "process_status": "succeeded",
-        "source_id": "source_aaa964d65f26473196945098655bde42",
+        "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
         "source_role": "candidate",
         "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
         "state": {
@@ -2678,7 +2678,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 15148,
+        "target_pid": 9924,
         "utf8_complete": true,
         "visual": null
       },
@@ -2699,14 +2699,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_e5eb0828e1654a6aad2c8200204ff560",
-      "source_id": "source_aaa964d65f26473196945098655bde42",
+      "run_id": "run_ef492dc69cd54758b02b123be892f8fb",
+      "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
       "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
-      "stderr_material": "material_23e19e5dd3a94feba4ea2e75b4ca6efa",
-      "stdout_material": "material_a11091f0091741f0943f38f35b8c44d4",
+      "stderr_material": "material_edf23972a6bc4d7293d827b6d26d3413",
+      "stdout_material": "material_fd3bd1cfbd18407681f7dc37420a8d18",
       "trust": "local-managed-execution"
     },
-    "observation_d4849f01119147bfa77535d8853bb399": {
+    "observation_4cc0ba8fbb14477fb30f8b389b4ab60b": {
       "capture": {
         "cleanup": {
           "details": [
@@ -2777,11 +2777,11 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 41352,
+        "pid": 44220,
         "process_status": "succeeded",
-        "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
+        "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
         "source_role": "reference",
-        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
         "state": {
           "protocol_snapshot": {
             "available": 0,
@@ -2838,7 +2838,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 20244,
+        "target_pid": 31844,
         "utf8_complete": true,
         "visual": null
       },
@@ -2859,14 +2859,14 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_6b1bceba9b0e4ced9acb5a803d0b9b4b",
-      "source_id": "source_d0f02cb8d1704ffdaa2a9b1cc75a42ec",
-      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
-      "stderr_material": "material_eb8fb1733ac846a7a47adb46adbc52e4",
-      "stdout_material": "material_02ca220bd70b4112a6b7972d9e912ada",
+      "run_id": "run_c22a69fee0c747ac913688a0b76f10f5",
+      "source_id": "source_d1a942b3b6a04b17a614c2974e217a14",
+      "source_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
+      "stderr_material": "material_24a8524313db431293e0aab140f48550",
+      "stdout_material": "material_d89d0fa739484ffc9f70356e855644a5",
       "trust": "local-managed-execution"
     },
-    "observation_609c670319d34d5e9d1915f325a12636": {
+    "observation_54c012233d834b3e8b651af7f8c5da5b": {
       "capture": {
         "cleanup": {
           "details": [
@@ -2921,7 +2921,7 @@
         ],
         "effects": {},
         "effects_complete": true,
-        "elapsed_seconds": 0.094,
+        "elapsed_seconds": 0.093,
         "error": null,
         "exit_code": 0,
         "fixture": {
@@ -2937,9 +2937,9 @@
           "No assertion about filesystem writes outside the declared working directory or network side effects"
         ],
         "output_truncated": false,
-        "pid": 3372,
+        "pid": 9092,
         "process_status": "succeeded",
-        "source_id": "source_aaa964d65f26473196945098655bde42",
+        "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
         "source_role": "candidate",
         "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
         "state": {
@@ -2998,7 +2998,7 @@
           ],
           "type": "array"
         },
-        "target_pid": 39112,
+        "target_pid": 11772,
         "utf8_complete": true,
         "visual": null
       },
@@ -3019,11 +3019,11 @@
         "runner_version": "0.2.0"
       },
       "producer": "managed-runner-0.2.0",
-      "run_id": "run_6f03bb22cccf4a108199eda7c678b3af",
-      "source_id": "source_aaa964d65f26473196945098655bde42",
+      "run_id": "run_60409052854440519f3ae2306f294b80",
+      "source_id": "source_bae71f4f9e0a4f28b1980c794f0ded9a",
       "source_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
-      "stderr_material": "material_5f0e0e1cbc5a42b99de82392f4c76ab3",
-      "stdout_material": "material_fb32920c866d4fe79975d39fc55b162f",
+      "stderr_material": "material_86392ef2d2804ff29ee0dac3f1a1f8c4",
+      "stdout_material": "material_9c5cff5f7e9d4590ba9ed1406b86575d",
       "trust": "local-managed-execution"
     }
   }

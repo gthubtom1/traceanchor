@@ -214,7 +214,7 @@
   "workers": {
     "main-r3": "only active integration writer; all delegated workers completed"
   },
-  "next_action": "Final public artifact rebuild and52-step artifact-bound qualification, public tree/history/archive audit, local milestone commit/push then actual CI. Release0.2.0 and downloaded-artifact use only after CI succeeds. Full goal remains false until G10 observed.",
+  "next_action": "Canonical LF bytes now match Git. Current199/199,42process replay and parent-version reuse passed. Freeze final byte-exact package,52step installed qualification,commit/push and actualCI before release/download. G10 remains remote-pending.",
   "failures_retained": [
     "Original evidence-corruption and recovery-delete negative controls failed before fixes",
     "Native Windows GDB startup-with-shell command rejected; compatible commands then passed",
@@ -227,10 +227,10 @@
   ],
   "source_hashes": {
     "traceanchor/analysis.py": "9ae4e6b23ee6590b370df838656d9fa7f6c127c58776cc6c5e9095999f01ebd1",
-    "traceanchor/apk_adapter.py": "3d9f344eb1983abfbdf6441e330da7e3e8f34568d44b640409ec2b5a4d483690",
+    "traceanchor/apk_adapter.py": "f182f31a9f0ae76c6a7bb29a981944eb6363a7672caeca2ca3857bd908dde4d3",
     "traceanchor/cli.py": "51916e598536ea3b7c2cebbf40337baaf4297e269ae8c5db54b40846fd651e06",
     "traceanchor/comparison.py": "605853aab874bf3f18c9628aec4a0bb6453e9557ae5e7bfec529b31a0a9a7fea",
-    "traceanchor/core.py": "787d2976c8522fa804845463a9e9dcf046d662c78e33f713291c87acb25f3753",
+    "traceanchor/core.py": "dc0de4467078a5125ade0ce8a3bb6df9fd721e323ac5a2dafa59784ed478a9df",
     "traceanchor/demo.py": "ad1a72a091a2520eeffda21b7751e1fbcd33c3a7d689daf7e6327a3fbd91ca43",
     "traceanchor/exchange.py": "e73188a3c5219c1a4db5c248c3e0da413420f5dc8a4396f987c59f98b3bde050",
     "traceanchor/hosts.py": "fcb793b0690ddc72f30878f9ade65a699288a33b287115ff15cf84b735d52001",
@@ -238,14 +238,14 @@
     "traceanchor/knowledge.py": "00e8d8a01ef4c45c6fa5805107ea969dc215bfc760f8399069569fe0b54c66f3",
     "traceanchor/lifecycle.py": "c62d02c5ba1b8d8ab40115e6fa72377d41c4cebbe49a57e1f648527326c022c2",
     "traceanchor/maintenance.py": "f84390d92b48fd5c5a6d5bbf22cdbea3f4d6443b4c3b9824f5c28fb7fd63cfa1",
-    "traceanchor/mcp.py": "3cc01a2e6b2b5bc30f3235557597683868ba1e9e7e9d08589bcb3146d750f2a7",
+    "traceanchor/mcp.py": "46b9abe9a5d85981816c69465a648022340217b6f8de4696b61329efded0a8bf",
     "traceanchor/process.py": "20986bfdddeb350dab3ffe9bff64dd47d3b978e928439bd2994568d3d892262f",
     "traceanchor/professional.py": "f64682dfa59b1d280ab22d0da3b59c5aa3fcd46d14d8c4f2f39e75bfef440013",
     "traceanchor/service.py": "db788dfd3eef6f14bd14b450e6cf81ace8642602359977a443068fc549ebd1cf",
     "traceanchor/tool_runner.py": "84aac5aed279943609a65b43f2d5888af492113a9ed4f8d1534522f0905801f6",
     "traceanchor/web_adapter.py": "abe2204b3aa072abc8ce784451e132be55be9188eaa073c84810690881299fe4",
     "traceanchor/winjob.py": "5a42c6c844f779d2f3a964232b7d5b819d4f44b7556b2b21c2768ff729e03f81",
-    "traceanchor/workspace.py": "1e91db52177ca918690286a9be0ec2f585d740a00cfdcb189cd0061319877a51",
+    "traceanchor/workspace.py": "b2e9d2f5070b1db98470174df0692ad7e7116596da6089fc0fc0af40e687b853",
     "traceanchor/__init__.py": "5f964509ccb30eca19479df1c5e35fe72edea2b20513c52490eb7c2740a359f0",
     "traceanchor/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
     "traceanchor/resources/inspect_web.cjs": "5a6ad9d1ec25aa7db91c9b724bfe8cf28c0770c32ab7d6345cde18603cccf780"
@@ -268,7 +268,7 @@
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "source_identity": "b87d5d11ba8a1027c5faf1dc656a352a4d724d6946ed849cf3d1cfd3494f649e",
+    "source_identity": "02eec62dc9ff87d8ed3e0abf172f864edeb10ab1e7f378c8b8e42c0d69e618a7",
     "source_unchanged_during_run": true
   }
 }

@@ -4,30 +4,30 @@
     {
       "pair": "reference1-candidate1",
       "status": "pass",
-      "case_id": "case_9e7be60bf3f44cd9947365f7cca00e49",
-      "verdict_id": "verdict_ad998e7d6cd34b8387f89e74577e2083",
+      "case_id": "case_dcf54e86ba4e405a894b7c27a7d06d3a",
+      "verdict_id": "verdict_e0f7bf5bb5054d508eb09b93e2b8febb",
       "candidate_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
-      "reference_sha256": "673fe028e02c29cfed50a453bfdf60e7dd9f963c28b1ffbf88969f6990f84184",
+      "reference_sha256": "c1bf578f3842cf7d7a76759e656a522932ce1eca2af83b6d539c3a142912f6b5",
       "fixtures": 7,
       "runs": 14
     },
     {
       "pair": "reference2-candidate1",
       "status": "fail",
-      "case_id": "case_c479ea2b23e0460e9187c732c09857dc",
-      "verdict_id": "verdict_0ec94cfd51174f329ef6292b20a12829",
+      "case_id": "case_3947086e4978400c84d1f941e3ca4513",
+      "verdict_id": "verdict_e8d63a1b66ca423599b59df4dd34a3ed",
       "candidate_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
-      "reference_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "reference_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
       "fixtures": 7,
       "runs": 14
     },
     {
       "pair": "reference2-candidate2",
       "status": "pass",
-      "case_id": "case_8fd2d9d341e44a27a82991c60cadff11",
-      "verdict_id": "verdict_e7a6950d1ecf46f7a8fd9556930dc36f",
+      "case_id": "case_2a4c730a5036413d9b6c8479e126d09a",
+      "verdict_id": "verdict_ec104f1cbce14d5c82d8a452f1beb7f5",
       "candidate_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
-      "reference_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "reference_sha256": "5f448ea966276d084d178b14e831fa96810156c51a34a7e6b8e0073f144639db",
       "fixtures": 7,
       "runs": 14
     }

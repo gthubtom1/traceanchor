@@ -11,11 +11,11 @@
   "sections": 13,
   "goal_mechanism": "Host acknowledged Goal set in the user command; document reading alone did not activate it",
   "baseline_commit": "5b8f10026b538a47b2234464edd2561b48734dc2",
-  "full_goal_complete": false,
+  "full_goal_complete": true,
   "historical_release": "0.1.1 core-only; does not satisfy R3",
   "products": {
     "P01": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Actual mature machine-code disassembly and runtime question",
       "evidence": [
         "evidence/native-tool.json",
@@ -25,7 +25,7 @@
       "limits": "Windows GNU15.2/objdump2.45/GDB16.3. Visible-source capability fixture, not blind P04 or arbitrary protected desktop qualification."
     },
     "P02": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Real DEX semantic chain with code positions and conditions",
       "evidence": [
         "evidence/apk-tool.json",
@@ -36,7 +36,7 @@
       "limits": "JADX1.5.6/Java21 static only. No Android device/runtime/repack/install claim; reflection/JNI unresolved."
     },
     "P03": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Real runtime interaction/state/function/network causality",
       "evidence": [
         "evidence/web-tool.json",
@@ -47,7 +47,7 @@
       "limits": "Finite Node/V8 fixture protocol, not browser DOM/extension runtime. Extension diagnostic/connection route documented separately."
     },
     "P04": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Host-independent candidate, real differences, repair and unseen boundary",
       "evidence": [
         "evidence/host-notes.md",
@@ -66,7 +66,7 @@
       "limits": "Integrator knew C; worker reports exact materials. Shared filesystem isolation is cooperative, not OS secrecy. Public replay is not a new blind-model score. Self-tests are not oracle judgments."
     },
     "P05": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Parent development, finite subtask and version reuse",
       "evidence": [
         "evidence/development-version-reuse.json",
@@ -78,7 +78,7 @@
   },
   "engineering": {
     "G01": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Product identity and incremental useful architecture",
       "evidence": [
         "../../README.md",
@@ -90,7 +90,7 @@
       "limits": ""
     },
     "G02": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "All three real professional chains",
       "evidence": [
         "evidence/native-tool.json",
@@ -106,7 +106,7 @@
       "limits": ""
     },
     "G03": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Independent reconstruction and real repair",
       "evidence": [
         "evidence/host-notes.md",
@@ -125,7 +125,7 @@
       "limits": ""
     },
     "G04": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Development and incremental maintenance",
       "evidence": [
         "evidence/current-development.json"
@@ -134,7 +134,7 @@
       "limits": ""
     },
     "G05": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Core correctness and real failure/recovery paths",
       "evidence": [
         "evidence/engineering.json",
@@ -145,7 +145,7 @@
       "limits": ""
     },
     "G06": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Whole workspace/resource/recovery/cleanup",
       "evidence": [
         "evidence/engineering.json",
@@ -156,7 +156,7 @@
       "limits": "Polling may overshoot; bounded control-recovery records allowed. Not an OS disk/network sandbox."
     },
     "G07": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Recovery and bounded exclusive collaboration",
       "evidence": [
         "CONTRACT-R3.md",
@@ -170,7 +170,7 @@
       "limits": "Claims constrain cooperating writers, not arbitrary editors; TTL never grants takeover."
     },
     "G08": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Ordinary public use and real installed maintenance",
       "evidence": [
         "../professional-guide.md",
@@ -183,7 +183,7 @@
       "limits": "Not clean-machine/all-host/all-OS. Host collaboration and protocol/config templates have separate ratings."
     },
     "G09": {
-      "status": "pass-local",
+      "status": "pass-contract-scope",
       "criterion": "Maintainability/provenance/license/migration",
       "evidence": [
         "../provenance/README.md",
@@ -197,7 +197,7 @@
       "limits": ""
     },
     "G10": {
-      "status": "two-CI-failures-retained-terminal-budget-source-verification-pending",
+      "status": "pass-contract-scope",
       "criterion": "Fresh review, exact source qualification and actual publication",
       "evidence": [
         "evidence/independent-review.json",
@@ -207,17 +207,16 @@
         "../release-verification.json",
         "evidence/ci-first-attempt.json",
         "evidence/ci-second-attempt.json",
-        "evidence/quiet-terminal-budget.json"
+        "evidence/quiet-terminal-budget.json",
+        "evidence/release.json"
       ],
-      "facts": "Fresh reviewer6real counterexamples verified/fixed and original6replayed; withdrawn Read mixup explicitly retained. Current frozen executable qualification and local public preflight pass. Actual remote CI/0.2.0release/download pending.",
+      "facts": "Fresh independent review6counterexamples verified/fixed/replayed; current200/200local, twoactualCI4jobmatrices allgreen with exactsource identity; publictree/history/artifact audit; immutable0.2.0Release and actual downloaded freshvenv4professional methods pass. Two earlier failedCI records retained, original exact causes unknown.",
       "limits": ""
     }
   },
-  "active_claim": "claim_9a3baa27836a4fc498d07e18f6dd240b",
-  "workers": {
-    "main-r3": "only active integration writer; all delegated workers completed"
-  },
-  "next_action": "Current200/200 pass. Test-only idle deadlines now equal unchanged25/30s wall deadlines for terminal-output tools. Two priorCI failures retained; original exact causes unknown. Requalify package and one final new-source CI; repeated failure stops release as blocked instead of indefinite retry.",
+  "active_claim": null,
+  "workers": {},
+  "next_action": "No remaining R3 implementation/release gate. Start use with README/professional-guide; preserve0.1.x and0.2.0immutable assets and original raw evidence. Any future target/tool/platform expansion needs a new finite task and qualification.",
   "failures_retained": [
     "Original evidence-corruption and recovery-delete negative controls failed before fixes",
     "Native Windows GDB startup-with-shell command rejected; compatible commands then passed",
@@ -274,5 +273,9 @@
     "source_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d",
     "source_unchanged_during_run": true
   },
-  "qualification_binding": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d"
+  "qualification_binding": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d",
+  "immutable_release_commit": "b3f200b940f0f3f6bb61bf8c5b2c8134e97aaedb",
+  "final_receipt": "evidence/release.json",
+  "delivery": "DELIVERY.md",
+  "release_status": "published-downloaded-used-and-twoCI-matrices-verified"
 }

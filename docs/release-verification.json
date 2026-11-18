@@ -1,36 +1,381 @@
 {
   "schema_version": 2,
   "version": "0.2.0",
+  "contract_id": "FOUR-SOURCE-PRODUCT-R3",
+  "status": "published-downloaded-qualified",
+  "full_goal_complete": true,
   "repository": "https://github.com/gthubtom1/traceanchor",
-  "status": "two-failed-CI-records-retained-final-current-source-CI-pending",
-  "full_goal_complete": false,
-  "historical_revision2_release": "history/r2-release-verification.json",
-  "current_executable_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d",
-  "local_qualification": {
-    "tests": 200,
-    "passed": 200,
-    "skipped": 0,
-    "windows_dynamic_qualified": true,
-    "source_unchanged": true,
-    "evidence": "goal/evidence/engineering.json"
-  },
-  "installed_artifact_journey": {
-    "status": "pass",
-    "steps": 52,
-    "professional_methods": [
-      "Node-inspector-state-network",
-      "GNU-machine-code-disassembly",
-      "GNU-GDB-callback-runtime",
-      "JADX-DEX-static-semantics"
+  "release": "https://github.com/gthubtom1/traceanchor/releases/tag/v0.2.0",
+  "tag_commit": "b3f200b940f0f3f6bb61bf8c5b2c8134e97aaedb",
+  "executable_source_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d",
+  "ci": {
+    "status": "success",
+    "run": "https://github.com/gthubtom1/traceanchor/actions/runs/44211220636",
+    "head": "b3f200b940f0f3f6bb61bf8c5b2c8134e97aaedb",
+    "jobs": [
+      {
+        "artifact": "linux-static-python-3.12/qualification.json",
+        "environment": {
+          "python": "3.12.16",
+          "implementation": "CPython",
+          "platform": "linux",
+          "architecture": "x86_64",
+          "os_release": "7.0.0-1016-aws"
+        },
+        "qualification": {
+          "status": "passed",
+          "complete_suite": true,
+          "windows_dynamic_qualified": false,
+          "critical_process_tests_passed": false,
+          "posix_dynamic_qualified": false,
+          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+        },
+        "tests": {
+          "tests_run": 200,
+          "passed": 156,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 44
+        },
+        "source_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d"
+      },
+      {
+        "artifact": "windows-python-3.11/docs/qualification.json",
+        "environment": {
+          "python": "3.11.9",
+          "implementation": "CPython",
+          "platform": "win32",
+          "architecture": "AMD64",
+          "os_release": "10"
+        },
+        "qualification": {
+          "status": "passed",
+          "complete_suite": true,
+          "windows_dynamic_qualified": true,
+          "critical_process_tests_passed": true,
+          "posix_dynamic_qualified": false,
+          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+        },
+        "tests": {
+          "tests_run": 200,
+          "passed": 200,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "source_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d"
+      },
+      {
+        "artifact": "windows-python-3.12/docs/qualification.json",
+        "environment": {
+          "python": "3.12.10",
+          "implementation": "CPython",
+          "platform": "win32",
+          "architecture": "AMD64",
+          "os_release": "2025Server"
+        },
+        "qualification": {
+          "status": "passed",
+          "complete_suite": true,
+          "windows_dynamic_qualified": true,
+          "critical_process_tests_passed": true,
+          "posix_dynamic_qualified": false,
+          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+        },
+        "tests": {
+          "tests_run": 200,
+          "passed": 200,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "source_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d"
+      },
+      {
+        "artifact": "windows-python-3.13/docs/qualification.json",
+        "environment": {
+          "python": "3.13.17",
+          "implementation": "CPython",
+          "platform": "win32",
+          "architecture": "AMD64",
+          "os_release": "2025Server"
+        },
+        "qualification": {
+          "status": "passed",
+          "complete_suite": true,
+          "windows_dynamic_qualified": true,
+          "critical_process_tests_passed": true,
+          "posix_dynamic_qualified": false,
+          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+        },
+        "tests": {
+          "tests_run": 200,
+          "passed": 200,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "source_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d"
+      }
     ],
-    "real_previous_package": {
-      "filename": "traceanchor-0.1.1-py3-none-any.whl",
-      "sha256": "aaff745c74187b035b1382c952fdc17cb38354823c099a5296301e24a24b8087"
-    },
-    "scope": "Same machine, newly created isolated venv; explicitly selected local-version upgrade and paired pre-upgrade-data rollback when previous artifact supplied; not clean-machine qualification",
-    "evidence": "goal/evidence/installation.json"
+    "policy": "Single current-source run all jobs successful. Earlier two actual failures retained; exact original causes not established. Test-only idle budgets aligned with existing wall limits, no wall/cleanup/business criterion relaxed. Local exact release artifacts separately qualified through52steps."
   },
-  "reproducible_artifacts": {
+  "main_repeat_ci": {
+    "status": "success",
+    "head": "b3f200b940f0f3f6bb61bf8c5b2c8134e97aaedb",
+    "run": "https://github.com/gthubtom1/traceanchor/actions/runs/44211828679",
+    "jobs": [
+      {
+        "environment": {
+          "python": "3.12.16",
+          "implementation": "CPython",
+          "platform": "linux",
+          "architecture": "x86_64",
+          "os_release": "7.0.0-1019-azure"
+        },
+        "qualification": {
+          "status": "passed",
+          "complete_suite": true,
+          "windows_dynamic_qualified": false,
+          "critical_process_tests_passed": false,
+          "posix_dynamic_qualified": false,
+          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+        },
+        "tests": {
+          "tests_run": 200,
+          "passed": 156,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 44
+        },
+        "source_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d"
+      },
+      {
+        "environment": {
+          "python": "3.11.9",
+          "implementation": "CPython",
+          "platform": "win32",
+          "architecture": "AMD64",
+          "os_release": "10"
+        },
+        "qualification": {
+          "status": "passed",
+          "complete_suite": true,
+          "windows_dynamic_qualified": true,
+          "critical_process_tests_passed": true,
+          "posix_dynamic_qualified": false,
+          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+        },
+        "tests": {
+          "tests_run": 200,
+          "passed": 200,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "source_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d"
+      },
+      {
+        "environment": {
+          "python": "3.12.10",
+          "implementation": "CPython",
+          "platform": "win32",
+          "architecture": "AMD64",
+          "os_release": "2025Server"
+        },
+        "qualification": {
+          "status": "passed",
+          "complete_suite": true,
+          "windows_dynamic_qualified": true,
+          "critical_process_tests_passed": true,
+          "posix_dynamic_qualified": false,
+          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+        },
+        "tests": {
+          "tests_run": 200,
+          "passed": 200,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "source_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d"
+      },
+      {
+        "environment": {
+          "python": "3.13.17",
+          "implementation": "CPython",
+          "platform": "win32",
+          "architecture": "AMD64",
+          "os_release": "2025Server"
+        },
+        "qualification": {
+          "status": "passed",
+          "complete_suite": true,
+          "windows_dynamic_qualified": true,
+          "critical_process_tests_passed": true,
+          "posix_dynamic_qualified": false,
+          "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+        },
+        "tests": {
+          "tests_run": 200,
+          "passed": 200,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "source_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d"
+      }
+    ]
+  },
+  "download": {
+    "status": "pass",
+    "release": "https://github.com/gthubtom1/traceanchor/releases/tag/v0.2.0",
+    "artifacts": {
+      "traceanchor-0.2.0-py3-none-any.whl": "0e1d9c575efe8714c9e6dd8674ec3f6e8a8fccacd15bcd27283e860886738874",
+      "traceanchor-0.2.0.tar.gz": "26a2d66142822fa3ccda9123a070a0cb500f97090cd4fc4ff48dee5b9a1eaa76"
+    },
+    "matches_reviewed_artifacts": true,
+    "downloaded_wheel_installed_directly": true,
+    "fresh_same_machine_venv": true,
+    "professional_methods": [
+      "native.disassemble",
+      "native.trace",
+      "web.observe",
+      "apk.analyze"
+    ],
+    "steps": [
+      {
+        "step": "install-downloaded-wheel",
+        "exit_code": 0,
+        "streams": {
+          "stdout": {
+            "size": 229,
+            "sha256": "8d742019b48b75d2cb448aedd5ac459ab8f7a0ced3c5fb966def4555ede0472c"
+          },
+          "stderr": {
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      {
+        "step": "version",
+        "exit_code": 0,
+        "streams": {
+          "stdout": {
+            "size": 7,
+            "sha256": "c58a749f70f5e1ba5394ebcdbfcfa02fa938c4a173d8e41e6c476a7c8b2acddd"
+          },
+          "stderr": {
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      {
+        "step": "doctor",
+        "exit_code": 0,
+        "streams": {
+          "stdout": {
+            "size": 3293,
+            "sha256": "9e33e39d0f3ce9e2fa6996b57d789e07f63f45782be8276403bf93bdea275f37"
+          },
+          "stderr": {
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      {
+        "step": "packaged-domain-knowledge",
+        "exit_code": 0,
+        "streams": {
+          "stdout": {
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stderr": {
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      {
+        "step": "compile-original-fixture",
+        "exit_code": 0,
+        "streams": {
+          "stdout": {
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stderr": {
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      {
+        "step": "downloaded-native.disassemble",
+        "exit_code": 0,
+        "streams": {
+          "stdout": {
+            "size": 38800,
+            "sha256": "c3004977835163bf22b872fdc606ef283c60f070eb89e12dcfc6da25e3e34aac"
+          },
+          "stderr": {
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      {
+        "step": "downloaded-native.trace",
+        "exit_code": 0,
+        "streams": {
+          "stdout": {
+            "size": 6155,
+            "sha256": "fc8e2551230095c5a5bb0d0529d6b2c7719c2a9ba70e50e2830d868f59cd2678"
+          },
+          "stderr": {
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      {
+        "step": "downloaded-web.observe",
+        "exit_code": 0,
+        "streams": {
+          "stdout": {
+            "size": 17662,
+            "sha256": "c113722f3f4fecbef3653c7e9bc1b1f6eea7d502d744243f05d780d6efdd5461"
+          },
+          "stderr": {
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      {
+        "step": "downloaded-apk.analyze",
+        "exit_code": 0,
+        "streams": {
+          "stdout": {
+            "size": 21667,
+            "sha256": "18bf0629b2f696a2034d2a6e499d98baf8c686b95b7af8f246207533a1ec4ae5"
+          },
+          "stderr": {
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      }
+    ],
+    "network_downloads_by_pip": false,
+    "scope": "Actual GitHub asset bytes installed in new local venv; real selected native/GDB/JADX/Node methods and packaged knowledge. No clean-machine/all-host/all-platform claim."
+  },
+  "local_artifact_installation": "goal/evidence/installation.json",
+  "artifact_identity": {
     "traceanchor-0.2.0-py3-none-any.whl": {
       "sha256": "0e1d9c575efe8714c9e6dd8674ec3f6e8a8fccacd15bcd27283e860886738874",
       "size": 322601
@@ -40,20 +385,15 @@
       "size": 340895
     }
   },
-  "ci": {
-    "status": "previous-failures-retained",
-    "runs": [
-      "https://github.com/gthubtom1/traceanchor/actions/runs/44207938328",
-      "https://github.com/gthubtom1/traceanchor/actions/runs/44209589444"
-    ],
-    "next": "One final current-source check after terminal-output idle budgets aligned with existing total deadlines; exact original causes unknown. Repeated failure blocks release, not indefinite retries."
-  },
-  "release": {
-    "status": "not-created"
-  },
-  "download": {
-    "status": "not-run"
-  },
-  "artifact_policy": "Frozen pre-release bytes include explicit candidate/remote-pending status. Later out-of-band qualification/attestation records do not rewrite those artifacts or any0.1.x history.",
-  "byte_exactness": "Existing project eol=lf applied to working tree; source archive members equal declared files, repeat build identical. Git object identity checked before push."
+  "prior_failures": [
+    "goal/evidence/ci-first-attempt.json",
+    "goal/evidence/ci-second-attempt.json"
+  ],
+  "limitations": [
+    "Historical exact CI failure causes were not established; no claim of proven causal repair",
+    "Local and downloaded qualification are new same-machine venvs, not clean-machine proof",
+    "Linuxstatic156pass44skip, not POSIX dynamic qualification",
+    "No Android device/browserDOM/extensionruntime/general protected software equivalence claim"
+  ],
+  "attestation_policy": "Published frozen assets map to immutable tagcommit; later evidence-only records do not overwrite assets or claim their pre-release embedded status was post-release. Current executable identity remains unchanged."
 }

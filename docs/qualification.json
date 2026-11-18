@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-18T00:34:40.905937+00:00",
+  "generated_at": "2026-11-18T00:47:19.922674+00:00",
   "environment": {
     "python": "3.12.0",
     "implementation": "CPython",
@@ -8,11 +8,11 @@
     "architecture": "AMD64",
     "os_release": "10"
   },
-  "artifact_directory": ".validation/qualification-15a64eb83f0b",
+  "artifact_directory": ".validation/qualification-0f0b3b256611",
   "model_calls": 0,
   "build_install_release": "not-run; owned by separate release qualification",
   "source_identity": {
-    "sha256": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7",
+    "sha256": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d",
     "files": {
       ".github/workflows/qualification.yml": "c1cae991897b212cae9f7ec0e1fbb0aec549eaecfac9457e884bca07a804a659",
       "_build.py": "441798509ee190526a89c428c73f670a03a5a5dbd5ca5de9780b9c80a06a9f52",
@@ -30,11 +30,11 @@
       "tests/test_mcp.py": "d373ac351b99fccc6c25ca1f46113f1a41f15d6f2e3bc015c3515a5c4908f289",
       "tests/test_process.py": "7f90993e3cfabdcc91e0fe8a5f0b6cc6a38bf06a610e7949da5bcdda508aa128",
       "tests/test_r3_integrity.py": "faa3378c8fa8dc480bbef6436cab17c0dfe3395558d7bce50ede41575546db79",
-      "tests/test_r3_review_fixes.py": "0698adef888d500c887a5b5b00998e303c4614fd75e2d68de797f1c06bec0c02",
+      "tests/test_r3_review_fixes.py": "277a78be53d974ddcdea3eeb8969e82bcbdb952417d038d78adec388fa8ab81b",
       "tests/test_regressions.py": "d5b0402bf1cf18877bf5bafeecc6722c12b8511e17af4e9676ca34c156749ad7",
       "tests/test_service.py": "46c19f94a172be61d0a3b5cb19643ff3364c03169556bd61d5805441dc1537d2",
       "tests/test_tool_runner.py": "2b71aa450edd0233bfcdac91fb6c2ee3e8d28c06459b5bef9e6aaa75d844e217",
-      "tests/test_web_adapter.py": "885920e32d4f25fdb2c4736aca2db95a8283857ee67d3feee5a52984bc1d4526",
+      "tests/test_web_adapter.py": "a52716118169fa42accfd0cb70307c3c0b5a2d207e0da737317f886da28bb78f",
       "tests/test_workspace.py": "0cce6d22e73a1906197d3c12fbbc0d3e18394f4cd3630ef419f80bb3a0a243c1",
       "tools/assess_native.py": "d7e97460631220e9f821d27bcdb21244dc23436b9cf49143a68ef6d66d4740ab",
       "tools/claims.py": "f3a15c745eec8abc9221db9c109ab7e94eca734ad8d742a7ea00f89dc5ad2d3c",
@@ -95,7 +95,7 @@
     "skipped": 0,
     "expected_failures": 0,
     "unexpected_successes": 0,
-    "elapsed_seconds": 43.161695,
+    "elapsed_seconds": 55.330799,
     "outcomes": [
       {
         "id": "tests.test_acceptance_integrity.IntegrityTests.test_child_refresh_and_reviewed_result_can_replace_stale_dependency",
@@ -905,16 +905,16 @@
     "naive_files": {
       "before_bytes": 151552,
       "after_bytes": 49152,
-      "write_seconds": 0.000443,
-      "cleanup_seconds": 0.000197
+      "write_seconds": 0.00043,
+      "cleanup_seconds": 0.000211
     },
     "cas_objects": {
       "before_bytes": 102400,
       "after_bytes": 49152,
       "registered_before_bytes": 102400,
       "registered_after_bytes": 49152,
-      "registration_seconds": 0.066016,
-      "cleanup_seconds": 0.016505,
+      "registration_seconds": 0.061267,
+      "cleanup_seconds": 0.020686,
       "estimated_reclaim_bytes": 53248,
       "actual_reclaimed_bytes": 53248
     },
@@ -938,13 +938,13 @@
   },
   "demo": {
     "status": "passed",
-    "elapsed_seconds": 8.189716,
-    "artifact_directory": ".validation/qualification-15a64eb83f0b/demo",
+    "elapsed_seconds": 10.482088,
+    "artifact_directory": ".validation/qualification-0f0b3b256611/demo",
     "summary": {
       "status": "passed-finite-scope",
-      "case_id": "case_b407fa6602964d0dad272891ad66dc7b",
-      "negative_control": "verdict_4a0267c4245b4914b542cfa526ec0c06",
-      "final_verdict": "verdict_32156da8f410477f9cb7333f2e3f915c",
+      "case_id": "case_b04f8b2d883141b1bf9fb75d96ca03e6",
+      "negative_control": "verdict_fca479c6b3ba4561a84d9d7af998ef33",
+      "final_verdict": "verdict_59fa3eecf9e24d54859c61e6b514d2d8",
       "disposition": "accepted",
       "fixtures": 3,
       "actual_process_runs": 12,
@@ -963,23 +963,23 @@
     "timing": {
       "raw_subprocess": {
         "samples_seconds": [
-          0.017597,
-          0.016203,
-          0.015857
+          0.026511,
+          0.023678,
+          0.020202
         ],
-        "median_seconds": 0.016203
+        "median_seconds": 0.023678
       },
       "managed_runner": {
         "samples_seconds": [
-          0.0665,
-          0.056588,
-          0.055942
+          0.078998,
+          0.077821,
+          0.066523
         ],
-        "median_seconds": 0.056588
+        "median_seconds": 0.077821
       }
     },
-    "median_overhead_seconds": 0.040385,
-    "median_managed_over_raw_ratio": 3.493,
+    "median_overhead_seconds": 0.054143,
+    "median_managed_over_raw_ratio": 3.287,
     "output_equal": true,
     "stdout_bytes": 4096,
     "stderr_bytes": 14,

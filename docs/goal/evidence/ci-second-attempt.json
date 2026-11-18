@@ -1,0 +1,118 @@
+{
+  "run": "https://github.com/gthubtom1/traceanchor/actions/runs/44209589444",
+  "head": "25f73b413aca2c0d1058d4ef53e7e6383b760913",
+  "status": "failure",
+  "jobs": [
+    {
+      "environment": {
+        "python": "3.12.16",
+        "implementation": "CPython",
+        "platform": "linux",
+        "architecture": "x86_64",
+        "os_release": "7.0.0-1019-azure"
+      },
+      "source_identity": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7",
+      "qualification": {
+        "status": "passed",
+        "complete_suite": true,
+        "windows_dynamic_qualified": false,
+        "critical_process_tests_passed": false,
+        "posix_dynamic_qualified": false,
+        "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+      },
+      "tests": {
+        "tests_run": 200,
+        "passed": 156,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 44
+      },
+      "failures": []
+    },
+    {
+      "environment": {
+        "python": "3.11.9",
+        "implementation": "CPython",
+        "platform": "win32",
+        "architecture": "AMD64",
+        "os_release": "10"
+      },
+      "source_identity": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7",
+      "qualification": {
+        "status": "failed",
+        "complete_suite": true,
+        "windows_dynamic_qualified": false,
+        "critical_process_tests_passed": true,
+        "posix_dynamic_qualified": false,
+        "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+      },
+      "tests": {
+        "tests_run": 200,
+        "passed": 199,
+        "failed": 1,
+        "errors": 0,
+        "skipped": 0
+      },
+      "failures": [
+        {
+          "id": "tests.test_r3_review_fixes.ReviewFixTests.test_target_stdout_never_creates_debugger_breakpoint_receipt",
+          "status": "fail",
+          "detail": "Traceback (most recent call last):\n  File \"<product>\\tests\\test_r3_review_fixes.py\", line 89, in test_target_stdout_never_creates_debugger_breakpoint_receipt\n    self.assertEqual(b['exit_code'],0,b['stderr'])\nAssertionError: None != 0 : b''\n"
+        }
+      ]
+    },
+    {
+      "environment": {
+        "python": "3.12.10",
+        "implementation": "CPython",
+        "platform": "win32",
+        "architecture": "AMD64",
+        "os_release": "2025Server"
+      },
+      "source_identity": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7",
+      "qualification": {
+        "status": "passed",
+        "complete_suite": true,
+        "windows_dynamic_qualified": true,
+        "critical_process_tests_passed": true,
+        "posix_dynamic_qualified": false,
+        "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+      },
+      "tests": {
+        "tests_run": 200,
+        "passed": 200,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "failures": []
+    },
+    {
+      "environment": {
+        "python": "3.13.17",
+        "implementation": "CPython",
+        "platform": "win32",
+        "architecture": "AMD64",
+        "os_release": "2025Server"
+      },
+      "source_identity": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7",
+      "qualification": {
+        "status": "passed",
+        "complete_suite": true,
+        "windows_dynamic_qualified": true,
+        "critical_process_tests_passed": true,
+        "posix_dynamic_qualified": false,
+        "scope": "Windows dynamic qualification requires unchanged source, the complete suite, critical real process tests, separate demo and baseline; skipped tests never qualify their capability"
+      },
+      "tests": {
+        "tests_run": 200,
+        "passed": 200,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "failures": []
+    }
+  ],
+  "interpretation": "Windows3.12/3.13 current200tests pass; Linux156pass44skip. Windows3.11 initial GCC build returned no exit code; original assertion only retained stderr, so original exact process cause remains unknown. Terminal-only test executors now use existing wall limit as idle limit; wall limit, cleanup and business acceptance unchanged. Separate real quiet-target control demonstrates semantics, not original root cause."
+}

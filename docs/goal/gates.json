@@ -188,7 +188,7 @@
       "limits": ""
     },
     "G10": {
-      "status": "actual-CI-failed-current-diagnostic-verification-pending",
+      "status": "two-CI-failures-retained-terminal-budget-source-verification-pending",
       "criterion": "Fresh review, exact source qualification and actual publication",
       "evidence": [
         "evidence/independent-review.json",
@@ -196,13 +196,15 @@
         "evidence/engineering.json",
         "../public-audit.json",
         "../release-verification.json",
-        "evidence/ci-first-attempt.json"
+        "evidence/ci-first-attempt.json",
+        "evidence/ci-second-attempt.json",
+        "evidence/quiet-terminal-budget.json"
       ],
       "facts": "Fresh reviewer6real counterexamples verified/fixed and original6replayed; withdrawn Read mixup explicitly retained. Current frozen executable qualification and local public preflight pass. Actual remote CI/0.2.0release/download pending.",
       "limits": ""
     }
   },
-  "qualification_binding": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7",
+  "qualification_binding": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d",
   "release_admission": "Local product gates observed. Final exact artifact audit, remote CI and downloaded artifact use still required; do not claim R3 complete.",
   "evidence_path_base": "docs/goal; input paths product-relative",
   "historical_contract": "OldA01-A20/R2 receipts under docs/history do not replace R3."

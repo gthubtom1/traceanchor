@@ -2,10 +2,10 @@
   "schema_version": 2,
   "version": "0.2.0",
   "repository": "https://github.com/gthubtom1/traceanchor",
-  "status": "first-CI-failed-diagnostic-current-CI-pending",
+  "status": "two-failed-CI-records-retained-final-current-source-CI-pending",
   "full_goal_complete": false,
   "historical_revision2_release": "history/r2-release-verification.json",
-  "current_executable_identity": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7",
+  "current_executable_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d",
   "local_qualification": {
     "tests": 200,
     "passed": 200,
@@ -32,19 +32,21 @@
   },
   "reproducible_artifacts": {
     "traceanchor-0.2.0-py3-none-any.whl": {
-      "sha256": "37907a7f877cd88820d30c9e31ea9dfbcfb5761b0ed5b0c310771254dad44c86",
-      "size": 320184
+      "sha256": "0e1d9c575efe8714c9e6dd8674ec3f6e8a8fccacd15bcd27283e860886738874",
+      "size": 322601
     },
     "traceanchor-0.2.0.tar.gz": {
-      "sha256": "1a59fef6e106849704a0f59c4831bc8d6faa9eaee33993014da664026e391008",
-      "size": 339805
+      "sha256": "26a2d66142822fa3ccda9123a070a0cb500f97090cd4fc4ff48dee5b9a1eaa76",
+      "size": 340895
     }
   },
   "ci": {
-    "status": "failure",
-    "run": "https://github.com/gthubtom1/traceanchor/actions/runs/44207938328",
-    "evidence": "goal/evidence/ci-first-attempt.json",
-    "next": "One current diagnostic-source CI verification; original cause unknown, criteria unchanged"
+    "status": "previous-failures-retained",
+    "runs": [
+      "https://github.com/gthubtom1/traceanchor/actions/runs/44207938328",
+      "https://github.com/gthubtom1/traceanchor/actions/runs/44209589444"
+    ],
+    "next": "One final current-source check after terminal-output idle budgets aligned with existing total deadlines; exact original causes unknown. Repeated failure blocks release, not indefinite retries."
   },
   "release": {
     "status": "not-created"

@@ -1,0 +1,71 @@
+{
+  "status": "pass-finite-budget-demonstration",
+  "input": "import time;time.sleep(0.3);print(\"terminal-result\")",
+  "runs": [
+    {
+      "timeout": 1,
+      "idle_timeout": 0.05,
+      "outcome": {
+        "status": "timed_out",
+        "exit_code": null,
+        "elapsed_seconds": 0.063,
+        "pid": 42992,
+        "target_pid": 28356,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": {
+          "code": "idle_timeout",
+          "message": "no stdout/stderr progress within idle_timeout"
+        }
+      },
+      "streams": {
+        "stdout": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text": ""
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text": ""
+        }
+      }
+    },
+    {
+      "timeout": 1,
+      "idle_timeout": 1,
+      "outcome": {
+        "status": "succeeded",
+        "exit_code": 0,
+        "elapsed_seconds": 0.391,
+        "pid": 21244,
+        "target_pid": 43128,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": null
+      },
+      "streams": {
+        "stdout": {
+          "sha256": "9613a9241c7d26a60859f4d9c651dc033e7ad2ea169cf98655718fa7bc20f72b",
+          "text": "terminal-result\r\n"
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text": ""
+        }
+      }
+    }
+  ],
+  "criterion": "Same silent finite target; short stdout-idle deadline cancels admitted work before total deadline, terminal-aware idle budget within unchanged total permits expected output. No fabricated heartbeat.",
+  "limits": "Demonstrates budget semantics, NOT confirmed root cause of earlier CI failures."
+}

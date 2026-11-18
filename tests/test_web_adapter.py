@@ -54,7 +54,9 @@ class WebAdapterTests(unittest.TestCase):
 
     def execute(self, argv, input_bytes=b"", env=None):
         run = run_process(argv, cwd=str(self.base), input_bytes=input_bytes, env=env,
-                          timeout=25, idle_timeout=10, output_limit=4 * 1024 * 1024)
+                          # The collector emits one JSON trace only at completion;
+                          # quiet execution is not evidence of absent progress.
+                          timeout=25, idle_timeout=25, output_limit=4 * 1024 * 1024)
         number = len(self.runs) + 1
         (self.base / f"tool-{number}.stdin.bin").write_bytes(input_bytes)
         (self.base / f"tool-{number}.stdout.bin").write_bytes(run["stdout"])

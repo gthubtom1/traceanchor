@@ -85,8 +85,10 @@ class ReviewFixTests(unittest.TestCase):
     def test_target_stdout_never_creates_debugger_breakpoint_receipt(self):
         code=self.base/'not-called.c';exe=self.base/'not-called.exe'
         code.write_text('#include <stdio.h>\nint never_called(int x){return x+1;}\nint main(void){puts("TRACEANCHOR_BREAK never_called");return 0;}\n')
-        b=run_process([shutil.which('gcc'),'-g','-O0','-o',str(exe),str(code)],cwd=str(self.base),timeout=30,idle_timeout=10)
-        self.assertEqual(b['exit_code'],0,b['stderr'])
+        # GCC may be silent for the entire compile. Preserve the existing30s
+        # total bound rather than treating10s stdout silence as compile failure.
+        b=run_process([shutil.which('gcc'),'-g','-O0','-o',str(exe),str(code)],cwd=str(self.base),timeout=30,idle_timeout=30)
+        self.assertEqual(b['exit_code'],0,b)
         s=self.call('source.add',case_id=self.cid,path=str(exe))
         o=self.call('professional.run',case_id=self.cid,source_id=s['id'],method='native.trace',options={'breakpoints':['never_called']})
         p=o['data']['professional'];self.assertNotEqual(p['status'],'complete')

@@ -197,7 +197,7 @@
       "limits": ""
     },
     "G10": {
-      "status": "actual-CI-failed-current-diagnostic-verification-pending",
+      "status": "two-CI-failures-retained-terminal-budget-source-verification-pending",
       "criterion": "Fresh review, exact source qualification and actual publication",
       "evidence": [
         "evidence/independent-review.json",
@@ -205,7 +205,9 @@
         "evidence/engineering.json",
         "../public-audit.json",
         "../release-verification.json",
-        "evidence/ci-first-attempt.json"
+        "evidence/ci-first-attempt.json",
+        "evidence/ci-second-attempt.json",
+        "evidence/quiet-terminal-budget.json"
       ],
       "facts": "Fresh reviewer6real counterexamples verified/fixed and original6replayed; withdrawn Read mixup explicitly retained. Current frozen executable qualification and local public preflight pass. Actual remote CI/0.2.0release/download pending.",
       "limits": ""
@@ -215,7 +217,7 @@
   "workers": {
     "main-r3": "only active integration writer; all delegated workers completed"
   },
-  "next_action": "Current200/200 and11Web tests pass. Diagnostic-only process outcome exposure does not claim original CI cause repaired. Freeze matching52step artifact use and one bounded current-source CI run; no Release until actual CI succeeds.",
+  "next_action": "Current200/200 pass. Test-only idle deadlines now equal unchanged25/30s wall deadlines for terminal-output tools. Two priorCI failures retained; original exact causes unknown. Requalify package and one final new-source CI; repeated failure stops release as blocked instead of indefinite retry.",
   "failures_retained": [
     "Original evidence-corruption and recovery-delete negative controls failed before fixes",
     "Native Windows GDB startup-with-shell command rejected; compatible commands then passed",
@@ -269,8 +271,8 @@
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "source_identity": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7",
+    "source_identity": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d",
     "source_unchanged_during_run": true
   },
-  "qualification_binding": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7"
+  "qualification_binding": "62f73b2f1e211db0cb3f0c09337769a49102047c4e3d79135979ead9c71bb13d"
 }

@@ -32,6 +32,8 @@ def import_bundle(store, payload, sha256):
         if record['kind']=='verdict':
             data['current']=False;data['stale_reason']='imported-proof-not-local-execution'
         if record['kind']=='observation':data['trust']='imported-untrusted'
+        if record['kind']=='workspace-item':data.update(local_authority=False,recovery=True,status='imported-untrusted')
+        if record['kind']=='reservation':data['status']='imported-inactive'
         prepared.append((record,data))
     if len(case_ids)!=1:
         raise TraceError('invalid-export','One portable case is required per import')
@@ -69,6 +71,8 @@ def import_bundle(store, payload, sha256):
         unique={digest(raw):raw for raw in decoded.values()}
         additional=sum(len(raw) for sha,raw in unique.items() if db.execute('SELECT 1 FROM materials WHERE path=? AND deleted=0 LIMIT 1',(f'objects/{sha[:2]}/{sha}',)).fetchone() is None)
         if used+additional>limits['hard_bytes']:raise TraceError('disk-budget','Import would exceed managed hard budget')
+        from .workspace import admit
+        admit(store,additional+sum(len(canonical(d).encode())*2+8192 for _,d in prepared))
         for old,raw in decoded.items():
             sha=digest(raw);rel=f'objects/{sha[:2]}/{sha}';path=child_path(store.root,rel);path.parent.mkdir(exist_ok=True)
             if path.exists():

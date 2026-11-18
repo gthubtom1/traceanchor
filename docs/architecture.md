@@ -1,3 +1,5 @@
+> Historical core guide (0.1.x). For current FOUR-SOURCE-PRODUCT-R3 professional usage and whole-workspace governance, read [professional-guide.md](professional-guide.md), [r3-support.md](r3-support.md), [r3-maintenance.md](r3-maintenance.md), and goal/CONTRACT-R3.md. Old limited support statements are retained history, not the current capability matrix.
+
 # 架构、合同与实际能力
 
 适用版本：**TraceAnchor 0.1.1 有限能力首版**。本篇解释实现及冻结边界，不代替 [实施契约](IMPLEMENTATION-CONTRACT.md) 及实际生成的 [qualification.json](qualification.json)。用法见 [README](../README.md)。

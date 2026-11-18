@@ -12,8 +12,8 @@ import tarfile
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-EXCLUDE={'.git','.validation','dist','.venv','__pycache__'}
-BAD_PARTS={'.traceanchor-hosts','.mcp.json','.codex','.env','state.sqlite3','sources'}
+EXCLUDE={'.git','.validation','.coordination','assessments','dist','.venv','__pycache__'}
+BAD_PARTS={'.traceanchor-hosts','.mcp.json','.codex','.env','state.sqlite3','sources','.coordination','assessments'}
 PATTERNS={
  'private-path':re.compile(r'[A-Za-z]:[\\/](?:Users|Project)[\\/]|/(?:Users|home)/[A-Za-z0-9_.-]+/',re.I),
  'private-key':re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
@@ -73,7 +73,7 @@ def main():
             else:continue
             if any(set(Path(n).parts)&EXCLUDE for n in names):issues.append({'file':path.name,'kind':'archive-private-directory'})
             archives[path.name]={'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'size':path.stat().st_size,'files':len(names)}
-    report={'schema_version':1,'status':'pass' if not issues else 'fail','inventory':inventory,'artifacts':archives,'git_history':history,'issues':issues,'scope':'Explicit product tree excluding .git/.validation/dist/env/cache; common private path/key/token patterns and artifact inventory. Human review of origin, data and license is still required.','license_review':'Original MIT implementation; upstream mechanism-only study with no copied upstream code/assets/runtime, see docs/provenance/notices.md'}
+    report={'schema_version':1,'status':'pass' if not issues else 'fail','inventory':inventory,'artifacts':archives,'git_history':history,'issues':issues,'scope':'Explicit product tree excluding .git/.validation/.coordination/assessments/dist/env/cache; private assessment workspaces and collaboration locks remain local, public replay candidates are in examples/reconstruction; common private path/key/token patterns and artifact inventory. Human review of origin, data and license is still required.','license_review':'Original MIT implementation; upstream mechanism-only study with no copied upstream code/assets/runtime, see docs/provenance/notices.md'}
     destination.parent.mkdir(parents=True,exist_ok=True);destination.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'status':report['status'],'files':len(inventory),'artifacts':len(archives),'issues':issues}))
     return bool(issues)

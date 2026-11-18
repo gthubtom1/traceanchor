@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "origin_sha256": "38125468f676a2726a3d19d025ee6dd32840d931f5897f9c197f3af60a42c3d2",
+  "origin_local_reference": ".validation/development-f9a73296953d/qualification.json",
+  "disclosure": "Path-redacted structured evidence; raw local originals retained, hash identifies unmodified original. Redacted text is not claimed byte-identical to raw. Historical experiment identity remains distinct from final artifact qualification.",
+  "observed": {
+    "status": "pass-finite-development-and-version-reuse",
+    "parent_id": "case_c9d03040d4dc4bb2a055f19cbdeb07b7",
+    "child_id": "case_e6c9432d29e24a12ba47ec0b85f41546",
+    "old_result": "subtask_result_517caaf8c9904cedb6350a90e14fce2f",
+    "new_result": "subtask_result_509500d311364cb185febb8d247a76c7",
+    "parent_v1": "verdict_b9ef6feb30bd4b0b8484bd39a465b792",
+    "parent_v2": "verdict_16d1f9d889444a6c9616e07153cd23b3",
+    "old_parent_verification_became_stale": true,
+    "parent_client_sha256": "5fabdcdde77ab82da2c8e0f67cd859e50905cc0ca52f7891b78c8e1c5c13b618",
+    "parent_code_reused_byte_identical": true,
+    "incremental_scope": "V2 revisits pricing function and price observations; command grammar, error envelope and parent implementation reused with explicit version evidence",
+    "not_claimed": "This reviewed parent acceptance witness is not a blind independent reconstruction or proof of every backend input"
+  }
+}

@@ -11,6 +11,10 @@ def snapshot(store):
     with contextlib.closing(store.connect()) as db:
         if db.execute('SELECT 1 FROM leases LIMIT 1').fetchone():
             raise TraceError('resource-busy','Release or reconcile all active leases before maintenance')
+    from .workspace import admit
+    # Reserve a conservative staging+CAS estimate before making the local backup;
+    # admitted DB snapshots remain bounded and counted, including their staging.
+    admit(store,store.path.stat().st_size*2+65536)
     identity=new_id('checkpoint')
     directory=child_path(store.root,'checkpoints');directory.mkdir(exist_ok=True)
     temporary=directory/(identity+'.staging')

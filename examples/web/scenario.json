@@ -1,0 +1,10 @@
+{
+  "steps": [
+    {"id": "commit-before-reserve", "action": {"type": "commit"}},
+    {"id": "invalid-quantity", "action": {"type": "reserve", "quantity": 0}},
+    {"id": "stock-boundary", "action": {"type": "reserve", "quantity": 8}},
+    {"id": "reserve", "action": {"type": "reserve", "quantity": 3}},
+    {"id": "commit", "action": {"type": "commit"}},
+    {"id": "repeated-commit", "action": {"type": "commit"}}
+  ]
+}

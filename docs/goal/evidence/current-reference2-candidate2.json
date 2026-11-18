@@ -1,0 +1,2888 @@
+{
+  "disclosure": "Now-public finite replay, not a new blind-host assessment. Contains actual fixture inputs, independent comparator obligations, verdict binding and captures; raw originals retained locally.",
+  "summary": {
+    "pair": "reference2-candidate2",
+    "status": "pass",
+    "case_id": "case_8fd2d9d341e44a27a82991c60cadff11",
+    "verdict_id": "verdict_e7a6950d1ecf46f7a8fd9556930dc36f",
+    "candidate_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+    "reference_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+    "fixtures": 7,
+    "runs": 14
+  },
+  "spec": {
+    "acceptance_revision": 1,
+    "digest": "f9ba84683b2df691af6c50fe182cb814ae5cd69535341132b9f05716da72ccb7",
+    "evidence_ids": [
+      "observation_498f564e055a4e00bbc96705c55354e5"
+    ],
+    "fixtures": [
+      {
+        "id": "normal",
+        "state_from_last_json_line": true,
+        "stdin": "state\nreserve 3\nquote 250 0\ncancel 1\nstate\n",
+        "stdout_json_lines": true,
+        "test_environment": {
+          "TRACEANCHOR_PARCEL_ZONE": "local"
+        }
+      },
+      {
+        "id": "errors",
+        "state_from_last_json_line": true,
+        "stdin": "reserve 99\ncancel 1\nquote 0 0\nwhat\nstate\n",
+        "stdout_json_lines": true,
+        "test_environment": {
+          "TRACEANCHOR_PARCEL_ZONE": "local"
+        }
+      },
+      {
+        "id": "remote",
+        "state_from_last_json_line": true,
+        "stdin": "quote 501 1\nstate\n",
+        "stdout_json_lines": true,
+        "test_environment": {
+          "TRACEANCHOR_PARCEL_ZONE": "remote"
+        }
+      },
+      {
+        "id": "rounding-edges",
+        "state_from_last_json_line": true,
+        "stdin": "quote 499 0\nquote 500 0\nquote 501 0\nquote 19999 1\nquote 20000 1\nquote 20001 0\nstate\n",
+        "stdout_json_lines": true,
+        "test_environment": {
+          "TRACEANCHOR_PARCEL_ZONE": "local"
+        }
+      },
+      {
+        "id": "reservation-errors",
+        "state_from_last_json_line": true,
+        "stdin": "reserve 12\nreserve 1\ncancel 13\ncancel 12\nreserve 0\nreserve -2\ncancel 0\nstate\n",
+        "stdout_json_lines": true,
+        "test_environment": {
+          "TRACEANCHOR_PARCEL_ZONE": "local"
+        }
+      },
+      {
+        "id": "parsing-boundary",
+        "state_from_last_json_line": true,
+        "stdin": "\nreserve +2\ncancel +1\nquote 1\nreserve 3 trailing\nSTATE\nstate\n",
+        "stdout_json_lines": true,
+        "test_environment": {
+          "TRACEANCHOR_PARCEL_ZONE": "local"
+        }
+      },
+      {
+        "id": "formerly-sealed-final",
+        "state_from_last_json_line": true,
+        "stdin": "quote 1501 1\nreserve 11\nreserve 2\ncancel 4\nreserve 5\nquote -1 1\nquote 1 2\nstate\n",
+        "stdout_json_lines": true,
+        "test_environment": {
+          "TRACEANCHOR_PARCEL_ZONE": "remote"
+        }
+      }
+    ],
+    "plan": {
+      "obligations": [
+        {
+          "blocking": true,
+          "comparator": "json",
+          "dimension": "behavior",
+          "id": "outputs",
+          "selector": "decoded_stdout"
+        },
+        {
+          "blocking": true,
+          "comparator": "exact",
+          "dimension": "behavior",
+          "id": "exit",
+          "selector": "exit_code"
+        },
+        {
+          "blocking": true,
+          "comparator": "exact",
+          "dimension": "behavior",
+          "id": "stderr",
+          "selector": "stderr"
+        },
+        {
+          "blocking": true,
+          "comparator": "exact",
+          "dimension": "state",
+          "id": "state"
+        },
+        {
+          "blocking": true,
+          "comparator": "exact",
+          "dimension": "side-effects",
+          "id": "effects"
+        },
+        {
+          "blocking": true,
+          "comparator": "json-shape",
+          "dimension": "structure",
+          "id": "structure"
+        },
+        {
+          "blocking": false,
+          "comparator": "ppm",
+          "dimension": "visual",
+          "id": "visual",
+          "not_applicable_reason": "Frozen text-only protocol with no visual surface"
+        }
+      ]
+    },
+    "reference_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+    "requirements": [
+      "shipping prices",
+      "reservation state",
+      "error branches",
+      "integer boundaries"
+    ],
+    "scope": "Seven public replay sequences; not an unexposed assessment now"
+  },
+  "verdict": {
+    "binding": {
+      "candidate": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+      "case_contract": "7407440be475c6f07a522f577984c985a47333341f6622c09603dc67e0279234",
+      "comparator": "605853aab874bf3f18c9628aec4a0bb6453e9557ae5e7bfec529b31a0a9a7fea",
+      "engine": "da8ca075be62f5e36e32b820261565bb0646f1f9510b6ec53292af7df344026c",
+      "environment": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+      "fixtures": "314b799f5e5452771c9f0bf9d8d9466ac9c2017a7ffc5d40660da017895b48df",
+      "reference": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "runner": "20986bfdddeb350dab3ffe9bff64dd47d3b978e928439bd2994568d3d892262f",
+      "spec_digest": "f9ba84683b2df691af6c50fe182cb814ae5cd69535341132b9f05716da72ccb7"
+    },
+    "blocking_unknown_ids": [],
+    "candidate_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+    "created_at": 1794960266.6361518,
+    "current": true,
+    "pairs": [
+      {
+        "fixture_id": "normal",
+        "left": "observation_0c2abdb036b5480ab39e938fa3e062ac",
+        "result": {
+          "differences": [],
+          "limitations": [],
+          "obligations": [
+            {
+              "blocking": true,
+              "comparator": "json",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "decoded_stdout"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "outputs",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "exit_code"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "exit",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "stderr"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "stderr",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "state"
+              },
+              "differences": [],
+              "dimension": "state",
+              "id": "state",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "effects"
+              },
+              "differences": [],
+              "dimension": "side-effects",
+              "id": "effects",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "json-shape",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "structure"
+              },
+              "differences": [],
+              "dimension": "structure",
+              "id": "structure",
+              "status": "pass"
+            },
+            {
+              "blocking": false,
+              "coverage": {
+                "left_present": false,
+                "reason": "Frozen text-only protocol with no visual surface",
+                "right_present": false
+              },
+              "differences": [],
+              "dimension": "visual",
+              "id": "visual",
+              "not_applicable_reason": "Frozen text-only protocol with no visual surface",
+              "status": "not-applicable"
+            }
+          ],
+          "status": "pass"
+        },
+        "right": "observation_5d26675a81264cc9923dc829078bee9f"
+      },
+      {
+        "fixture_id": "errors",
+        "left": "observation_7fb2b91862434e7f8862bb3fad947eed",
+        "result": {
+          "differences": [],
+          "limitations": [],
+          "obligations": [
+            {
+              "blocking": true,
+              "comparator": "json",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "decoded_stdout"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "outputs",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "exit_code"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "exit",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "stderr"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "stderr",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "state"
+              },
+              "differences": [],
+              "dimension": "state",
+              "id": "state",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "effects"
+              },
+              "differences": [],
+              "dimension": "side-effects",
+              "id": "effects",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "json-shape",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "structure"
+              },
+              "differences": [],
+              "dimension": "structure",
+              "id": "structure",
+              "status": "pass"
+            },
+            {
+              "blocking": false,
+              "coverage": {
+                "left_present": false,
+                "reason": "Frozen text-only protocol with no visual surface",
+                "right_present": false
+              },
+              "differences": [],
+              "dimension": "visual",
+              "id": "visual",
+              "not_applicable_reason": "Frozen text-only protocol with no visual surface",
+              "status": "not-applicable"
+            }
+          ],
+          "status": "pass"
+        },
+        "right": "observation_49516c3336d240aeb9cdb68ea1d9b8a8"
+      },
+      {
+        "fixture_id": "remote",
+        "left": "observation_9a5579e99fba4e898b27e90b97bbaaff",
+        "result": {
+          "differences": [],
+          "limitations": [],
+          "obligations": [
+            {
+              "blocking": true,
+              "comparator": "json",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "decoded_stdout"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "outputs",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "exit_code"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "exit",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "stderr"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "stderr",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "state"
+              },
+              "differences": [],
+              "dimension": "state",
+              "id": "state",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "effects"
+              },
+              "differences": [],
+              "dimension": "side-effects",
+              "id": "effects",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "json-shape",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "structure"
+              },
+              "differences": [],
+              "dimension": "structure",
+              "id": "structure",
+              "status": "pass"
+            },
+            {
+              "blocking": false,
+              "coverage": {
+                "left_present": false,
+                "reason": "Frozen text-only protocol with no visual surface",
+                "right_present": false
+              },
+              "differences": [],
+              "dimension": "visual",
+              "id": "visual",
+              "not_applicable_reason": "Frozen text-only protocol with no visual surface",
+              "status": "not-applicable"
+            }
+          ],
+          "status": "pass"
+        },
+        "right": "observation_7690689e04b740afb64fbd63f6b1f858"
+      },
+      {
+        "fixture_id": "rounding-edges",
+        "left": "observation_11da740e853e477291f23395964a6aa7",
+        "result": {
+          "differences": [],
+          "limitations": [],
+          "obligations": [
+            {
+              "blocking": true,
+              "comparator": "json",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "decoded_stdout"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "outputs",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "exit_code"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "exit",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "stderr"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "stderr",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "state"
+              },
+              "differences": [],
+              "dimension": "state",
+              "id": "state",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "effects"
+              },
+              "differences": [],
+              "dimension": "side-effects",
+              "id": "effects",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "json-shape",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "structure"
+              },
+              "differences": [],
+              "dimension": "structure",
+              "id": "structure",
+              "status": "pass"
+            },
+            {
+              "blocking": false,
+              "coverage": {
+                "left_present": false,
+                "reason": "Frozen text-only protocol with no visual surface",
+                "right_present": false
+              },
+              "differences": [],
+              "dimension": "visual",
+              "id": "visual",
+              "not_applicable_reason": "Frozen text-only protocol with no visual surface",
+              "status": "not-applicable"
+            }
+          ],
+          "status": "pass"
+        },
+        "right": "observation_e4c1ba29c9b642019efe3118dc873f3a"
+      },
+      {
+        "fixture_id": "reservation-errors",
+        "left": "observation_07a8a7d03d90409294b32659b513fec9",
+        "result": {
+          "differences": [],
+          "limitations": [],
+          "obligations": [
+            {
+              "blocking": true,
+              "comparator": "json",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "decoded_stdout"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "outputs",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "exit_code"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "exit",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "stderr"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "stderr",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "state"
+              },
+              "differences": [],
+              "dimension": "state",
+              "id": "state",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "effects"
+              },
+              "differences": [],
+              "dimension": "side-effects",
+              "id": "effects",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "json-shape",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "structure"
+              },
+              "differences": [],
+              "dimension": "structure",
+              "id": "structure",
+              "status": "pass"
+            },
+            {
+              "blocking": false,
+              "coverage": {
+                "left_present": false,
+                "reason": "Frozen text-only protocol with no visual surface",
+                "right_present": false
+              },
+              "differences": [],
+              "dimension": "visual",
+              "id": "visual",
+              "not_applicable_reason": "Frozen text-only protocol with no visual surface",
+              "status": "not-applicable"
+            }
+          ],
+          "status": "pass"
+        },
+        "right": "observation_80084b9904ca482a9a8fb6ed7345d5ca"
+      },
+      {
+        "fixture_id": "parsing-boundary",
+        "left": "observation_125c76360a0b42a48f07da3e73cd19c1",
+        "result": {
+          "differences": [],
+          "limitations": [],
+          "obligations": [
+            {
+              "blocking": true,
+              "comparator": "json",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "decoded_stdout"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "outputs",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "exit_code"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "exit",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "stderr"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "stderr",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "state"
+              },
+              "differences": [],
+              "dimension": "state",
+              "id": "state",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "effects"
+              },
+              "differences": [],
+              "dimension": "side-effects",
+              "id": "effects",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "json-shape",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "structure"
+              },
+              "differences": [],
+              "dimension": "structure",
+              "id": "structure",
+              "status": "pass"
+            },
+            {
+              "blocking": false,
+              "coverage": {
+                "left_present": false,
+                "reason": "Frozen text-only protocol with no visual surface",
+                "right_present": false
+              },
+              "differences": [],
+              "dimension": "visual",
+              "id": "visual",
+              "not_applicable_reason": "Frozen text-only protocol with no visual surface",
+              "status": "not-applicable"
+            }
+          ],
+          "status": "pass"
+        },
+        "right": "observation_93d6cbdbb7124b4993d2807595f1625b"
+      },
+      {
+        "fixture_id": "formerly-sealed-final",
+        "left": "observation_b34f5fc2a53d4b5dbfaaa6981dbf1523",
+        "result": {
+          "differences": [],
+          "limitations": [],
+          "obligations": [
+            {
+              "blocking": true,
+              "comparator": "json",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "decoded_stdout"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "outputs",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "exit_code"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "exit",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "stderr"
+              },
+              "differences": [],
+              "dimension": "behavior",
+              "id": "stderr",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "state"
+              },
+              "differences": [],
+              "dimension": "state",
+              "id": "state",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "exact",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "effects"
+              },
+              "differences": [],
+              "dimension": "side-effects",
+              "id": "effects",
+              "status": "pass"
+            },
+            {
+              "blocking": true,
+              "comparator": "json-shape",
+              "coverage": {
+                "left_present": true,
+                "right_present": true,
+                "selector": "structure"
+              },
+              "differences": [],
+              "dimension": "structure",
+              "id": "structure",
+              "status": "pass"
+            },
+            {
+              "blocking": false,
+              "coverage": {
+                "left_present": false,
+                "reason": "Frozen text-only protocol with no visual surface",
+                "right_present": false
+              },
+              "differences": [],
+              "dimension": "visual",
+              "id": "visual",
+              "not_applicable_reason": "Frozen text-only protocol with no visual surface",
+              "status": "not-applicable"
+            }
+          ],
+          "status": "pass"
+        },
+        "right": "observation_eb074cc0108b423eb0e3ca30ad449872"
+      }
+    ],
+    "scope": "Only the frozen fixtures, observation surfaces and obligations; no global software equivalence",
+    "spec_id": "spec_b4c5600f73004c9ab836e638a89d8fe1",
+    "status": "pass"
+  },
+  "observations": {
+    "observation_0c2abdb036b5480ab39e938fa3e062ac": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          },
+          {
+            "available": 9,
+            "ok": true,
+            "reserved": 3
+          },
+          {
+            "cents": 350,
+            "ok": true,
+            "zone": 0
+          },
+          {
+            "available": 10,
+            "ok": true,
+            "reserved": 2
+          },
+          {
+            "available": 10,
+            "ok": true,
+            "reserved": 2
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.047,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "normal",
+          "state_from_last_json_line": true,
+          "stdin": "state\nreserve 3\nquote 250 0\ncancel 1\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "local"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 29112,
+        "process_status": "succeeded",
+        "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+        "source_role": "reference",
+        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "state": {
+          "protocol_snapshot": {
+            "available": 10,
+            "ok": true,
+            "reserved": 2
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"available\":12,\"reserved\":0}\r\n{\"ok\":true,\"available\":9,\"reserved\":3}\r\n{\"ok\":true,\"cents\":350,\"zone\":0}\r\n{\"ok\":true,\"available\":10,\"reserved\":2}\r\n{\"ok\":true,\"available\":10,\"reserved\":2}\r\n",
+        "stdout_sha256": "7b524ed3d3797aec3ebe898c77e32c2de81ad0acdc0739cb36c6077942620220",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "cents": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "zone": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 12696,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_0e92432a9fcb4fcf9a62b57d8ec12a5c",
+      "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "stderr_material": "material_862e1c957af84079a0d7ea19da0ff8da",
+      "stdout_material": "material_1840d9569ffd4cf9b491545b17514b4d",
+      "trust": "local-managed-execution"
+    },
+    "observation_5d26675a81264cc9923dc829078bee9f": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          },
+          {
+            "available": 9,
+            "ok": true,
+            "reserved": 3
+          },
+          {
+            "cents": 350,
+            "ok": true,
+            "zone": 0
+          },
+          {
+            "available": 10,
+            "ok": true,
+            "reserved": 2
+          },
+          {
+            "available": 10,
+            "ok": true,
+            "reserved": 2
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.063,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "normal",
+          "state_from_last_json_line": true,
+          "stdin": "state\nreserve 3\nquote 250 0\ncancel 1\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "local"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 24056,
+        "process_status": "succeeded",
+        "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+        "source_role": "candidate",
+        "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+        "state": {
+          "protocol_snapshot": {
+            "available": 10,
+            "ok": true,
+            "reserved": 2
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"available\":12,\"reserved\":0}\r\n{\"ok\":true,\"available\":9,\"reserved\":3}\r\n{\"ok\":true,\"cents\":350,\"zone\":0}\r\n{\"ok\":true,\"available\":10,\"reserved\":2}\r\n{\"ok\":true,\"available\":10,\"reserved\":2}\r\n",
+        "stdout_sha256": "7b524ed3d3797aec3ebe898c77e32c2de81ad0acdc0739cb36c6077942620220",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "cents": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "zone": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 35432,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_68d0eee749c74d31af07933c17f9a78c",
+      "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+      "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+      "stderr_material": "material_0b77c862f5624f519994ad717d6b0869",
+      "stdout_material": "material_c7c08ceb2a044c779ccab30a23a3ea23",
+      "trust": "local-managed-execution"
+    },
+    "observation_7fb2b91862434e7f8862bb3fad947eed": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "error": "stock",
+            "ok": false
+          },
+          {
+            "error": "reservation",
+            "ok": false
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "error": "operation",
+            "ok": false
+          },
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.062,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "errors",
+          "state_from_last_json_line": true,
+          "stdin": "reserve 99\ncancel 1\nquote 0 0\nwhat\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "local"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 25916,
+        "process_status": "succeeded",
+        "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+        "source_role": "reference",
+        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "state": {
+          "protocol_snapshot": {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":false,\"error\":\"stock\"}\r\n{\"ok\":false,\"error\":\"reservation\"}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":false,\"error\":\"operation\"}\r\n{\"ok\":true,\"available\":12,\"reserved\":0}\r\n",
+        "stdout_sha256": "6fde43e06e34c0e527e17aa537b28f53e3d6a694d5b5bcf850446b4a530a4551",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "error": {
+                  "type": "string"
+                },
+                "ok": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 29600,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_9fa7bda6bd0b44ca87bc70bcee7a3368",
+      "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "stderr_material": "material_b1e4568bced84b0b98b72a08d8a66385",
+      "stdout_material": "material_bbfa71bf194f4b328ea18518a0e16a7e",
+      "trust": "local-managed-execution"
+    },
+    "observation_49516c3336d240aeb9cdb68ea1d9b8a8": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "error": "stock",
+            "ok": false
+          },
+          {
+            "error": "reservation",
+            "ok": false
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "error": "operation",
+            "ok": false
+          },
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.078,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "errors",
+          "state_from_last_json_line": true,
+          "stdin": "reserve 99\ncancel 1\nquote 0 0\nwhat\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "local"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 21096,
+        "process_status": "succeeded",
+        "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+        "source_role": "candidate",
+        "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+        "state": {
+          "protocol_snapshot": {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":false,\"error\":\"stock\"}\r\n{\"ok\":false,\"error\":\"reservation\"}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":false,\"error\":\"operation\"}\r\n{\"ok\":true,\"available\":12,\"reserved\":0}\r\n",
+        "stdout_sha256": "6fde43e06e34c0e527e17aa537b28f53e3d6a694d5b5bcf850446b4a530a4551",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "error": {
+                  "type": "string"
+                },
+                "ok": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 6924,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_1fef48e9ce744bc5b9e210ed3d1f7b36",
+      "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+      "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+      "stderr_material": "material_9b2b7d355cff4c9a91e6e1e7bc7c78db",
+      "stdout_material": "material_1298142841754faa93f7203db1adcc98",
+      "trust": "local-managed-execution"
+    },
+    "observation_9a5579e99fba4e898b27e90b97bbaaff": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "cents": 985,
+            "ok": true,
+            "zone": 2
+          },
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.047,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "remote",
+          "state_from_last_json_line": true,
+          "stdin": "quote 501 1\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "remote"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 37228,
+        "process_status": "succeeded",
+        "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+        "source_role": "reference",
+        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "state": {
+          "protocol_snapshot": {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"cents\":985,\"zone\":2}\r\n{\"ok\":true,\"available\":12,\"reserved\":0}\r\n",
+        "stdout_sha256": "a43390c8b7b12dbf1afaeac8c63356139013991a1fcbfafbc2ac80c76ec39b62",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "cents": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "zone": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 39144,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_6d371f2e8f9b4c4b8a138367b739395f",
+      "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "stderr_material": "material_ff7f038f1dab4d73983f333ce280066a",
+      "stdout_material": "material_bb9654dec8ab49b0a0e794a3ea925504",
+      "trust": "local-managed-execution"
+    },
+    "observation_7690689e04b740afb64fbd63f6b1f858": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "cents": 985,
+            "ok": true,
+            "zone": 2
+          },
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.078,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "remote",
+          "state_from_last_json_line": true,
+          "stdin": "quote 501 1\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "remote"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 6204,
+        "process_status": "succeeded",
+        "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+        "source_role": "candidate",
+        "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+        "state": {
+          "protocol_snapshot": {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"cents\":985,\"zone\":2}\r\n{\"ok\":true,\"available\":12,\"reserved\":0}\r\n",
+        "stdout_sha256": "a43390c8b7b12dbf1afaeac8c63356139013991a1fcbfafbc2ac80c76ec39b62",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "cents": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "zone": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 20036,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_f6085acac4ab41c198023891833595cd",
+      "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+      "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+      "stderr_material": "material_6a072a2dc0b045b28c752dfa6b7da1dd",
+      "stdout_material": "material_b6eb64a4af2d4b73a1a864d6be70a6b3",
+      "trust": "local-managed-execution"
+    },
+    "observation_11da740e853e477291f23395964a6aa7": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "cents": 350,
+            "ok": true,
+            "zone": 0
+          },
+          {
+            "cents": 350,
+            "ok": true,
+            "zone": 0
+          },
+          {
+            "cents": 425,
+            "ok": true,
+            "zone": 0
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.063,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "rounding-edges",
+          "state_from_last_json_line": true,
+          "stdin": "quote 499 0\nquote 500 0\nquote 501 0\nquote 19999 1\nquote 20000 1\nquote 20001 0\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "local"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 35864,
+        "process_status": "succeeded",
+        "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+        "source_role": "reference",
+        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "state": {
+          "protocol_snapshot": {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"cents\":350,\"zone\":0}\r\n{\"ok\":true,\"cents\":350,\"zone\":0}\r\n{\"ok\":true,\"cents\":425,\"zone\":0}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":true,\"available\":12,\"reserved\":0}\r\n",
+        "stdout_sha256": "6094d81e17d488f2598dad9beaff8364cc9e893025bb2614e05ef3e5a563f94e",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "cents": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "zone": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "error": {
+                  "type": "string"
+                },
+                "ok": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 31688,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_fe058a73bb2e490d94e693e5ba778f51",
+      "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "stderr_material": "material_43eb5234c5724905ae701ee0da768790",
+      "stdout_material": "material_f3bfd8cb731b4b07a621a0493bab5f91",
+      "trust": "local-managed-execution"
+    },
+    "observation_e4c1ba29c9b642019efe3118dc873f3a": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "cents": 350,
+            "ok": true,
+            "zone": 0
+          },
+          {
+            "cents": 350,
+            "ok": true,
+            "zone": 0
+          },
+          {
+            "cents": 425,
+            "ok": true,
+            "zone": 0
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.078,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "rounding-edges",
+          "state_from_last_json_line": true,
+          "stdin": "quote 499 0\nquote 500 0\nquote 501 0\nquote 19999 1\nquote 20000 1\nquote 20001 0\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "local"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 13696,
+        "process_status": "succeeded",
+        "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+        "source_role": "candidate",
+        "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+        "state": {
+          "protocol_snapshot": {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"cents\":350,\"zone\":0}\r\n{\"ok\":true,\"cents\":350,\"zone\":0}\r\n{\"ok\":true,\"cents\":425,\"zone\":0}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":true,\"available\":12,\"reserved\":0}\r\n",
+        "stdout_sha256": "6094d81e17d488f2598dad9beaff8364cc9e893025bb2614e05ef3e5a563f94e",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "cents": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "zone": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "error": {
+                  "type": "string"
+                },
+                "ok": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 21556,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_74c7a4e7254a43109ef3164d4055cbcf",
+      "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+      "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+      "stderr_material": "material_86b632d4d6bb44c79915abff00c57ce6",
+      "stdout_material": "material_b3ebca96409b4f6ca7b42e93231ba539",
+      "trust": "local-managed-execution"
+    },
+    "observation_07a8a7d03d90409294b32659b513fec9": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "available": 0,
+            "ok": true,
+            "reserved": 12
+          },
+          {
+            "error": "stock",
+            "ok": false
+          },
+          {
+            "error": "reservation",
+            "ok": false
+          },
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          },
+          {
+            "error": "stock",
+            "ok": false
+          },
+          {
+            "error": "stock",
+            "ok": false
+          },
+          {
+            "error": "reservation",
+            "ok": false
+          },
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.062,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "reservation-errors",
+          "state_from_last_json_line": true,
+          "stdin": "reserve 12\nreserve 1\ncancel 13\ncancel 12\nreserve 0\nreserve -2\ncancel 0\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "local"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 25020,
+        "process_status": "succeeded",
+        "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+        "source_role": "reference",
+        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "state": {
+          "protocol_snapshot": {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"available\":0,\"reserved\":12}\r\n{\"ok\":false,\"error\":\"stock\"}\r\n{\"ok\":false,\"error\":\"reservation\"}\r\n{\"ok\":true,\"available\":12,\"reserved\":0}\r\n{\"ok\":false,\"error\":\"stock\"}\r\n{\"ok\":false,\"error\":\"stock\"}\r\n{\"ok\":false,\"error\":\"reservation\"}\r\n{\"ok\":true,\"available\":12,\"reserved\":0}\r\n",
+        "stdout_sha256": "7472a0529ae4d2bff41a7b1bcbd2191980632add5657d5f74234ed0be62a0c23",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "error": {
+                  "type": "string"
+                },
+                "ok": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 43596,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_ee5fa74d6a7e483dae8ba1c0069e493f",
+      "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "stderr_material": "material_d4e1643d83e04f148708dfff9970cb85",
+      "stdout_material": "material_674065b0c193434cbf3a9d4bca6cc0ad",
+      "trust": "local-managed-execution"
+    },
+    "observation_80084b9904ca482a9a8fb6ed7345d5ca": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "available": 0,
+            "ok": true,
+            "reserved": 12
+          },
+          {
+            "error": "stock",
+            "ok": false
+          },
+          {
+            "error": "reservation",
+            "ok": false
+          },
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          },
+          {
+            "error": "stock",
+            "ok": false
+          },
+          {
+            "error": "stock",
+            "ok": false
+          },
+          {
+            "error": "reservation",
+            "ok": false
+          },
+          {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.078,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "reservation-errors",
+          "state_from_last_json_line": true,
+          "stdin": "reserve 12\nreserve 1\ncancel 13\ncancel 12\nreserve 0\nreserve -2\ncancel 0\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "local"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 26816,
+        "process_status": "succeeded",
+        "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+        "source_role": "candidate",
+        "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+        "state": {
+          "protocol_snapshot": {
+            "available": 12,
+            "ok": true,
+            "reserved": 0
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"available\":0,\"reserved\":12}\r\n{\"ok\":false,\"error\":\"stock\"}\r\n{\"ok\":false,\"error\":\"reservation\"}\r\n{\"ok\":true,\"available\":12,\"reserved\":0}\r\n{\"ok\":false,\"error\":\"stock\"}\r\n{\"ok\":false,\"error\":\"stock\"}\r\n{\"ok\":false,\"error\":\"reservation\"}\r\n{\"ok\":true,\"available\":12,\"reserved\":0}\r\n",
+        "stdout_sha256": "7472a0529ae4d2bff41a7b1bcbd2191980632add5657d5f74234ed0be62a0c23",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "error": {
+                  "type": "string"
+                },
+                "ok": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 7944,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_7085bafe59d248138208da6ba8f5199e",
+      "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+      "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+      "stderr_material": "material_515d5ef516f046e9a3a31883f3be6d52",
+      "stdout_material": "material_6fa700326a4d470d92212ba8830f409b",
+      "trust": "local-managed-execution"
+    },
+    "observation_125c76360a0b42a48f07da3e73cd19c1": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "available": 10,
+            "ok": true,
+            "reserved": 2
+          },
+          {
+            "available": 11,
+            "ok": true,
+            "reserved": 1
+          },
+          {
+            "cents": 350,
+            "ok": true,
+            "zone": 0
+          },
+          {
+            "available": 8,
+            "ok": true,
+            "reserved": 4
+          },
+          {
+            "error": "operation",
+            "ok": false
+          },
+          {
+            "available": 8,
+            "ok": true,
+            "reserved": 4
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.062,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "parsing-boundary",
+          "state_from_last_json_line": true,
+          "stdin": "\nreserve +2\ncancel +1\nquote 1\nreserve 3 trailing\nSTATE\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "local"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 20156,
+        "process_status": "succeeded",
+        "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+        "source_role": "reference",
+        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "state": {
+          "protocol_snapshot": {
+            "available": 8,
+            "ok": true,
+            "reserved": 4
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"available\":10,\"reserved\":2}\r\n{\"ok\":true,\"available\":11,\"reserved\":1}\r\n{\"ok\":true,\"cents\":350,\"zone\":0}\r\n{\"ok\":true,\"available\":8,\"reserved\":4}\r\n{\"ok\":false,\"error\":\"operation\"}\r\n{\"ok\":true,\"available\":8,\"reserved\":4}\r\n",
+        "stdout_sha256": "4d334c07b9c384e727b83d6c749a9f70f48ec10b26b7a84355cb7217ed73fe27",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "cents": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "zone": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "error": {
+                  "type": "string"
+                },
+                "ok": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 44224,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_b6cd434e65354be9ad16fdd2e5da0180",
+      "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "stderr_material": "material_96ea331b38454fe683772a289a06f441",
+      "stdout_material": "material_e6d224cba206432f9ee2317aa2a82803",
+      "trust": "local-managed-execution"
+    },
+    "observation_93d6cbdbb7124b4993d2807595f1625b": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "available": 10,
+            "ok": true,
+            "reserved": 2
+          },
+          {
+            "available": 11,
+            "ok": true,
+            "reserved": 1
+          },
+          {
+            "cents": 350,
+            "ok": true,
+            "zone": 0
+          },
+          {
+            "available": 8,
+            "ok": true,
+            "reserved": 4
+          },
+          {
+            "error": "operation",
+            "ok": false
+          },
+          {
+            "available": 8,
+            "ok": true,
+            "reserved": 4
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.078,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "parsing-boundary",
+          "state_from_last_json_line": true,
+          "stdin": "\nreserve +2\ncancel +1\nquote 1\nreserve 3 trailing\nSTATE\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "local"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 19236,
+        "process_status": "succeeded",
+        "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+        "source_role": "candidate",
+        "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+        "state": {
+          "protocol_snapshot": {
+            "available": 8,
+            "ok": true,
+            "reserved": 4
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"available\":10,\"reserved\":2}\r\n{\"ok\":true,\"available\":11,\"reserved\":1}\r\n{\"ok\":true,\"cents\":350,\"zone\":0}\r\n{\"ok\":true,\"available\":8,\"reserved\":4}\r\n{\"ok\":false,\"error\":\"operation\"}\r\n{\"ok\":true,\"available\":8,\"reserved\":4}\r\n",
+        "stdout_sha256": "4d334c07b9c384e727b83d6c749a9f70f48ec10b26b7a84355cb7217ed73fe27",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "cents": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "zone": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "error": {
+                  "type": "string"
+                },
+                "ok": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 43492,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_4c306470142e49d998004299f488993b",
+      "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+      "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+      "stderr_material": "material_73dac6a576894b7a87824749a036d248",
+      "stdout_material": "material_f9cf82b75d0e4b1fa9fa9837bfa33af3",
+      "trust": "local-managed-execution"
+    },
+    "observation_b34f5fc2a53d4b5dbfaaa6981dbf1523": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "cents": 1175,
+            "ok": true,
+            "zone": 2
+          },
+          {
+            "available": 1,
+            "ok": true,
+            "reserved": 11
+          },
+          {
+            "error": "stock",
+            "ok": false
+          },
+          {
+            "available": 5,
+            "ok": true,
+            "reserved": 7
+          },
+          {
+            "available": 0,
+            "ok": true,
+            "reserved": 12
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "available": 0,
+            "ok": true,
+            "reserved": 12
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.063,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "formerly-sealed-final",
+          "state_from_last_json_line": true,
+          "stdin": "quote 1501 1\nreserve 11\nreserve 2\ncancel 4\nreserve 5\nquote -1 1\nquote 1 2\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "remote"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 19824,
+        "process_status": "succeeded",
+        "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+        "source_role": "reference",
+        "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+        "state": {
+          "protocol_snapshot": {
+            "available": 0,
+            "ok": true,
+            "reserved": 12
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"cents\":1175,\"zone\":2}\r\n{\"ok\":true,\"available\":1,\"reserved\":11}\r\n{\"ok\":false,\"error\":\"stock\"}\r\n{\"ok\":true,\"available\":5,\"reserved\":7}\r\n{\"ok\":true,\"available\":0,\"reserved\":12}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":true,\"available\":0,\"reserved\":12}\r\n",
+        "stdout_sha256": "04960bad1ee03137c807a97f6b3d8f58ef647ca3e1851ca013c8d7087145679d",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "cents": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "zone": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "error": {
+                  "type": "string"
+                },
+                "ok": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 30248,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_0b4739824f91446596bb1d25b29d8619",
+      "source_id": "source_ea2656b5e99f44c9af13a7e8534e9a43",
+      "source_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "stderr_material": "material_136efcad89fb45edb274362481110e43",
+      "stdout_material": "material_c6ce497afa0f486caff1bf14cf43a2e4",
+      "trust": "local-managed-execution"
+    },
+    "observation_eb074cc0108b423eb0e3ca30ad449872": {
+      "capture": {
+        "cleanup": {
+          "details": [
+            "job active process count confirmed zero"
+          ],
+          "state": "complete"
+        },
+        "containment": "windows-job",
+        "coverage": {
+          "filesystem_scope": "owned-workdir-only",
+          "input_sequences": 1,
+          "network_observed": false
+        },
+        "decoded_stdout": [
+          {
+            "cents": 1175,
+            "ok": true,
+            "zone": 2
+          },
+          {
+            "available": 1,
+            "ok": true,
+            "reserved": 11
+          },
+          {
+            "error": "stock",
+            "ok": false
+          },
+          {
+            "available": 5,
+            "ok": true,
+            "reserved": 7
+          },
+          {
+            "available": 0,
+            "ok": true,
+            "reserved": 12
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "error": "weight-or-priority",
+            "ok": false
+          },
+          {
+            "available": 0,
+            "ok": true,
+            "reserved": 12
+          }
+        ],
+        "effects": {},
+        "effects_complete": true,
+        "elapsed_seconds": 0.063,
+        "error": null,
+        "exit_code": 0,
+        "fixture": {
+          "id": "formerly-sealed-final",
+          "state_from_last_json_line": true,
+          "stdin": "quote 1501 1\nreserve 11\nreserve 2\ncancel 4\nreserve 5\nquote -1 1\nquote 1 2\nstate\n",
+          "stdout_json_lines": true,
+          "test_environment": {
+            "TRACEANCHOR_PARCEL_ZONE": "remote"
+          }
+        },
+        "limitations": [
+          "No assertion about filesystem writes outside the declared working directory or network side effects"
+        ],
+        "output_truncated": false,
+        "pid": 9156,
+        "process_status": "succeeded",
+        "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+        "source_role": "candidate",
+        "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+        "state": {
+          "protocol_snapshot": {
+            "available": 0,
+            "ok": true,
+            "reserved": 12
+          }
+        },
+        "status": "completed",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "{\"ok\":true,\"cents\":1175,\"zone\":2}\r\n{\"ok\":true,\"available\":1,\"reserved\":11}\r\n{\"ok\":false,\"error\":\"stock\"}\r\n{\"ok\":true,\"available\":5,\"reserved\":7}\r\n{\"ok\":true,\"available\":0,\"reserved\":12}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":false,\"error\":\"weight-or-priority\"}\r\n{\"ok\":true,\"available\":0,\"reserved\":12}\r\n",
+        "stdout_sha256": "04960bad1ee03137c807a97f6b3d8f58ef647ca3e1851ca013c8d7087145679d",
+        "structure": {
+          "items": [
+            {
+              "properties": {
+                "available": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "reserved": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "cents": {
+                  "type": "number"
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "zone": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "error": {
+                  "type": "string"
+                },
+                "ok": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "target_pid": 14232,
+        "utf8_complete": true,
+        "visual": null
+      },
+      "environment": {
+        "architecture": "AMD64",
+        "digest": "124f6fe63f3177619cc0269cc05ffd10eecc687b2212a83f4f0fc3bc020ae4a5",
+        "encoding": "utf-8",
+        "executable_sha256": "42ac541168e97dedb9aabd8be335539fc41c682e414b9e8d137b164fb68683b0",
+        "limitations": [
+          "Process containment is not an OS filesystem or network sandbox; ambient library/system dependencies are not fully sealed"
+        ],
+        "os": "win32",
+        "python": [
+          3,
+          12,
+          0
+        ],
+        "runner_version": "0.2.0"
+      },
+      "producer": "managed-runner-0.2.0",
+      "run_id": "run_2dd7be5dfaad48f795545edc2b829493",
+      "source_id": "source_84a9f6096af74c7290bbee1cf3bc8a00",
+      "source_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+      "stderr_material": "material_a075add16bf541e39814900df41353e2",
+      "stdout_material": "material_d1c165422def4fdea3f2cc19e4f2fc3c",
+      "trust": "local-managed-execution"
+    }
+  }
+}

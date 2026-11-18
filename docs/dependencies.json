@@ -1,12 +1,75 @@
 {
   "schema_version": 1,
-  "runtime": {"python": ">=3.11", "third_party_packages": [], "implementation": "Python standard library supplied by the user's selected interpreter"},
-  "build": {"backend": "_build.py", "pep517_requires": [], "network_required_by_backend": false, "installer": "pip in the selected isolated environment"},
-  "optional_external_tools": {"automatically_installed": [], "qualified_debugger_decompiler_browser_adapters": [], "host_models": "Owned and paid for by the selected host, not called by the product"},
+  "runtime": {
+    "python": ">=3.11",
+    "third_party_packages": [],
+    "implementation": "Python standard library supplied by the user's selected interpreter"
+  },
+  "build": {
+    "backend": "_build.py",
+    "pep517_requires": [],
+    "network_required_by_backend": false,
+    "installer": "pip in the selected isolated environment"
+  },
+  "optional_external_tools": {
+    "automatically_installed": [],
+    "qualified_debugger_decompiler_browser_adapters": [
+      {
+        "name": "GNU objdump/GDB/GCC",
+        "tested_versions": [
+          "2.45",
+          "16.3",
+          "15.2.0"
+        ],
+        "license": "GNU GPL tool licenses; user-supplied executables, not redistributed",
+        "purpose": "Native build, actual disassembly and breakpoint callbacks"
+      },
+      {
+        "name": "JADX",
+        "tested_version": "1.5.6",
+        "license": "Apache-2.0 installed LICENSE verified",
+        "purpose": "DEX/APK semantic decompilation with explicit CLI and local cache/home"
+      },
+      {
+        "name": "Java/Android Build-Tools",
+        "tested_versions": [
+          "Temurin21.0.12.1",
+          "Build-Tools34.0.0/D8 8.2.2-dev"
+        ],
+        "license": "User-installed JDK and Android SDK components; no binaries/jars redistributed",
+        "purpose": "Optional self-created APK build and bytecode cross-check"
+      },
+      {
+        "name": "Node",
+        "tested_version": "24.20.0",
+        "license": "Node distribution license; not redistributed",
+        "purpose": "Inspector-based finite JS interaction/state/local HTTP; not browser DOM"
+      }
+    ],
+    "host_models": "Owned and paid for by the selected host, not called by the product"
+  },
   "ci_only": [
-    {"source":"https://github.com/actions/checkout","tag":"v4","commit":"11d5960a326750d5838078e36cf38b85af677262","purpose":"Checkout the product repository in CI","review":"Official repository/tag resolved through GitHub API; action executes in CI only"},
-    {"source":"https://github.com/actions/setup-python","tag":"v5","commit":"a26af69be951a213d495a4c3e4e4022e16d87065","purpose":"Select Python on hosted CI runners","review":"Official repository/tag resolved through GitHub API; no local global interpreter installation"},
-    {"source":"https://github.com/actions/upload-artifact","tag":"v4","commit":"ea165f8d65b6e75b540449e92b4886f43607fa02","purpose":"Retain public qualification/build results","review":"Official repository/tag resolved through GitHub API; only explicitly listed public files uploaded"}
+    {
+      "source": "https://github.com/actions/checkout",
+      "tag": "v4",
+      "commit": "11d5960a326750d5838078e36cf38b85af677262",
+      "purpose": "Checkout the product repository in CI",
+      "review": "Official repository/tag resolved through GitHub API; action executes in CI only"
+    },
+    {
+      "source": "https://github.com/actions/setup-python",
+      "tag": "v5",
+      "commit": "a26af69be951a213d495a4c3e4e4022e16d87065",
+      "purpose": "Select Python on hosted CI runners",
+      "review": "Official repository/tag resolved through GitHub API; no local global interpreter installation"
+    },
+    {
+      "source": "https://github.com/actions/upload-artifact",
+      "tag": "v4",
+      "commit": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "purpose": "Retain public qualification/build results",
+      "review": "Official repository/tag resolved through GitHub API; only explicitly listed public files uploaded"
+    }
   ],
   "distribution": "No upstream source copies, binaries, providers, prompts, fonts, icons or host credentials; see provenance/notices.md"
 }

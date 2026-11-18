@@ -56,6 +56,8 @@ class ProtocolTests(unittest.TestCase):
 
     def test_initialize_negotiates_and_requires_initialized(self):
         out = self.invoke([initialize("future"), request("tools/list", 2), ready()[1], request("tools/list", 3)])
+        from traceanchor import __version__
+        self.assertEqual(out[0]["result"]["serverInfo"]["version"], __version__)
         self.assertEqual(out[0]["result"]["protocolVersion"], mcp.PROTOCOL_VERSIONS[0])
         self.assertEqual(out[1]["error"]["code"], -32600)
         self.assertEqual(len(out[2]["result"]["tools"]), len(mcp.TOOL_GROUPS))

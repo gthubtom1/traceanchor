@@ -15,7 +15,7 @@ import uuid
 from pathlib import Path
 
 SCHEMA_VERSION = 1
-RECORD_KINDS = frozenset({"case", "source", "observation", "spec", "run", "verdict", "unknown", "route", "subtask-result", "gc", "checkpoint"})
+RECORD_KINDS = frozenset({"case", "source", "observation", "spec", "run", "verdict", "unknown", "route", "subtask-result", "gc", "checkpoint", "workspace-item", "reservation"})
 DEFAULT_LIMITS = {"hard_bytes": 256 * 1024 * 1024, "soft_bytes": 192 * 1024 * 1024, "temp_bytes": 64 * 1024 * 1024}
 
 
@@ -61,12 +61,28 @@ def new_id(kind):
     return kind.replace("-", "_") + "_" + uuid.uuid4().hex
 
 
+def io_path(path):
+    """Native Windows long-path spelling for IO only, never logical identities.
+
+    Keep normal relative paths in records and tool commands. This neither grants
+    ownership nor bypasses no_links/child_path checks.
+    """
+    path = Path(os.path.abspath(path))
+    text = str(path)
+    prefix = chr(92) * 2 + '?' + chr(92)
+    if os.name != 'nt' or text.startswith(prefix):
+        return path
+    if text.startswith(chr(92) * 2):
+        return Path(prefix + 'UNC' + chr(92) + text[2:])
+    return Path(prefix + text)
+
+
 def no_links(path):
     """Reject symlinks and Windows reparse/junction ancestors before resolving."""
     path = Path(os.path.abspath(path))
     for part in [*reversed(path.parents), path]:
         try:
-            info = part.lstat()
+            info = io_path(part).lstat()
         except FileNotFoundError:
             continue
         if stat.S_ISLNK(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
@@ -86,18 +102,19 @@ def child_path(root, relative):
 
 def read_regular(path, limit=64 * 1024 * 1024):
     path = no_links(path)
+    native = io_path(path)
     try:
-        info = path.stat()
+        info = native.stat()
         if not stat.S_ISREG(info.st_mode):
             raise TraceError("invalid-input", "Only regular files are accepted")
         if info.st_size > limit:
             raise TraceError("over-limit", "File exceeds the admitted read budget", {"size": info.st_size, "limit": limit})
         flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
-        with os.fdopen(os.open(path, flags), "rb") as stream:
+        with os.fdopen(os.open(native, flags), "rb") as stream:
             initial = os.fstat(stream.fileno())
             data = stream.read(limit + 1)
             after = os.fstat(stream.fileno())
-        current = path.stat()
+        current = native.stat()
         # Python 3.12 Windows fstat exposes change time while stat may expose
         # creation time as st_ctime; do not compare incompatible clock meanings.
         identity = lambda s: (s.st_dev, s.st_ino, s.st_size, s.st_mtime_ns) + (() if os.name == "nt" else (s.st_ctime_ns,))
@@ -204,6 +221,9 @@ class Store:
         text = canonical(data)
         if len(text.encode("utf-8")) > 4 * 1024 * 1024:
             raise TraceError("over-limit", "Record exceeds 4MiB; put large bytes in material storage")
+        from .workspace import admit
+        if kind not in {'gc','reservation','workspace-item'}:
+            admit(self,len(text.encode('utf-8'))+8192)
         with self.transaction() as db:
             if case_id is not None and db.execute("SELECT id FROM records WHERE kind='case' AND id=?", (case_id,)).fetchone() is None:
                 raise TraceError("not-found", "Case was not found")
@@ -299,6 +319,10 @@ class Store:
             exists = path.exists()
             registered = db.execute("SELECT 1 FROM materials WHERE path=? AND deleted=0 LIMIT 1", (relative,)).fetchone()
             extra = 0 if registered else len(data)
+            from .workspace import admit
+            # The same transaction serializes all product object admissions, not
+            # only CAS quota. Include actual database/work/checkpoints/unknown.
+            admit(self,extra)
             if used + extra > limits["hard_bytes"]:
                 raise TraceError("disk-budget", "Managed material hard budget exceeded; preserve evidence and clean eligible L3 first", {"used": used, "requested": extra, "hard_bytes": limits["hard_bytes"]})
             if tier == "L3":
@@ -319,6 +343,11 @@ class Store:
                 except OSError as exc:
                     raise TraceError("write-error", "Material write failed; any partial object is not admitted", {"error": str(exc)}) from exc
             db.execute("INSERT INTO materials(id,case_id,run_id,path,sha256,size,tier,reason,created,metadata) VALUES(?,?,?,?,?,?,?,?,?,?)", (material_id, case_id, run_id, relative, sha, len(data), tier, reason, time.time(), canonical(metadata or {})))
+            if (metadata or {}).get('recovery_use'):
+                owner = run_id or case_id
+                if not owner or db.execute('SELECT 1 FROM records WHERE id=?', (owner,)).fetchone() is None:
+                    raise TraceError('recovery-owner-required', 'Recovery payload requires a durable case or run owner')
+                db.execute('INSERT INTO refs VALUES(?,?,?)', (owner, material_id, 'recovery-protection'))
         return self.material(material_id)
 
     def material(self, identity):

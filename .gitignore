@@ -2,6 +2,7 @@ __pycache__/
 *.py[cod]
 .venv/
 .validation/
+.coordination/
 dist/
 *.egg-info/
 .traceanchor/
@@ -11,3 +12,4 @@ dist/
 .env
 .env.*
 *.sqlite3*
+assessments/

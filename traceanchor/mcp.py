@@ -5,6 +5,8 @@ Event. There is deliberately no executor submission queue.
 """
 from __future__ import annotations
 
+from . import __version__ as VERSION
+
 import contextlib
 import json
 import sys
@@ -17,13 +19,13 @@ JOIN_SECONDS = 1.0
 PROTOCOL_VERSIONS = ("2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05")
 TOOL_GROUPS = {
     "traceanchor_case": ("case.create", "case.get", "case.list", "case.revise", "case.close", "subtask.create", "subtask.result"),
-    "traceanchor_source": ("source.add", "source.get", "source.refresh", "source.derive", "analyze", "version-diff"),
+    "traceanchor_source": ("source.add", "source.get", "source.refresh", "source.derive", "analyze", "version-diff", "professional.run"),
     "traceanchor_research": ("observability.set", "observe.http", "plan", "unknown.add", "unknown.resolve", "report"),
     "traceanchor_spec": ("spec.freeze", "spec.get", "compare", "verify"),
     "traceanchor_run": ("capture", "run.get", "run.list", "run.cancel", "run.reconcile"),
-    "traceanchor_storage": ("storage.usage", "storage.register", "storage.preview", "storage.clean", "storage.promote", "storage.pin"),
+    "traceanchor_storage": ("storage.usage", "storage.register", "storage.preview", "storage.clean", "storage.promote", "storage.pin", "storage.recovery.release", "workspace.usage", "workspace.configure", "workspace.work.list", "workspace.work.archive", "workspace.work.clean", "workspace.work.reconcile"),
     "traceanchor_exchange": ("export", "import"),
-    "traceanchor_system": ("doctor",),
+    "traceanchor_system": ("doctor", "knowledge.get"),
 }
 
 
@@ -190,7 +192,7 @@ def _serve(root, incoming, outgoing, dispatcher, *, join_seconds=JOIN_SECONDS):
                     state = "initializing"
                     result(request_id, {"protocolVersion": version if version in PROTOCOL_VERSIONS else PROTOCOL_VERSIONS[0],
                                         "capabilities": {"tools": {"listChanged": False}},
-                                        "serverInfo": {"name": "traceanchor", "version": "0.1.0"}})
+                                        "serverInfo": {"name": "traceanchor", "version": VERSION}})
             elif method == "ping":
                 if _shape(params, (), ("_meta",)):
                     result(request_id, {})

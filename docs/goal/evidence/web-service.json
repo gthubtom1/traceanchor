@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "origin_sha256": "d597f90c3fa1a000bfa86a46797d6b5c5c836f153b9927233771dbd816f51b67",
+  "origin_local_reference": ".validation/web-service-af0dfdbee69f/qualification.json",
+  "disclosure": "Path-redacted structured evidence; raw local originals retained, hash identifies unmodified original. Redacted text is not claimed byte-identical to raw. Historical experiment identity remains distinct from final artifact qualification.",
+  "observed": {
+    "status": "pass-finite-runtime-chain",
+    "case_id": "case_defecbf662b24ef89dadcf366b07a8f8",
+    "source_id": "source_351ed5a85f6041e79bcbac22b8e814f5",
+    "observation_id": "observation_871ae5fd6239456381680083b774eaf0",
+    "steps": 6,
+    "causal_http_requests": 4,
+    "artifact_ids": [
+      "material_77c806eeebff494b99ad5645589595cd",
+      "material_b66ea0d5ad2f4a46a78d5300a2ba6235",
+      "material_f337abedd6d5425fa4f8d6c10cd495c0",
+      "material_08ee0c3b6ce744bdb2031a1409f72b7e",
+      "material_72958b263fc14b8a8ee1046fe91d0bf2"
+    ],
+    "scope": "Actual Node inspector, interaction, state transitions, local HTTP and call-stack causality; not DOM/browser-extension qualification"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "origin_sha256": "5023616d8136231a9cfc86c8b03613f5be1a90e69828fbea8c925b780502388e",
+  "origin_local_reference": "assessments/native-parcel/private-v2/judgment-9792652c7b42-development/summary.json",
+  "disclosure": "Path-redacted structured evidence; raw local originals retained, hash identifies unmodified original. Redacted text is not claimed byte-identical to raw. Historical experiment identity remains distinct from final artifact qualification.",
+  "observed": {
+    "stage": "development",
+    "candidate_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
+    "fixture_manifest_sha256": "4588a22cf2eb9a1806f1d1af3c8888b1681720219f5f346ceef220213ad9faea",
+    "status": "fail",
+    "fixtures": 6,
+    "sealed_final_exposed_to_candidate": false,
+    "case_id": "case_e4ad016fd3794e1ead4367683a2ae5e5",
+    "spec_id": "spec_5d05b90d130041548ed186cd0099d41b",
+    "verdict_id": "verdict_03cab529b77b471192d6dcea625e6017",
+    "feedback_fixtures": [
+      "normal",
+      "remote",
+      "rounding-edges",
+      "parsing-boundary"
+    ]
+  }
+}

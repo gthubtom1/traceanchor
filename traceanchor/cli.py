@@ -18,6 +18,14 @@ def main(argv=None):
     init.add_argument("--temp-bytes", type=int, help="L3 material budget at workspace creation")
     sub.add_parser("doctor")
     sub.add_parser("mcp")
+    inspect = sub.add_parser('inspect', help='Ask one concrete question using an optional professional tool; no manual case JSON')
+    inspect.add_argument('path')
+    inspect.add_argument('--method', choices=['native.disassemble','native.trace','apk.analyze','web.observe'], required=True)
+    inspect.add_argument('--question', required=True)
+    inspect.add_argument('--tools', help='Explicit local JSON mapping to trusted optional executables/jars')
+    inspect.add_argument('--options', help='Optional bounded JSON scenario/options file')
+    inspect.add_argument('--allow-execute', action='store_true', help='Admit selected analysis tool process execution in the task')
+    inspect.add_argument('--allow-network', action='store_true', help='Required for the selected local Web runtime observation')
     maintenance = sub.add_parser("maintenance", help="Offline database maintenance; stop all hosts first")
     maintenance.add_argument("action", choices=["snapshot", "restore"])
     maintenance.add_argument("--checkpoint", help="Required for restore")
@@ -50,6 +58,20 @@ def main(argv=None):
             if args.action == "restore" and not args.checkpoint:
                 raise TraceError("invalid-input", "Restore requires --checkpoint ID; stop all hosts first")
             result = snapshot(store) if args.action == "snapshot" else restore(store, args.checkpoint)
+        elif args.command == 'inspect':
+            if not args.allow_execute:
+                raise TraceError('effect-not-granted', 'Select --allow-execute for the professional tool process')
+            if args.method == 'web.observe' and not args.allow_network:
+                raise TraceError('effect-not-granted', 'Local Web runtime requires --allow-network')
+            Store(args.workspace, create=True)
+            tools = parse_json(read_regular(args.tools,65536)) if args.tools else {}
+            options = parse_json(read_regular(args.options,1048576)) if args.options else {}
+            effects = ['read','execute'] + (['network'] if args.allow_network else [])
+            target = {'native':'native','apk':'apk','web':'web'}[args.method.split('.')[0]]
+            case = dispatch(args.workspace,'case.create',{'objective':args.question,'target_kind':target,'mode':'analysis','allowed_effects':effects})
+            source = dispatch(args.workspace,'source.add',{'case_id':case['id'],'path':str(Path(args.path).absolute())})
+            observation = dispatch(args.workspace,'professional.run',{'case_id':case['id'],'source_id':source['id'],'method':args.method,'tools':tools,'options':options})
+            result = {'case_id':case['id'],'source_id':source['id'],'observation':observation,'next':'Read specific facts and unknowns; analysis is not an independent-reconstruction acceptance verdict'}
         elif args.command == "doctor":
             result = dispatch(args.workspace, "doctor", {})
         elif args.command == "demo":

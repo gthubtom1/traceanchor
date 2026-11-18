@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "origin_sha256": "bf2309b0f2471075b3e9b023d98549d5a39b105948bcc57c19aa2f33daab0114",
+  "origin_local_reference": ".validation/web-bed16b5cd8e046f3ad865a5c0abb1c99/summary.json",
+  "disclosure": "Path-redacted structured evidence; raw local originals retained, hash identifies unmodified original. Redacted text is not claimed byte-identical to raw. Historical experiment identity remains distinct from final artifact qualification.",
+  "observed": {
+    "schema_version": 1,
+    "status": "passed",
+    "capability": "finite-node-inspector-state-network",
+    "checks": {
+      "managed_execution_complete": true,
+      "inspector_source_matches_selected_bytes": true,
+      "executed_dispatch_and_service_locations": true,
+      "real_http_request_and_response": true,
+      "step_network_function_causality": true,
+      "domain_state_transition": true,
+      "boundary_and_error_observed": true,
+      "business_error_is_not_collector_error": true,
+      "browser_and_extension_not_overclaimed": true,
+      "tool_failure_preserves_raw_and_blocks": true
+    },
+    "source_sha256": "12c4fbc95e8abb09bfe48642cad5db5fbad56fb3916368bccfca808177ac14ef",
+    "adapter_sha256": "abe2204b3aa072abc8ce784451e132be55be9188eaa073c84810690881299fe4",
+    "helper_sha256": "5a6ad9d1ec25aa7db91c9b724bfe8cf28c0770c32ab7d6345cde18603cccf780",
+    "node_version": "v24.20.0",
+    "actual_tool_runs": 2,
+    "model_calls": 0,
+    "directory": "[PRODUCT]\\.validation\\web-bed16b5cd8e046f3ad865a5c0abb1c99",
+    "scope": "Self-created script/service fixture; no browser DOM/extension or P04 holdout/model-effectiveness qualification"
+  }
+}

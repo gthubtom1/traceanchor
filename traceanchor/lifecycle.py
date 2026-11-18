@@ -29,6 +29,9 @@ def _decision(store, db, row, now, min_age):
         return False, "user-pinned"
     if row["active"]:
         return False, "active-material"
+    from .core import parse_json
+    if parse_json(row['metadata']).get('recovery_use'):
+        return False, 'unreleased-recovery-dependency'
     if now - row["created"] < min_age:
         return False, "retention-period"
     if db.execute("SELECT 1 FROM refs WHERE target=? LIMIT 1", (row["id"],)).fetchone():
@@ -147,6 +150,40 @@ def promote(store, identity, *, owner=None):
         if owner:
             db.execute("INSERT OR IGNORE INTO refs VALUES(?,?,?)", (owner, identity, "evidence"))
     return store.material(identity)
+
+
+def release_recovery(store, identity, *, reason):
+    """Explicitly archive the actual recovery bytes before retiring protection."""
+    if not isinstance(reason, str) or not reason.strip():
+        raise TraceError('invalid-input', 'Reviewed recovery release requires a reason')
+    material = store.material(identity)
+    if not material['metadata'].get('recovery_use') or material['deleted']:
+        raise TraceError('recovery-not-active', 'Material has no active recovery obligation')
+    case = store.get('case', material['case_id'])
+    if case['data'].get('status') != 'closed' or case['data'].get('disposition') != 'accepted':
+        raise TraceError('recovery-not-archived', 'Accept and archive the owning case before releasing recovery')
+    store.read_material(case['data']['archive_id'])
+    raw = store.read_material(identity)
+    archived = store.put_bytes(material['case_id'], raw, 'L1', 'archived-recovery-payload', metadata={'source_material_id': identity, 'reason': reason})
+    from .core import parse_json
+    with store.transaction() as db:
+        row = db.execute('SELECT * FROM materials WHERE id=? AND deleted=0', (identity,)).fetchone()
+        if row is None or not parse_json(row['metadata']).get('recovery_use'):
+            raise TraceError('revision-conflict', 'Recovery state changed; immutable archive was retained')
+        if row['run_id']:
+            run = store.record(db.execute("SELECT * FROM records WHERE kind='run' AND id=?", (row['run_id'],)).fetchone())
+            if run['data'].get('cleanup', {}).get('state') != 'complete' or run['data'].get('status') not in {'succeeded','failed','cancelled','timed_out','output_limit','abandoned'}:
+                raise TraceError('resource-busy', 'Producer cleanup must be complete')
+        if db.execute('SELECT 1 FROM leases WHERE owner IN (?,?) OR resource IN (?,?)', (identity,row['run_id'] or '',identity,row['path'])).fetchone():
+            raise TraceError('resource-busy', 'Recovery material is leased')
+        store.read_material(archived['id'])
+        data = parse_json(row['metadata'])
+        data.update(recovery_use=False, recovery_archive_id=archived['id'], recovery_release_reason=reason)
+        db.execute('INSERT OR IGNORE INTO refs VALUES(?,?,?)', (material['case_id'], archived['id'], 'archived-recovery-payload'))
+        db.execute('UPDATE materials SET metadata=? WHERE id=?', (canonical(data),identity))
+        db.execute("DELETE FROM refs WHERE target=? AND purpose='recovery-protection'", (identity,))
+    store.event(material['case_id'], 'recovery-released', {'material_id': identity, 'archived_material_id': archived['id'], 'reason': reason})
+    return {'material_id': identity, 'archived_material_id': archived['id'], 'status': 'recovery-archived-and-released'}
 
 
 def pin(store, identity, pinned=True):

@@ -1,3 +1,5 @@
+> Historical core guide (0.1.x). For current FOUR-SOURCE-PRODUCT-R3 professional usage and whole-workspace governance, read [professional-guide.md](professional-guide.md), [r3-support.md](r3-support.md), [r3-maintenance.md](r3-maintenance.md), and goal/CONTRACT-R3.md. Old limited support statements are retained history, not the current capability matrix.
+
 # 支持矩阵、诊断与已知限制
 
 适用版本：**0.1.1 有限能力首版**。本篇基于实际实现描述能力；完整本地测试见 [qualification.json](qualification.json)，实际隔离包旅程见 [install-qualification.json](install-qualification.json)。本地通过不替代远程发布核对。安装与完整 JSON 流程见 [README](../README.md)。

@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "contract_id": "FOUR-SOURCE-PRODUCT-R3",
+  "revision": 3,
+  "version": "0.2.0",
+  "full_goal_complete": false,
+  "products": {
+    "P01": {
+      "status": "pass-local",
+      "criterion": "Actual mature machine-code disassembly and runtime question",
+      "evidence": [
+        "evidence/native-tool.json",
+        "evidence/installation.json"
+      ],
+      "facts": "Original examples/native/parcel.c; tools/qualify_professional.py actually builds and runs objdump/GDB.22direct calls; true GDB callbacks with grams501,priority1,zone2;920cents and stock error. Installed native.disassemble/native.trace also exercised.",
+      "limits": "Windows GNU15.2/objdump2.45/GDB16.3. Visible-source capability fixture, not blind P04 or arbitrary protected desktop qualification."
+    },
+    "P02": {
+      "status": "pass-local",
+      "criterion": "Real DEX semantic chain with code positions and conditions",
+      "evidence": [
+        "evidence/apk-tool.json",
+        "evidence/apk-service.json",
+        "evidence/installation.json"
+      ],
+      "facts": "Original examples/apk; explicit Java/JADX/D8/aapt2/android.jar. Activity.onCreate -> ShipmentSession.requestQuote -> requireState -> ShippingRules.quote; DRAFT/QUOTED/CONFIRMED and critical DEX invoke descriptors. Service30facts/8artifacts; installed apk.analyze passed.",
+      "limits": "JADX1.5.6/Java21 static only. No Android device/runtime/repack/install claim; reflection/JNI unresolved."
+    },
+    "P03": {
+      "status": "pass-local",
+      "criterion": "Real runtime interaction/state/function/network causality",
+      "evidence": [
+        "evidence/web-tool.json",
+        "evidence/web-service.json",
+        "evidence/installation.json"
+      ],
+      "facts": "Original examples/web fixture; tools/qualify_web.py and installed web.observe.6steps,4HTTPexchanges; inspector source identity, coverage, pause stack, step/request IDs and service receipts.10checks including actual failed target preservation.",
+      "limits": "Finite Node/V8 fixture protocol, not browser DOM/extension runtime. Extension diagnostic/connection route documented separately."
+    },
+    "P04": {
+      "status": "pass-local",
+      "criterion": "Host-independent candidate, real differences, repair and unseen boundary",
+      "evidence": [
+        "evidence/host-notes.md",
+        "evidence/host-notes_v2.md",
+        "evidence/host-v1-initial.json",
+        "evidence/host-v1-final.json",
+        "evidence/host-v2-real-difference.json",
+        "evidence/host-v2-repaired.json",
+        "evidence/host-v2-final.json",
+        "evidence/current-replay-summary.json",
+        "evidence/current-reference1-candidate1.json",
+        "evidence/current-reference2-candidate1.json",
+        "evidence/current-reference2-candidate2.json"
+      ],
+      "facts": "Fresh worker received actual professional packet, not reference C/binary/private judge. V1 honestly passed first attempt6+sealed7. Owner V2 real pricing/weight change caused4failedgroups; only2feedbackgroups disclosed. Same worker changed3constants; development6/final7passed. Current core42process public replay:pass/fail/pass.",
+      "limits": "Integrator knew C; worker reports exact materials. Shared filesystem isolation is cooperative, not OS secrecy. Public replay is not a new blind-model score. Self-tests are not oracle judgments."
+    },
+    "P05": {
+      "status": "pass-local",
+      "criterion": "Parent development, finite subtask and version reuse",
+      "evidence": [
+        "evidence/development-version-reuse.json",
+        "evidence/current-development.json"
+      ],
+      "facts": "Actual examples/development/quote_batch.py delegates finite native research, consumes contract/evidence/unknowns/fixtures and passes. V2 reference change stales accepted parent; limited pricing re-research, same parent bytes reused, V2passes.",
+      "limits": "Normal development uses a disclosed reviewed acceptance witness, not blind backend reconstruction."
+    }
+  },
+  "engineering": {
+    "G01": {
+      "status": "pass-local",
+      "criterion": "Product identity and incremental useful architecture",
+      "evidence": [
+        "../../README.md",
+        "../professional-guide.md",
+        "../provenance/decisions.md",
+        "../provenance/mechanisms.json"
+      ],
+      "facts": "0.1.x history retained. Core, optional professional tools/knowledge and current host have distinct authority; ordinary inspect route, no internal second model loop.",
+      "limits": ""
+    },
+    "G02": {
+      "status": "pass-local",
+      "criterion": "All three real professional chains",
+      "evidence": [
+        "evidence/native-tool.json",
+        "evidence/installation.json",
+        "evidence/apk-tool.json",
+        "evidence/apk-service.json",
+        "evidence/installation.json",
+        "evidence/web-tool.json",
+        "evidence/web-service.json",
+        "evidence/installation.json"
+      ],
+      "facts": "P01/P02/P03 all qualified in actual finite local tool and installed-package experiments; tool/platform limits retained.",
+      "limits": ""
+    },
+    "G03": {
+      "status": "pass-local",
+      "criterion": "Independent reconstruction and real repair",
+      "evidence": [
+        "evidence/host-notes.md",
+        "evidence/host-notes_v2.md",
+        "evidence/host-v1-initial.json",
+        "evidence/host-v1-final.json",
+        "evidence/host-v2-real-difference.json",
+        "evidence/host-v2-repaired.json",
+        "evidence/host-v2-final.json",
+        "evidence/current-replay-summary.json",
+        "evidence/current-reference1-candidate1.json",
+        "evidence/current-reference2-candidate1.json",
+        "evidence/current-reference2-candidate2.json"
+      ],
+      "facts": "P04 host record, information boundary, frozen final input, actual fail/fix/pass and current executable replay.",
+      "limits": ""
+    },
+    "G04": {
+      "status": "pass-local",
+      "criterion": "Development and incremental maintenance",
+      "evidence": [
+        "evidence/current-development.json"
+      ],
+      "facts": "P05 source change mechanically invalidates parent; explicit reused_from and byte-identical client.",
+      "limits": ""
+    },
+    "G05": {
+      "status": "pass-local",
+      "criterion": "Core correctness and real failure/recovery paths",
+      "evidence": [
+        "evidence/engineering.json",
+        "evidence/independent-review.json",
+        "evidence/independent-review-replay.json"
+      ],
+      "facts": "Current199pass0skip includes integrity,role/freshness,comparison,ownercrash,timeout,cancel,EOF/process-tree cleanup and six reviewer counterexamples. Captured business dimensions independently judged; unrequested visual is explicit not-applicable, not fabricated success.",
+      "limits": ""
+    },
+    "G06": {
+      "status": "pass-local",
+      "criterion": "Whole workspace/resource/recovery/cleanup",
+      "evidence": [
+        "evidence/engineering.json",
+        "evidence/independent-review-replay.json",
+        "evidence/installation.json"
+      ],
+      "facts": "Actual open-file writer cancelled; CAS/DB/work/checkpoint/cache/unknown measured; actual payload archive before clean; pin/ref/L1/recovery protection; >260-character Java path counted, archived and safely cleaned.",
+      "limits": "Polling may overshoot; bounded control-recovery records allowed. Not an OS disk/network sandbox."
+    },
+    "G07": {
+      "status": "pass-local",
+      "criterion": "Recovery and bounded exclusive collaboration",
+      "evidence": [
+        "CONTRACT-R3.md",
+        "RESUME.md",
+        "status.json",
+        "evidence/engineering.json",
+        "evidence/host-notes.md",
+        "evidence/host-notes_v2.md"
+      ],
+      "facts": "Original contract digest checked after restart/compaction/app exit; atomic exact-path/parent collision, multi-file all-or-nothing, changed-byte/checkpoint/handoff tests. Main+atmost2workers, no recursive delegation; registry local/unshipped.",
+      "limits": "Claims constrain cooperating writers, not arbitrary editors; TTL never grants takeover."
+    },
+    "G08": {
+      "status": "pass-local",
+      "criterion": "Ordinary public use and real installed maintenance",
+      "evidence": [
+        "../professional-guide.md",
+        "../r3-support.md",
+        "../r3-maintenance.md",
+        "../hosts.md",
+        "evidence/installation.json"
+      ],
+      "facts": "Same-machine isolated venv52steps: all4professional methods, wheel/sdist, actual0.1.1upgrade, paired pre-upgrade-data rollback, reinstall/uninstall preserve assets, synthetic project host configuration preserves unrelated bytes.",
+      "limits": "Not clean-machine/all-host/all-OS. Host collaboration and protocol/config templates have separate ratings."
+    },
+    "G09": {
+      "status": "pass-local",
+      "criterion": "Maintainability/provenance/license/migration",
+      "evidence": [
+        "../provenance/README.md",
+        "../provenance/mechanisms.json",
+        "../provenance/decisions.md",
+        "../dependencies.json",
+        "../../UPSTREAM-REVIEW-PROMPT.md",
+        "../r3-maintenance.md"
+      ],
+      "facts": "17mechanisms with bidirectional source/local anchors and explicit decisions. Original MIT implementation; no redistributed external tool/JAR/snapshots. Generic schema1 retained; old rollback only with paired data; self-contained future static review.",
+      "limits": ""
+    },
+    "G10": {
+      "status": "local-pass-remote-pending",
+      "criterion": "Fresh review, exact source qualification and actual publication",
+      "evidence": [
+        "evidence/independent-review.json",
+        "evidence/independent-review-replay.json",
+        "evidence/engineering.json",
+        "../public-audit.json",
+        "../release-verification.json"
+      ],
+      "facts": "Fresh reviewer6real counterexamples verified/fixed and original6replayed; withdrawn Read mixup explicitly retained. Current frozen executable qualification and local public preflight pass. Actual remote CI/0.2.0release/download pending.",
+      "limits": ""
+    }
+  },
+  "qualification_binding": "b87d5d11ba8a1027c5faf1dc656a352a4d724d6946ed849cf3d1cfd3494f649e",
+  "release_admission": "Local product gates observed. Final exact artifact audit, remote CI and downloaded artifact use still required; do not claim R3 complete.",
+  "evidence_path_base": "docs/goal; input paths product-relative",
+  "historical_contract": "OldA01-A20/R2 receipts under docs/history do not replace R3."
+}

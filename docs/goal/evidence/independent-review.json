@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "origin_sha256": "6eb33ea80746e606aa87cfc8637eac5e39a54745e7f685aaeaf4dd5d943d714d",
+  "origin_local_reference": ".validation/r3-review-20261118-3f891d/report.json",
+  "disclosure": "Path-redacted structured evidence; raw local originals retained, hash identifies unmodified original. Redacted text is not claimed byte-identical to raw. Historical experiment identity remains distinct from final artifact qualification.",
+  "observed": {
+    "review_id": "r3-readonly-review-20261118-3f891d",
+    "recipient": "main coordinator only",
+    "result": "6 high-confidence self-created fixture counterexamples; no shared source writes",
+    "baseline_commit": "5b8f10026b538a47b2234464edd2561b48734dc2",
+    "source_binding": "storage-results.json baseline and end_hashes match; final-readable-file-hashes.json confirms other reviewed implementation files unchanged after workflow/native probes. core.py and workspace.py handed back to main for fixes and not reread after handoff. Locations below are baseline locations.",
+    "findings": [
+      {
+        "id": "R3-IR-01",
+        "priority": "P1",
+        "title": "Inferior stdout is accepted as an actual GDB breakpoint hit",
+        "locations": [
+          "traceanchor/professional.py:95-104"
+        ],
+        "input": "Self-built C: never_called() exists but main only puts(\"TRACEANCHOR_BREAK never_called\"). Run professional.run native.trace with breakpoints=[never_called].",
+        "actual": "Real GDB 16.3 exits normally without entering never_called; observation status=complete, breakpoint_hits=[{symbol:never_called,line:4}], unknowns=[]. Raw trace contains no debugger-generated info args/backtrace from the breakpoint commands.",
+        "cause": "Regex searches merged GDB/inferior stdout for a public fixed marker; no debugger event/channel identity or actual stop receipt is required.",
+        "impact": "P01 runtime evidence can assert a function was executed when only target text contained the marker.",
+        "evidence": [
+          "native-marker/owned.c",
+          "native-marker/result.json",
+          "native-marker/workspace"
+        ],
+        "command": "python -I -B [PRODUCT]/.validation/r3-review-20261118-3f891d/native_probe.py"
+      },
+      {
+        "id": "R3-IR-02",
+        "priority": "P1",
+        "title": "Revising a linked child expands effects beyond its read-only parent",
+        "locations": [
+          "traceanchor/service.py:498-502",
+          "traceanchor/service.py:581-592",
+          "traceanchor/service.py:677-681"
+        ],
+        "input": "Create read-only parent and subtask. case.revise child changes.allowed_effects=[read,execute], then capture a self-written child Python source.",
+        "actual": "Child revision succeeds and capture status=completed, stdout='child executed beyond parent contract'. Parent allowed_effects stays [read].",
+        "cause": "Parent subset check exists at child creation but is absent from case.revise and execution-time effect checks.",
+        "impact": "Task effect authority is bypassed through the ordinary linked-subtask workflow.",
+        "evidence": [
+          "workflow-results.json:child_effects",
+          "child-effects/workspace"
+        ],
+        "command": "python -I -B [PRODUCT]/.validation/r3-review-20261118-3f891d/workflow_probe.py"
+      },
+      {
+        "id": "R3-IR-03",
+        "priority": "P1",
+        "title": "Corrupt raw evidence of a consumed child does not stale or block parent acceptance",
+        "locations": [
+          "traceanchor/service.py:381-402",
+          "traceanchor/service.py:405-443",
+          "traceanchor/service.py:446-475",
+          "traceanchor/service.py:697-703"
+        ],
+        "input": "Child performs real capture; parent consumes it through subtask.result. Parent obtains finite verify pass. Overwrite child's raw stdout CAS object, leaving sources unchanged.",
+        "actual": "read_material(child stdout) raises integrity-error. Parent report still acceptance=pass with integrity_failures=[], and case.close sets disposition=accepted. Negative control: corrupting parent's own raw stdout correctly makes report stale.",
+        "cause": "_check_dependencies refreshes only applicable_source_ids. _evidence_integrity starts at a verdict whose refs do not reach consumed subtask-result records.",
+        "impact": "P05 parent development can be accepted with damaged evidence from its registered research dependency.",
+        "evidence": [
+          "workflow-results.json:child_evidence",
+          "child-evidence/workspace"
+        ],
+        "command": "python -I -B [PRODUCT]/.validation/r3-review-20261118-3f891d/workflow_probe.py"
+      },
+      {
+        "id": "R3-IR-04",
+        "priority": "P1",
+        "title": "source.add writes beyond whole-workspace hard limit",
+        "locations": [
+          "traceanchor/service.py:63-75",
+          "traceanchor/core.py:282-321"
+        ],
+        "input": "Initial census 69734 bytes; workspace.configure hard_bytes=269734, soft_bytes=169734, work_bytes=131072. Register a self-created 210000-byte source.",
+        "actual": "source.add returns success; census total_bytes=279734, hard_exceeded=true. Subsequent workspace.admit rejects workspace-budget, proving configured policy exists but was skipped by the controllable write.",
+        "cause": "Source import calls put_bytes directly; put_bytes enforces only separate CAS quota, not whole-workspace census/reservation.",
+        "impact": "Ordinary CLI inspect/source.add can exceed G06 hard budget before the professional execution admission check.",
+        "evidence": [
+          "storage-results.json:quota",
+          "quota/workspace"
+        ],
+        "command": "python -I -B [PRODUCT]/.validation/r3-review-20261118-3f891d/storage_probe.py",
+        "handoff": "Main informed and began core/workspace repair after this verified baseline. This report does not assess that later fix."
+      },
+      {
+        "id": "R3-IR-05",
+        "priority": "P2",
+        "title": "A legitimate work-limit residual has no public path to a fresh inventory/archive",
+        "locations": [
+          "traceanchor/workspace.py:130-145",
+          "traceanchor/workspace.py:163-168",
+          "traceanchor/service.py:507-520"
+        ],
+        "input": "Terminal cancelled run, cleanup=complete, owned L3 work_bytes=8192; create one 9000-byte residual and finish_directory. Attempt workspace.work.archive and workspace.work.clean. Raise work_bytes to16384 and retry archive.",
+        "actual": "Terminal item inventory_complete=false,recovery=true. Archive raises recovery-not-archived; clean keeps unarchived-recovery-payload. Increasing quota still does not refresh inventory and archive again fails. Residual remains.",
+        "cause": "finish_directory deliberately omits over-limit hashing, but the service exposes neither reinventory nor an alternate bounded residual archive path; archive requires the missing complete inventory.",
+        "impact": "The exact overflow state created by growth enforcement is measurable but stranded from ordinary recovery/reclamation. Retaining bytes is correct; missing finite recovery transition is the defect.",
+        "evidence": [
+          "storage-results.json:overshoot",
+          "overshoot/workspace"
+        ],
+        "command": "python -I -B [PRODUCT]/.validation/r3-review-20261118-3f891d/storage_probe.py",
+        "handoff": "Main informed and began workspace recovery repair after this baseline; no reread or duplicate experiments after handoff."
+      },
+      {
+        "id": "R3-IR-06",
+        "priority": "P2",
+        "title": "Public compare returns pass after its raw source evidence is corrupt",
+        "locations": [
+          "traceanchor/service.py:779-785"
+        ],
+        "input": "Use two real managed observations from a passing verify pair. Overwrite left stdout raw CAS object. Call compare on the same observation IDs and exact stdout obligation.",
+        "actual": "compare returns status=pass, although report on that parent returns stale with integrity-error for the same damaged streams.",
+        "cause": "compare passes saved capture dictionaries straight into the comparator without refreshing sources or reading referenced raw materials.",
+        "impact": "CLI/MCP users can receive a fresh-looking pass on a diagnostic path that skips the evidence integrity protection already present in report/close. This counterexample does not bypass case.close for parent-local raw damage.",
+        "evidence": [
+          "workflow-results.json:child_evidence.compare_after_parent_raw_corruption",
+          "workflow-results.json:child_evidence.report_after_parent_raw_corruption"
+        ],
+        "command": "python -I -B [PRODUCT]/.validation/r3-review-20261118-3f891d/workflow_probe.py"
+      }
+    ],
+    "read_boundary": "Read entire CONTRACT-R3.md and docs/goal/status.json, all ten requested implementation areas including inspect_web.cjs, all three requested tests and all three method packages. Also read pyproject.toml, knowledge.py and process.py run/cleanup excerpt. Used git status/rev-parse and explicitly selected file hashes/AST, not a disk scan.",
+    "execution_boundary": "Executed only self-written small Python/C fixtures and product service in this owned directory with Python -I -B; actual installed GCC/GDB used for one original executable. No existing qualification script or test suite was run because their fixed output roots are shared. APK/JADX and Web/Node adapters reviewed statically only, not runtime-qualified by this audit.",
+    "isolation_boundary": "No agents spawned, no assessments/native-parcel or sealed/private material read, no candidate or score information sent. No snapshot/old-project/real-target execution, credential/global-settings read, source edit, commit, publish or external network. Temporary fixtures and evidence retained for coordinator under ownership.json.",
+    "withdrawn_observation": "Early apparent professional/tool_runner module swap was a parallel Read response identity mix-up; single labeled AST/hash confirmed correct module layout. It was immediately retracted and is not a finding.",
+    "replay_note": "Listed commands are exact successful one-shot executions. Their fixed fixture directories are intentionally retained; use a fresh isolated copy or new fixture names for replay rather than replacing existing evidence."
+  }
+}

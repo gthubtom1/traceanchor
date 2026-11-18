@@ -5,7 +5,7 @@ backend-path = ["."]
 
 [project]
 name = "traceanchor"
-version = "0.1.1"
+version = "0.2.0"
 description = "Host-driven evidence, managed analysis and independent reconstruction"
 readme = "README.md"
 requires-python = ">=3.11"

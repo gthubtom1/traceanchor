@@ -15,7 +15,7 @@ from pathlib import Path
 from .core import Store, TraceError, canonical, child_path, digest, new_id, no_links, parse_json, read_regular, value_digest
 from . import lifecycle
 
-VERSION = "0.1.1"
+VERSION = "0.2.0"
 MODES = {"analysis", "protocol", "reconstruct", "diagnose-modify", "version-diff", "dev-subtask"}
 TARGETS = {"desktop", "native", "apk", "extension", "javascript", "web", "protocol", "development-component", "file"}
 EFFECTS = {"read", "execute", "network", "derive", "write-candidate"}
@@ -24,7 +24,7 @@ _OPERATIONS = {
     "case.create", "case.get", "case.list", "case.revise", "case.close", "source.add", "source.refresh", "source.derive", "source.get",
     "analyze", "observability.set", "plan", "subtask.create", "subtask.result", "spec.freeze", "spec.get", "capture", "compare", "verify",
     "run.get", "run.list", "run.cancel", "run.reconcile", "unknown.add", "unknown.resolve", "storage.usage", "storage.preview", "storage.clean", "storage.promote", "storage.pin",
-    "report", "export", "import", "doctor", "version-diff", "observe.http", "storage.register",
+    "report", "export", "import", "doctor", "version-diff", "observe.http", "storage.register", "professional.run", "knowledge.get", "workspace.usage", "workspace.configure", "workspace.work.list", "workspace.work.archive", "workspace.work.clean", "workspace.work.reconcile", "storage.recovery.release",
 }
 
 
@@ -36,13 +36,24 @@ def _need(args, key, typ=str):
 
 
 def _case(store, identity):
-    return store.get("case", identity)
+    case=store.get('case',identity)
+    effects=set(case['data']['allowed_effects']);parent=case['data'].get('parent_id');visited={identity}
+    while parent:
+        if parent in visited:raise TraceError('integrity-error','Cycle in parent task effects')
+        visited.add(parent)
+        if len(visited)>100:raise TraceError('over-limit','Parent task depth limit')
+        ancestor=store.get('case',parent)
+        effects.intersection_update(ancestor['data']['allowed_effects'])
+        if ancestor['data'].get('status')!='active':effects.intersection_update({'read'})
+        parent=ancestor['data'].get('parent_id')
+    case['data']['effective_allowed_effects']=sorted(effects)
+    return case
 
 
 def _effect(case, effect):
     if case["data"].get("status") == "closed":
         raise TraceError("case-closed", "Closed case is read-only; explicitly revise/reopen before new work")
-    if effect not in case["data"]["allowed_effects"]:
+    if effect not in case['data'].get('effective_allowed_effects',case['data']['allowed_effects']):
         raise TraceError("effect-not-granted", "Task contract does not admit this effect", {"required_effect": effect})
 
 
@@ -130,6 +141,7 @@ def _files(root, *, limit=1000, max_bytes=16 * 1024 * 1024):
 
 def _capture(store, case_id, source_id, fixture, cancel=None):
     from .process import run_process
+    from . import workspace
     case = _case(store, case_id)
     _effect(case, "execute")
     source = _source(store, case_id, source_id)
@@ -154,7 +166,10 @@ def _capture(store, case_id, source_id, fixture, cancel=None):
     expected_exit = fixture.get("expect_exit", 0)
     if not isinstance(expected_exit, int) or isinstance(expected_exit, bool):
         raise TraceError("invalid-input", "expect_exit must be an integer fixed by the fixture")
+    workspace.admit(store,source['data']['size']+65536)
     run_id = new_id("run")
+    work_item = None
+    growth = {'last_check':0.0,'error':None}
     resource = "case-execution:" + case_id
     store.acquire(resource, run_id)
     try:
@@ -172,11 +187,13 @@ def _capture(store, case_id, source_id, fixture, cancel=None):
             if len(previous) >= budgets["max_runs"] or charged + timeout > budgets["max_seconds"]:
                 raise TraceError("task-budget", "Cumulative run/time budget exhausted; no target launched", {"runs": len(previous), "charged_seconds": charged})
         store.update("run", run["id"], {"reserved_seconds": timeout})
-        owned.mkdir()
+        work_item = workspace.register_directory(store,'work/'+run['id'],case_id,run['id'],reason='managed capture directory')
         work = owned / "cwd"
         work.mkdir()
         snapshot = child_path(owned, _source_name(source["data"]["name"]))
-        snapshot.write_bytes(store.read_material(source["data"]["material_id"]))
+        copy_reservation=workspace.reserve(store,run['id'],source['data']['size'],'capture target copy')
+        try:snapshot.write_bytes(store.read_material(source["data"]["material_id"]))
+        finally:workspace.release(store,copy_reservation['id'],run['id'])
         if source["data"]["name"].lower().endswith(".py"):
             argv = [sys.executable, "-I", "-B", str(snapshot), *arguments]
         else:
@@ -188,8 +205,20 @@ def _capture(store, case_id, source_id, fixture, cancel=None):
         def started(identity):
             store.update("run", run["id"], {"status": "running", "identity": identity})
         def cancelled():
-            return bool(cancel is not None and cancel.is_set()) or store.get("run", run["id"])["data"].get("cancel_requested", False)
-        outcome = run_process(argv, cwd=str(work), input_bytes=input_text.encode("utf-8"), timeout=timeout, idle_timeout=idle, output_limit=budgets["output_limit"], cancelled=cancelled, on_start=started)
+            if bool(cancel is not None and cancel.is_set()) or store.get('run',run['id'])['data'].get('cancel_requested',False):return True
+            now=time.perf_counter()
+            if now-growth['last_check']>=0.05:
+                growth['last_check']=now
+                try:workspace.admit(store)
+                except TraceError as exc:growth['error']=exc.as_dict();return True
+            return False
+        test_env=fixture.get('test_environment',{})
+        if not isinstance(test_env,dict) or len(test_env)>8 or any(not isinstance(k,str) or not k.startswith('TRACEANCHOR_') or not isinstance(v,str) or len(v)>64 or '\x00' in v for k,v in test_env.items()):
+            raise TraceError('invalid-input','Only bounded TRACEANCHOR test environment overrides are admitted')
+        outcome = run_process(argv, cwd=str(work), input_bytes=input_text.encode("utf-8"), timeout=timeout, idle_timeout=idle, output_limit=budgets["output_limit"], cancelled=cancelled, on_start=started,env={**os.environ,**test_env})
+        if growth['error']:
+            outcome['resource_limit']=growth['error']
+            outcome['growth_limit_scope']='50ms polling; possible overshoot preserved, not OS quota'
         store.update("run", run["id"], {"status": "collecting"})
         stdout = outcome.pop("stdout", b"")
         stderr = outcome.pop("stderr", b"")
@@ -218,20 +247,36 @@ def _capture(store, case_id, source_id, fixture, cancel=None):
             encoding_complete = False
             text = stdout.decode("utf-8", "replace")
             error_text = stderr.decode("utf-8", "replace")
+        decoded_stdout = None
         try:
             from .analysis import json_shape
-            structure = json_shape(parse_json(text))
+            if fixture.get('stdout_json_lines'):
+                lines = text.splitlines()
+                if len(lines) > 10000:raise TraceError('over-limit','JSON-lines observation limit')
+                decoded_stdout = [parse_json(line) for line in lines if line.strip()]
+                structure = json_shape(decoded_stdout)
+            else:
+                decoded_stdout = parse_json(text)
+                structure = json_shape(decoded_stdout)
         except TraceError:
             structure = None
+        if fixture.get('state_from_last_json_line'):
+            if isinstance(decoded_stdout,list) and decoded_stdout and isinstance(decoded_stdout[-1],dict):
+                state['protocol_snapshot'] = decoded_stdout[-1]
+            else:
+                state['protocol_snapshot'] = {'error':'missing-final-state-response'}
         clean = outcome.get("cleanup", {"state": "unknown"})
         expected_business_exit = outcome.get("exit_code") == expected_exit and outcome.get("status") in {"succeeded", "success", "completed", "failed"} and not outcome.get("output_truncated") and clean.get("state") == "complete"
-        observed = {**outcome, "process_status": outcome.get("status"), "status": "completed" if expected_business_exit and effects_complete and encoding_complete else "blocked", "stdout": text, "stderr": error_text, "utf8_complete": encoding_complete, "stdout_sha256": digest(stdout), "stderr_sha256": digest(stderr), "state": state, "effects": effects, "structure": structure, "visual": visual, "effects_complete": effects_complete, "cleanup": clean, "source_id": source_id, "source_sha256": source["data"]["sha256"], "source_role": source["data"]["role"], "fixture": fixture, "coverage": {"input_sequences": 1, "filesystem_scope": "owned-workdir-only", "network_observed": False}, "limitations": ["No assertion about filesystem writes outside the declared working directory or network side effects"]}
+        observed = {**outcome, "process_status": outcome.get("status"), "status": "completed" if expected_business_exit and effects_complete and encoding_complete else "blocked", "stdout": text, "stderr": error_text, "decoded_stdout": decoded_stdout, "utf8_complete": encoding_complete, "stdout_sha256": digest(stdout), "stderr_sha256": digest(stderr), "state": state, "effects": effects, "structure": structure, "visual": visual, "effects_complete": effects_complete, "cleanup": clean, "source_id": source_id, "source_sha256": source["data"]["sha256"], "source_role": source["data"]["role"], "fixture": fixture, "coverage": {"input_sequences": 1, "filesystem_scope": "owned-workdir-only", "network_observed": False}, "limitations": ["No assertion about filesystem writes outside the declared working directory or network side effects"]}
         # Finalize the raw execution before publishing observations; a publication error
         # is recoverable but never turns the run into an unobserved success.
         terminal = outcome.get("status", "failed")
         if terminal not in {"succeeded", "failed", "cancelled", "timed_out", "output_limit"}:
             terminal = "succeeded" if terminal in {"success", "completed"} else "failed"
-        store.update("run", run["id"], {**outcome, "status": terminal, "cleanup": clean, "elapsed_seconds": outcome.get("elapsed_seconds", 0), "reserved_seconds": outcome.get("elapsed_seconds", timeout)})
+        emergency={name:{'prefix_base64':base64.b64encode(raw[:4096]).decode(),'full_size':len(raw),'full_sha256':digest(raw),'complete':len(raw)<=4096} for name,raw in [('stdout',stdout),('stderr',stderr)]}
+        store.update("run", run["id"], {**outcome, "status": terminal, "cleanup": clean, "elapsed_seconds": outcome.get("elapsed_seconds", 0), "reserved_seconds": outcome.get("elapsed_seconds", timeout),'recovery_stream_prefixes':emergency})
+        if growth['error']:
+            raise TraceError('work-budget','Capture cancelled after actual owned-workspace growth limit',growth['error'])
         out_blob = store.put_bytes(case_id, stdout, "L1", "raw-stdout", run["id"])
         err_blob = store.put_bytes(case_id, stderr, "L1", "raw-stderr", run["id"])
         obs = store.create("observation", {"capture": observed, "run_id": run["id"], "source_id": source_id, "source_sha256": source["data"]["sha256"], "environment": run["data"]["environment"], "producer": "managed-runner-" + VERSION, "stdout_material": out_blob["id"], "stderr_material": err_blob["id"], "trust": "local-managed-execution"}, case_id)
@@ -272,6 +317,13 @@ def _capture(store, case_id, source_id, fixture, cancel=None):
         raise
     finally:
         final = store.get("run", run["id"])
+        if work_item:
+            if owned.exists():
+                try:workspace.finish_directory(store,work_item['id'],'completed' if final['data']['status']=='succeeded' else 'failed',final['data'].get('cleanup',{'state':'unknown'}))
+                except (OSError,TraceError) as exc:
+                    store.update('workspace-item',work_item['id'],{'status':'failed','inventory_complete':False,'recovery':True,'inventory_error':str(exc)})
+            else:
+                store.update('workspace-item',work_item['id'],{'status':'completed','cleanup':{'state':'complete'},'directory_retired':True,'recovery':False,'bytes':0})
         if final["data"].get("cleanup", {}).get("state") == "complete":
             store.release(resource, run["id"])
             # Work files are not guessed as garbage: keep them as explicit recovery
@@ -354,6 +406,9 @@ def _check_dependencies(store, case_id):
         for result in _all(store, "subtask-result", current):
             if not result["data"].get("current", True):
                 continue
+            if _evidence_integrity(store,result):
+                fresh=False
+                store.invalidate(case_id,'subtask-evidence-integrity-failed:'+result['id'])
             for identity in result["data"].get("applicable_source_ids", []):
                 try:
                     store.check_source(identity)
@@ -364,12 +419,60 @@ def _check_dependencies(store, case_id):
     return fresh
 
 
+def _evidence_integrity(store, verdict):
+    """Re-read the transitive evidence bytes, not only saved verdict booleans."""
+    pending = [verdict['id']]
+    visited = set()
+    failures = []
+    while pending:
+        identity = pending.pop()
+        if identity in visited:
+            continue
+        visited.add(identity)
+        if len(visited) > 5000:
+            failures.append({'id': identity, 'code': 'evidence-graph-limit'})
+            break
+        with store.connect() as db:
+            material = db.execute('SELECT id FROM materials WHERE id=?', (identity,)).fetchone()
+            record = db.execute('SELECT * FROM records WHERE id=?', (identity,)).fetchone()
+            targets = [r[0] for r in db.execute('SELECT target FROM refs WHERE owner=?', (identity,))]
+        try:
+            if material:
+                store.read_material(identity)
+            elif record:
+                row = store.record(record)
+                data = row['data']
+                if row['kind'] == 'observation':
+                    # Also follow the authoritative payload fields if a graph edge
+                    # was lost. Missing raw capture fields cannot certify a pass.
+                    for key in ('stdout_material', 'stderr_material', 'body_material'):
+                        if data.get(key):
+                            pending.append(data[key])
+                    if 'capture' in data and not all(data.get(k) for k in ('stdout_material', 'stderr_material')):
+                        raise TraceError('integrity-error', 'Runtime observation lacks original stream material identities')
+                if row['kind'] == 'source':
+                    pending.append(data['material_id'])
+            else:
+                raise TraceError('not-found', 'Evidence dependency is missing')
+        except (TraceError, KeyError) as exc:
+            failures.append({'id': identity, 'code': exc.code if isinstance(exc, TraceError) else 'invalid-evidence', 'message': str(exc)})
+        pending.extend(targets)
+    return failures
+
+
 def _report(store, case_id):
     _check_dependencies(store, case_id)
     case = _case(store, case_id)
     verdicts = _all(store, "verdict", case_id)
+    integrity_failures = []
     for verdict in verdicts:
         if not verdict["data"].get("current", True):
+            continue
+        broken = _evidence_integrity(store, verdict)
+        if broken:
+            integrity_failures.extend(broken)
+            store.invalidate(case_id, 'referenced-evidence-integrity-failed')
+            store.event(case_id, 'evidence-integrity-failed', {'verdict_id': verdict['id'], 'failures': broken[:30]})
             continue
         try:
             spec = store.get("spec", verdict["data"]["spec_id"])
@@ -386,14 +489,18 @@ def _report(store, case_id):
     acceptance = latest["data"]["status"] if latest else "stale" if verdicts else "not-verified"
     if blocking_unknowns and acceptance == "pass":
         acceptance = "blocked"
-    return {"case": case, "acceptance": acceptance, "latest_verdict": latest, "sources": _all(store, "source", case_id), "unknowns": _all(store, "unknown", case_id), "runs": _all(store, "run", case_id), "scope": "No unexecuted or unsupported route is represented as passed", "storage": lifecycle.usage(store)}
+    return {"case": _case(store, case_id), "acceptance": acceptance, "integrity_failures": integrity_failures, "latest_verdict": latest, "sources": _all(store, "source", case_id), "unknowns": _all(store, "unknown", case_id), "runs": _all(store, "run", case_id), "scope": "No unexecuted or unsupported route is represented as passed", "storage": lifecycle.usage(store)}
 
 
 def dispatch(root, operation, args, cancel=None):
     if operation not in _OPERATIONS or not isinstance(args, dict):
         raise TraceError("invalid-operation", "Unknown operation or non-object arguments", {"supported": sorted(_OPERATIONS)})
+    if operation == 'knowledge.get':
+        from .knowledge import guide
+        return guide(_need(args,'domain'))
     if operation == "doctor":
-        return {"version": VERSION, "python": list(sys.version_info[:3]), "platform": sys.platform, "core": "available", "runtime_dependencies": [], "model_loop": "host-owned; no external model calls", "process_containment": "windows-job" if os.name == "nt" else "posix-session", "qualification": "See release qualification records; this diagnostic does not certify runtime success", "unsupported": ["general desktop automation", "Android device runtime", "browser runtime and screenshots", "memory dump and decompilation"], "operations": sorted(_OPERATIONS)}
+        from .knowledge import capabilities
+        return {**capabilities(), "version": VERSION, "python": list(sys.version_info[:3]), "platform": sys.platform, "core": "available", "runtime_dependencies": [], "model_loop": "host-owned; no external model calls", "process_containment": "windows-job" if os.name == "nt" else "posix-session", "qualification": "See release qualification records; this diagnostic does not certify runtime success", "unsupported": ["general desktop automation", "Android device runtime", "browser DOM, extension runtime and screenshots", "memory dump and general decompilation beyond explicit qualified tool methods"], "operations": sorted(_OPERATIONS)}
     if operation == "case.create":
         store = Store(root)
         mode = args.get("mode", "analysis")
@@ -414,7 +521,26 @@ def dispatch(root, operation, args, cancel=None):
     store = Store(root)
     if operation == "case.list":
         return {"items": store.list("case"), "limit": 1000}
+    if operation == 'workspace.usage':
+        from .workspace import census
+        return census(store, max_entries=args.get('max_entries'))
+    if operation == 'workspace.configure':
+        from .workspace import configure
+        return configure(store, _need(args, 'limits', dict))
+    if operation == 'workspace.work.list':
+        return {'items': store.list('workspace-item',args.get('case_id'))}
+    if operation == 'workspace.work.reconcile':
+        from .workspace import reconcile_directory
+        return reconcile_directory(store,_need(args,'work_id'))
+    if operation == 'workspace.work.archive':
+        from .workspace import archive_directory
+        return archive_directory(store,_need(args,'work_id'),reason=_need(args,'reason'))
+    if operation == 'workspace.work.clean':
+        from .workspace import clean_directory
+        return clean_directory(store,_need(args,'work_id'),apply=args.get('apply',False),cancel=cancel)
     if operation.startswith("storage."):
+        if operation == 'storage.recovery.release':
+            return lifecycle.release_recovery(store, _need(args, 'material_id'), reason=_need(args, 'reason'))
         if operation == "storage.register":
             cid = _need(args, "case_id")
             _effect(_case(store, cid), "read")
@@ -479,6 +605,12 @@ def dispatch(root, operation, args, cancel=None):
             raise TraceError("invalid-input", "Only explicit task-contract fields can be revised")
         if "allowed_effects" in changes and (not isinstance(changes["allowed_effects"], list) or not set(changes["allowed_effects"]).issubset(EFFECTS)):
             raise TraceError("invalid-input", "Unknown effect")
+        if case['data'].get('parent_id') and 'allowed_effects' in changes:
+            parent_case=_case(store,case['data']['parent_id'])
+            if not set(changes['allowed_effects']).issubset(parent_case['data']['allowed_effects']):
+                raise TraceError('effect-not-granted','Child revisions cannot expand the parent effect contract')
+        if 'status' in changes and changes['status'] not in ('active','suspended','closed'):
+            raise TraceError('invalid-input','Unknown case state')
         if "budgets" in changes:
             raise TraceError("budget-frozen", "Start a new request/case for a different budget; retries do not reset cumulative limits")
         changes["acceptance_revision"] = case["data"]["acceptance_revision"] + 1
@@ -566,7 +698,7 @@ def dispatch(root, operation, args, cancel=None):
         execute = "execute" in case["data"]["allowed_effects"]
         missing_external = any(g["missing"] for g in gaps)
         route = "static" if not gaps else "combined" if execute and not missing_external else "static-with-observation-gap"
-        data = {"route": route, "mode": case["data"]["mode"], "target_kind": case["data"]["target_kind"], "gaps": gaps, "status": "blocked" if missing_external else "ready", "reason": "Evidence/requirements and admitted effects select route, not keywords", "excluded": [] if execute else [{"route": "dynamic", "reason": "execute effect not granted"}], "dynamic_supported": case["data"]["target_kind"] in {"protocol", "development-component", "file"}, "stops": case["data"]["stops"], "limitations": ["No device/browser/debugger runtime is implicitly supplied", "Static facts cannot discharge runtime obligations"]}
+        data = {"route": route, "mode": case["data"]["mode"], "target_kind": case["data"]["target_kind"], "gaps": gaps, "status": "blocked" if missing_external else "ready", "reason": "Evidence/requirements and admitted effects select route, not keywords", "excluded": [] if execute else [{"route": "dynamic", "reason": "execute effect not granted"}], "dynamic_supported": case["data"]["target_kind"] in {"protocol", "development-component", "file", "native", "desktop", "javascript", "web"}, "professional_adapter_qualification": "An implemented route is not an observed success; select knowledge.get and professional.run, retain actual tool version and unknowns", "stops": case["data"]["stops"], "limitations": ["No device/browser/debugger runtime is implicitly supplied", "Static facts cannot discharge runtime obligations"]}
         return store.create("route", data, case_id)
     if operation == "subtask.create":
         data = {**args, "mode": "dev-subtask", "parent_id": case_id, "objective": _need(args, "question"), "target_kind": args.get("target_kind", "development-component"), "allowed_effects": args.get("allowed_effects", ["read"])}
@@ -663,6 +795,9 @@ def dispatch(root, operation, args, cancel=None):
                 elapsed = time.perf_counter() - started
                 store.update("run", identity, {"cleanup": {"state": "complete"}, "elapsed_seconds": elapsed, "reserved_seconds": elapsed})
             store.release(resource, identity)
+    if operation == 'professional.run':
+        from .tool_runner import run
+        return run(store, case_id, _need(args, 'source_id'), _need(args, 'method'), options=args.get('options'), tools=args.get('tools'), cancel=cancel)
     if operation == "capture":
         return _capture(store, case_id, _need(args, "source_id"), args.get("fixture", {"id": "single"}), cancel)
     if operation == "verify":
@@ -673,6 +808,10 @@ def dispatch(root, operation, args, cancel=None):
         right = store.get("observation", _need(args, "right_id"))
         if left["case_id"] != case_id or right["case_id"] != case_id or left["id"] == right["id"] or left["data"].get("source_sha256") == right["data"].get("source_sha256"):
             raise TraceError("not-independent", "Comparison requires distinct observations and source identities in this case")
+        broken=_evidence_integrity(store,left)+_evidence_integrity(store,right)
+        if broken:
+            store.invalidate(case_id,'comparison-evidence-integrity-failed')
+            raise TraceError('integrity-error','Comparison requires intact original observation materials',{'failures':broken})
         return compare_observations(left["data"].get("capture", {}), right["data"].get("capture", {}), _need(args, "plan", dict))
     if operation == "run.list":
         return {"items": _all(store, "run", case_id)}

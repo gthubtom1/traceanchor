@@ -10,7 +10,7 @@ import tarfile
 import zipfile
 
 NAME = 'traceanchor'
-VERSION = '0.1.1'
+VERSION = '0.2.0'
 ROOT = Path(__file__).resolve().parent
 INFO = f'{NAME}-{VERSION}.dist-info'
 
@@ -27,7 +27,9 @@ def _files():
             files.extend(p for p in (ROOT/name).rglob('*') if p.is_file() and not p.is_symlink() and '__pycache__' not in p.parts and p.suffix != '.pyc')
     # Post-build verification describes artifacts from outside them, avoiding
     # self-referential artifact hash recursion.
-    external = {'docs/public-audit.json', 'docs/release-verification.json', 'docs/completion-gates.json'}
+    external = {'docs/public-audit.json', 'docs/release-verification.json', 'docs/completion-gates.json',
+                'docs/install-qualification.json', 'docs/qualification.json',
+                'docs/goal/evidence/installation.json', 'docs/goal/evidence/release.json'}
     return sorted(p for p in set(files) if p.relative_to(ROOT).as_posix() not in external)
 
 
@@ -39,7 +41,9 @@ def build_wheel(wheel_directory, config_settings=None, metadata_directory=None):
     # Package installation carries the host skill and provenance, not research snapshots.
     for p in _files():
         rel=p.relative_to(ROOT).as_posix()
-        if rel.startswith(('docs/','skills/')) or rel=='UPSTREAM-REVIEW-PROMPT.md':
+        if rel.startswith('traceanchor/resources/'):
+            entries[rel]=p.read_bytes()
+        elif rel.startswith(('docs/','skills/')) or rel=='UPSTREAM-REVIEW-PROMPT.md':
             entries['traceanchor/resources/'+rel]=p.read_bytes()
     record=io.StringIO(newline=''); writer=csv.writer(record,lineterminator='\n')
     for path,data in sorted(entries.items()):

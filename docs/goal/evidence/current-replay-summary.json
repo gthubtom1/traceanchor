@@ -1,0 +1,37 @@
+{
+  "status": "passed-public-replay",
+  "pairs": [
+    {
+      "pair": "reference1-candidate1",
+      "status": "pass",
+      "case_id": "case_9e7be60bf3f44cd9947365f7cca00e49",
+      "verdict_id": "verdict_ad998e7d6cd34b8387f89e74577e2083",
+      "candidate_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
+      "reference_sha256": "673fe028e02c29cfed50a453bfdf60e7dd9f963c28b1ffbf88969f6990f84184",
+      "fixtures": 7,
+      "runs": 14
+    },
+    {
+      "pair": "reference2-candidate1",
+      "status": "fail",
+      "case_id": "case_c479ea2b23e0460e9187c732c09857dc",
+      "verdict_id": "verdict_0ec94cfd51174f329ef6292b20a12829",
+      "candidate_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
+      "reference_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "fixtures": 7,
+      "runs": 14
+    },
+    {
+      "pair": "reference2-candidate2",
+      "status": "pass",
+      "case_id": "case_8fd2d9d341e44a27a82991c60cadff11",
+      "verdict_id": "verdict_e7a6950d1ecf46f7a8fd9556930dc36f",
+      "candidate_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+      "reference_sha256": "b2e0c6378d16b5387f616e22782e5c440f949b5e52692f24d4afc9148a2e2f14",
+      "fixtures": 7,
+      "runs": 14
+    }
+  ],
+  "total_actual_process_runs": 42,
+  "scope": "Actual frozen independent revisions replayed after assessment. All inputs public now; not a new blind-host score. No deliberate bad candidate: V1 fails only against owner-changed V2 reference."
+}

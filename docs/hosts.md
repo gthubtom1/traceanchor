@@ -57,13 +57,13 @@ WebFetch 对官方域名的安全验证失败，随后仅用保留 TLS 验证的
 | 工具 | operation 白名单 |
 |---|---|
 | traceanchor_case | case.create/get/list/revise/close，subtask.create/result |
-| traceanchor_source | source.add/get/refresh/derive，analyze，version-diff |
+| traceanchor_source | source.add/get/refresh/derive，analyze，version-diff，professional.run |
 | traceanchor_research | observability.set，observe.http，plan，unknown.add/resolve，report |
 | traceanchor_spec | spec.freeze/get，compare，verify |
 | traceanchor_run | capture，run.get/list/cancel/reconcile |
-| traceanchor_storage | storage.usage/register/preview/clean/promote/pin |
+| traceanchor_storage | storage.usage/register/preview/clean/promote/pin，storage.recovery.release，workspace.usage/configure/work.list/work.archive/work.clean/work.reconcile |
 | traceanchor_exchange | export，import |
-| traceanchor_system | doctor |
+| traceanchor_system | doctor，knowledge.get |
 
 例：`traceanchor_case` 输入 `{"operation":"case.create","arguments":{"objective":"理解自建文件格式","mode":"analysis","target_kind":"file","allowed_effects":["read"]}}`。`traceanchor_run` 不接受 `storage.clean`。未被 case 授予 execute 的 capture 调用必须由核心拒绝，而非因 MCP 工具可见就放行。
 

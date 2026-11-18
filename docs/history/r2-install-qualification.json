@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "version": "0.1.1",
+  "status": "pass",
+  "scope": "Same machine, newly created isolated venv; not a clean-machine or cross-version upgrade qualification",
+  "platform": "win32",
+  "python": [
+    3,
+    12,
+    0
+  ],
+  "network_downloads": false,
+  "global_config_modified": false,
+  "steps": [
+    {
+      "step": "install-wheel",
+      "status": "pass",
+      "elapsed_seconds": 0.485
+    },
+    {
+      "step": "module-version",
+      "status": "pass",
+      "elapsed_seconds": 0.062
+    },
+    {
+      "step": "console-entrypoint",
+      "status": "pass",
+      "elapsed_seconds": 0.063
+    },
+    {
+      "step": "doctor",
+      "status": "pass",
+      "elapsed_seconds": 0.047
+    },
+    {
+      "step": "init",
+      "status": "pass",
+      "elapsed_seconds": 0.078
+    },
+    {
+      "step": "create-case",
+      "status": "pass",
+      "elapsed_seconds": 0.047
+    },
+    {
+      "step": "checkpoint",
+      "status": "pass",
+      "elapsed_seconds": 0.093
+    },
+    {
+      "step": "revise-case",
+      "status": "pass",
+      "elapsed_seconds": 0.063
+    },
+    {
+      "step": "restore",
+      "status": "pass",
+      "elapsed_seconds": 0.156
+    },
+    {
+      "step": "verify-rollback",
+      "status": "pass",
+      "elapsed_seconds": 0.047
+    },
+    {
+      "step": "real-installed-demo",
+      "status": "pass",
+      "elapsed_seconds": 6.734
+    },
+    {
+      "step": "readme-init",
+      "status": "pass",
+      "elapsed_seconds": 0.079
+    },
+    {
+      "step": "readme-case",
+      "status": "pass",
+      "elapsed_seconds": 0.062
+    },
+    {
+      "step": "readme-reference",
+      "status": "pass",
+      "elapsed_seconds": 0.063
+    },
+    {
+      "step": "readme-analyze",
+      "status": "pass",
+      "elapsed_seconds": 0.187
+    },
+    {
+      "step": "readme-freeze",
+      "status": "pass",
+      "elapsed_seconds": 0.188
+    },
+    {
+      "step": "readme-candidate",
+      "status": "pass",
+      "elapsed_seconds": 0.078
+    },
+    {
+      "step": "readme-verify",
+      "status": "pass",
+      "elapsed_seconds": 2.906
+    },
+    {
+      "step": "readme-close",
+      "status": "pass",
+      "elapsed_seconds": 0.297
+    },
+    {
+      "step": "claude-preview",
+      "status": "pass",
+      "elapsed_seconds": 0.062
+    },
+    {
+      "step": "claude-apply",
+      "status": "pass",
+      "elapsed_seconds": 0.063
+    },
+    {
+      "step": "claude-reinstall",
+      "status": "pass",
+      "elapsed_seconds": 0.047
+    },
+    {
+      "step": "claude-uninstall",
+      "status": "pass",
+      "elapsed_seconds": 0.078
+    },
+    {
+      "step": "codex-preview",
+      "status": "pass",
+      "elapsed_seconds": 0.062
+    },
+    {
+      "step": "codex-apply",
+      "status": "pass",
+      "elapsed_seconds": 0.063
+    },
+    {
+      "step": "codex-reinstall",
+      "status": "pass",
+      "elapsed_seconds": 0.062
+    },
+    {
+      "step": "codex-uninstall",
+      "status": "pass",
+      "elapsed_seconds": 0.063
+    },
+    {
+      "step": "same-version-reinstall",
+      "status": "pass",
+      "elapsed_seconds": 0.484
+    },
+    {
+      "step": "workspace-survives-reinstall",
+      "status": "pass",
+      "elapsed_seconds": 0.063
+    },
+    {
+      "step": "uninstall",
+      "status": "pass",
+      "elapsed_seconds": 0.359
+    },
+    {
+      "step": "package-absent-assets-preserved",
+      "status": "pass"
+    },
+    {
+      "step": "install-sdist",
+      "status": "pass",
+      "elapsed_seconds": 0.656
+    },
+    {
+      "step": "workspace-survives-sdist-install",
+      "status": "pass",
+      "elapsed_seconds": 0.047
+    },
+    {
+      "step": "export",
+      "status": "pass",
+      "elapsed_seconds": 0.047
+    },
+    {
+      "step": "destination-init",
+      "status": "pass",
+      "elapsed_seconds": 0.078
+    },
+    {
+      "step": "migration-import",
+      "status": "pass",
+      "elapsed_seconds": 0.062
+    },
+    {
+      "step": "rollback-reinstall-local-wheel",
+      "status": "pass",
+      "elapsed_seconds": 0.453
+    },
+    {
+      "step": "final-data-preserved",
+      "status": "pass",
+      "elapsed_seconds": 0.047
+    }
+  ],
+  "installed_demo": "passed-finite-scope",
+  "implementation_sha256": {
+    "__init__.py": "da676b04369f6babdda3563b186a55ea3b41e758479b352da72dda756305697a",
+    "__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+    "analysis.py": "9ae4e6b23ee6590b370df838656d9fa7f6c127c58776cc6c5e9095999f01ebd1",
+    "cli.py": "d51d12cd67e9655ad9bfff9b15f7283bb114744e853b964df9065119c7c55e1d",
+    "comparison.py": "605853aab874bf3f18c9628aec4a0bb6453e9557ae5e7bfec529b31a0a9a7fea",
+    "core.py": "3ca42af3e645818f481d42d854df564a22c5ed1b964e320c3a770e5a75bcd58f",
+    "demo.py": "ad1a72a091a2520eeffda21b7751e1fbcd33c3a7d689daf7e6327a3fbd91ca43",
+    "exchange.py": "d306f435115c3663690081b7e139d6be38f343ef6b5b2297bb5761edc13bf88f",
+    "hosts.py": "fcb793b0690ddc72f30878f9ade65a699288a33b287115ff15cf84b735d52001",
+    "http_observer.py": "ccd710f8ab097922e1823a95d06fff513851404ee84fba9d88319d8428bcf0b4",
+    "lifecycle.py": "b8eca0c0598630bdbb95dc9599ed256bd5be213a07ada598165cf7749f788382",
+    "maintenance.py": "30c0b83a76334b132355b0df5e8ec13c81b914788fe672632d2e93e77d145c39",
+    "mcp.py": "6e8850d7830f0597ed6a8404ce999b30b51406f954a96ac327a6eefabf96d9dc",
+    "process.py": "20986bfdddeb350dab3ffe9bff64dd47d3b978e928439bd2994568d3d892262f",
+    "service.py": "0af33d083462d09b7e7fb6790cf9f2550c3f0f9ac9ac227802d81154bf0e42a3",
+    "winjob.py": "5a42c6c844f779d2f3a964232b7d5b819d4f44b7556b2b21c2768ff729e03f81"
+  },
+  "not_run": [
+    "Different-version package/schema upgrade (no earlier release exists)",
+    "Real Claude/Codex host workflows",
+    "Other operating systems"
+  ],
+  "limitations": [
+    "Database restore is offline and does not roll back source files or foreign effects",
+    "Same-version reinstall and local artifact recovery are not proof of arbitrary future upgrades"
+  ]
+}

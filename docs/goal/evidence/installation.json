@@ -1,0 +1,934 @@
+{
+  "schema_version": 2,
+  "version": "0.2.0",
+  "status": "pass",
+  "scope": "Same machine, newly created isolated venv; explicitly selected local-version upgrade and paired pre-upgrade-data rollback when previous artifact supplied; not clean-machine qualification",
+  "platform": "win32",
+  "python": [
+    3,
+    12,
+    0
+  ],
+  "network_downloads": false,
+  "global_config_modified": false,
+  "steps": [
+    {
+      "step": "install-previous-local-version",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.485,
+      "streams": {
+        "stdout": {
+          "size": 203,
+          "sha256": "b2c1281b68c7c72ef624693d7a91bfcc656f1934e37910a7e71b72f55f3808b0"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "previous-version-init",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.078,
+      "streams": {
+        "stdout": {
+          "size": 117,
+          "sha256": "6317762b1ae16ba00befe285ee84a1f18f6ac80a9bc0688ddeef1ffe7f376ece"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "previous-version-create-case",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.047,
+      "streams": {
+        "stdout": {
+          "size": 713,
+          "sha256": "5a15e10280a5cce12800a8a1645294f0599c91387c9d2e34fa76277d3d2bf5d4"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "preserve-pre-upgrade-owned-workspace",
+      "status": "pass",
+      "scope": "Offline local copy after previous CLI exited; paired with previous package for rollback"
+    },
+    {
+      "step": "install-wheel",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.515,
+      "streams": {
+        "stdout": {
+          "size": 379,
+          "sha256": "831ac6a4a335f8fc6b17bee8c8899fced608be5da73538844305d18125929081"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "cross-version-upgrade-preserves-case",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.047,
+      "streams": {
+        "stdout": {
+          "size": 768,
+          "sha256": "f73ece3d31a5dd1bd1452e4e9464663ae5934b25058600c60db90dc8731bc45a"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "module-version",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.063,
+      "streams": {
+        "stdout": {
+          "size": 7,
+          "sha256": "c58a749f70f5e1ba5394ebcdbfcfa02fa938c4a173d8e41e6c476a7c8b2acddd"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "console-entrypoint",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.062,
+      "streams": {
+        "stdout": {
+          "size": 7,
+          "sha256": "c58a749f70f5e1ba5394ebcdbfcfa02fa938c4a173d8e41e6c476a7c8b2acddd"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "doctor",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.063,
+      "streams": {
+        "stdout": {
+          "size": 3293,
+          "sha256": "9e33e39d0f3ce9e2fa6996b57d789e07f63f45782be8276403bf93bdea275f37"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "init",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.047,
+      "streams": {
+        "stdout": {
+          "size": 117,
+          "sha256": "6317762b1ae16ba00befe285ee84a1f18f6ac80a9bc0688ddeef1ffe7f376ece"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "create-case",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.047,
+      "streams": {
+        "stdout": {
+          "size": 701,
+          "sha256": "92ffd6f01299a56abe566a5cc3ecd0f30f93b1a21ab4bc09dada68e7c41497d3"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "checkpoint",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.093,
+      "streams": {
+        "stdout": {
+          "size": 486,
+          "sha256": "0e41e7720eb44e02bdbca858f2dc540bf66504f8da2af565393f92e29bd7289a"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "revise-case",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.047,
+      "streams": {
+        "stdout": {
+          "size": 684,
+          "sha256": "4b17fc0133f0bf2fd276666716a9e69775a1fe810a860e7fe9092ae0f854dd3d"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "restore",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.14,
+      "streams": {
+        "stdout": {
+          "size": 350,
+          "sha256": "9e62f250cb274a824ec95de76ecc6be8553ba49976b528f45e598c5cc03d2acb"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "verify-rollback",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.063,
+      "streams": {
+        "stdout": {
+          "size": 756,
+          "sha256": "1ef488777b6d1e9afa8b3f033bbec6941ee881136b256b895d392e39d270799a"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "real-installed-demo",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 8.219,
+      "streams": {
+        "stdout": {
+          "size": 558,
+          "sha256": "334d607a91839302ded61f4a13970859386e214037228df51688c3cf08c3aee2"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "readme-init",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.078,
+      "streams": {
+        "stdout": {
+          "size": 117,
+          "sha256": "ef1faa73e5010ece4d24eff971f1e6342392adb4025d4adb4d100516fb0fd561"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "readme-case",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.062,
+      "streams": {
+        "stdout": {
+          "size": 873,
+          "sha256": "198bf32990f619b6222055fd77ca1c729f3b9eabfdb173c281ef0c910cd8f01d"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "readme-reference",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.063,
+      "streams": {
+        "stdout": {
+          "size": 665,
+          "sha256": "cfa83eb3ef9ca174e0ebab95a4008137626b501d1c49846ffc7b467fef320d95"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "readme-analyze",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.187,
+      "streams": {
+        "stdout": {
+          "size": 5529,
+          "sha256": "2e58d92f803d05c48e3a949bd69ede1c3942ca66840fc8e65371a63db385a062"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "readme-freeze",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.141,
+      "streams": {
+        "stdout": {
+          "size": 2418,
+          "sha256": "eb381e12eb6bae9647fad1470553421db9c49b53e0e1dd93c0824442dc8f5e8d"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "readme-candidate",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.078,
+      "streams": {
+        "stdout": {
+          "size": 666,
+          "sha256": "7ada765dc9a3cef2394ba3d6ab86363ce02106bd33be657c31fbd327cce4d8bc"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "readme-verify",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 3.125,
+      "streams": {
+        "stdout": {
+          "size": 10869,
+          "sha256": "cd5d27c104fbea81d010e59d729a8e865cc979d3d766a8bbc882fbd97ec0a545"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "readme-close",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 1.156,
+      "streams": {
+        "stdout": {
+          "size": 1031,
+          "sha256": "9608e54bd0d4d9f7c06b3a94beb5d38de5db65fc1f9eafaea3bcaa62dec3976a"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "claude-preview",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.078,
+      "streams": {
+        "stdout": {
+          "size": 651,
+          "sha256": "ae7b4b228528640c5dd22a6529bbed0327bce413917f8c76154dbadd5ff6c857"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "claude-apply",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.063,
+      "streams": {
+        "stdout": {
+          "size": 650,
+          "sha256": "d3b646fca249c216e13277353112c3340136fd4acbd19aaab0b5a0684d51f444"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "claude-reinstall",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.062,
+      "streams": {
+        "stdout": {
+          "size": 653,
+          "sha256": "95619ea7549904cf7cc4509dc3764283c78f18adaf1c35ffb915aac530c0b541"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "claude-uninstall",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.063,
+      "streams": {
+        "stdout": {
+          "size": 265,
+          "sha256": "fb084803f5de0a6e9a63ac02e5d65e6be2d2177564127ca4c9cbbc7e5aeadb12"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "codex-preview",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.062,
+      "streams": {
+        "stdout": {
+          "size": 638,
+          "sha256": "ab96b0091a91364b630de1cd6601930418e638b63d247fcb0c42d3b634254e03"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "codex-apply",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.079,
+      "streams": {
+        "stdout": {
+          "size": 637,
+          "sha256": "5ade79e0b3c6a9feaea121be4c2153dc711e1d63206f971e8fca70988bc0c4cd"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "codex-reinstall",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.062,
+      "streams": {
+        "stdout": {
+          "size": 640,
+          "sha256": "0a717dea5a227ceb159902d249e47b0dc0d574bb3a8cb6931fbb69654bb2adf7"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "codex-uninstall",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.078,
+      "streams": {
+        "stdout": {
+          "size": 273,
+          "sha256": "e6fc87eb9d935f2d7a90be1c09fd48dcbd8c9ce5f9a9f8438b130f1b11a0e2e9"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "installed-domain-knowledge",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.047,
+      "streams": {
+        "stdout": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "installed-node-inspector-chain",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.875,
+      "streams": {
+        "stdout": {
+          "size": 17284,
+          "sha256": "f91f41b39f6e39e749b2651ab0f58a0c128382e146f58540e4dafa8de7aca7be"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "installed-native-fixture-build",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.094,
+      "streams": {
+        "stdout": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "installed-native-disassembly",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.734,
+      "streams": {
+        "stdout": {
+          "size": 38800,
+          "sha256": "88966571d365ff404e8d960e3ab85f5de52e610a381f2af08f22802ec5f202ba"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "installed-native-gdb-trace",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.938,
+      "streams": {
+        "stdout": {
+          "size": 6154,
+          "sha256": "a0d440ca71cd7e6abb17a5ae7ff8da1bf5b0b13d6b3d351cc30ff7c187be55d8"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "installed-jadx-static-chain",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 2.812,
+      "streams": {
+        "stdout": {
+          "size": 21812,
+          "sha256": "42c8eb2553acdd925de4f2adc211e89e0226c69f0bf00af7507361234d2f47e9"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "same-version-reinstall",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.5,
+      "streams": {
+        "stdout": {
+          "size": 379,
+          "sha256": "b8482322f0b00bae0e1a8cb25cb0731c2891be9a82be25053ee4ea1b7e23b132"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "workspace-survives-reinstall",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.047,
+      "streams": {
+        "stdout": {
+          "size": 756,
+          "sha256": "1ef488777b6d1e9afa8b3f033bbec6941ee881136b256b895d392e39d270799a"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "uninstall",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.391,
+      "streams": {
+        "stdout": {
+          "size": 127,
+          "sha256": "4fd91e933e755134e2adf5e55aec2bd1735c394cbc46aac2e2dfae803dc33cb6"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "package-absent-assets-preserved",
+      "status": "pass",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.031,
+      "streams": {
+        "stdout": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "size": 128,
+          "sha256": "d0725cd16cc7d1c29b042d92c827e1faf3fc4301e74a173ba95f0e8e8a4c60da"
+        }
+      }
+    },
+    {
+      "step": "install-sdist",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.766,
+      "streams": {
+        "stdout": {
+          "size": 1024,
+          "sha256": "b7a1c5efab7e7fd70cd4a0e6eec1cfd463cb085f7fd9d725ca519e299dc811be"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "workspace-survives-sdist-install",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.046,
+      "streams": {
+        "stdout": {
+          "size": 756,
+          "sha256": "1ef488777b6d1e9afa8b3f033bbec6941ee881136b256b895d392e39d270799a"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "export",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.063,
+      "streams": {
+        "stdout": {
+          "size": 1179,
+          "sha256": "4eb3d496a01652e0fc05c90baef9978451c5dfa596c68952695e6718d507aa4f"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "destination-init",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.062,
+      "streams": {
+        "stdout": {
+          "size": 117,
+          "sha256": "a11bf1b1350774c7c72a183ab4b7f795976283d610be2a5079396cf9a9f50585"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "migration-import",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.063,
+      "streams": {
+        "stdout": {
+          "size": 154,
+          "sha256": "73ef27c763cf8d3fbcd0e886393173852b17cd3f777f551bcdf60bf175d1da41"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "rollback-previous-local-package",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.453,
+      "streams": {
+        "stdout": {
+          "size": 379,
+          "sha256": "d9ed600278745d233f9ae7a2cb79f9ba33475055ea0fb34f2248f9d005b469df"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "rollback-paired-old-data",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.047,
+      "streams": {
+        "stdout": {
+          "size": 713,
+          "sha256": "5a15e10280a5cce12800a8a1645294f0599c91387c9d2e34fa76277d3d2bf5d4"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "newer-assets-retained-during-rollback",
+      "status": "pass",
+      "scope": "Older package opens only pre-upgrade data; R3 workspaces remain on disk and are not interpreted by old version"
+    },
+    {
+      "step": "rollback-reinstall-local-wheel",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.516,
+      "streams": {
+        "stdout": {
+          "size": 379,
+          "sha256": "831ac6a4a335f8fc6b17bee8c8899fced608be5da73538844305d18125929081"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "step": "final-data-preserved",
+      "status": "pass",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.046,
+      "streams": {
+        "stdout": {
+          "size": 756,
+          "sha256": "1ef488777b6d1e9afa8b3f033bbec6941ee881136b256b895d392e39d270799a"
+        },
+        "stderr": {
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "installed_demo": "passed-finite-scope",
+  "installed_professional_chains": [
+    "Node-inspector-state-network",
+    "GNU-machine-code-disassembly",
+    "GNU-GDB-callback-runtime",
+    "JADX-DEX-static-semantics"
+  ],
+  "implementation_sha256": {
+    "traceanchor/__init__.py": "5f964509ccb30eca19479df1c5e35fe72edea2b20513c52490eb7c2740a359f0",
+    "traceanchor/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+    "traceanchor/analysis.py": "9ae4e6b23ee6590b370df838656d9fa7f6c127c58776cc6c5e9095999f01ebd1",
+    "traceanchor/apk_adapter.py": "3d9f344eb1983abfbdf6441e330da7e3e8f34568d44b640409ec2b5a4d483690",
+    "traceanchor/cli.py": "51916e598536ea3b7c2cebbf40337baaf4297e269ae8c5db54b40846fd651e06",
+    "traceanchor/comparison.py": "605853aab874bf3f18c9628aec4a0bb6453e9557ae5e7bfec529b31a0a9a7fea",
+    "traceanchor/core.py": "787d2976c8522fa804845463a9e9dcf046d662c78e33f713291c87acb25f3753",
+    "traceanchor/demo.py": "ad1a72a091a2520eeffda21b7751e1fbcd33c3a7d689daf7e6327a3fbd91ca43",
+    "traceanchor/exchange.py": "e73188a3c5219c1a4db5c248c3e0da413420f5dc8a4396f987c59f98b3bde050",
+    "traceanchor/hosts.py": "fcb793b0690ddc72f30878f9ade65a699288a33b287115ff15cf84b735d52001",
+    "traceanchor/http_observer.py": "ccd710f8ab097922e1823a95d06fff513851404ee84fba9d88319d8428bcf0b4",
+    "traceanchor/knowledge.py": "00e8d8a01ef4c45c6fa5805107ea969dc215bfc760f8399069569fe0b54c66f3",
+    "traceanchor/lifecycle.py": "c62d02c5ba1b8d8ab40115e6fa72377d41c4cebbe49a57e1f648527326c022c2",
+    "traceanchor/maintenance.py": "f84390d92b48fd5c5a6d5bbf22cdbea3f4d6443b4c3b9824f5c28fb7fd63cfa1",
+    "traceanchor/mcp.py": "3cc01a2e6b2b5bc30f3235557597683868ba1e9e7e9d08589bcb3146d750f2a7",
+    "traceanchor/process.py": "20986bfdddeb350dab3ffe9bff64dd47d3b978e928439bd2994568d3d892262f",
+    "traceanchor/professional.py": "f64682dfa59b1d280ab22d0da3b59c5aa3fcd46d14d8c4f2f39e75bfef440013",
+    "traceanchor/resources/inspect_web.cjs": "5a6ad9d1ec25aa7db91c9b724bfe8cf28c0770c32ab7d6345cde18603cccf780",
+    "traceanchor/service.py": "db788dfd3eef6f14bd14b450e6cf81ace8642602359977a443068fc549ebd1cf",
+    "traceanchor/tool_runner.py": "84aac5aed279943609a65b43f2d5888af492113a9ed4f8d1534522f0905801f6",
+    "traceanchor/web_adapter.py": "abe2204b3aa072abc8ce784451e132be55be9188eaa073c84810690881299fe4",
+    "traceanchor/winjob.py": "5a42c6c844f779d2f3a964232b7d5b819d4f44b7556b2b21c2768ff729e03f81",
+    "traceanchor/workspace.py": "1e91db52177ca918690286a9be0ec2f585d740a00cfdcb189cd0061319877a51"
+  },
+  "artifacts": {
+    "traceanchor-0.2.0-py3-none-any.whl": {
+      "sha256": "557f411b1e18f9c08df0d070f5d9529214644b1505f4556872c8ae6ab4bf927e",
+      "size": 318393
+    },
+    "traceanchor-0.2.0.tar.gz": {
+      "sha256": "c6c4af8d1bfce2c0aa4e03ea3ea219edb4f5d3b19514adbf9ad43c46121b8887",
+      "size": 338957
+    }
+  },
+  "previous_artifact": {
+    "filename": "traceanchor-0.1.1-py3-none-any.whl",
+    "sha256": "aaff745c74187b035b1382c952fdc17cb38354823c099a5296301e24a24b8087"
+  },
+  "cross_version": "upgrade-and-paired-data-rollback-tested",
+  "not_run": [
+    "Real named-host launcher/config workflow (this script checks synthetic project configuration)",
+    "Other operating systems",
+    "Arbitrary old-version use of newer professional/workspace records"
+  ],
+  "limitations": [
+    "Database restore is offline and does not roll back source files or foreign effects",
+    "Rollback uses matching old package and pre-upgrade workspace; newer assets remain preserved, not interpreted by old version",
+    "Optional tools qualify only chains actually listed; availability is not execution proof",
+    "Raw commands/input/outputs retained locally; public stream hashes identify bytes without publishing private paths"
+  ]
+}

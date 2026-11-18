@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "origin_sha256": "32d8aa2cae4ef2fc1d7e732921058a43d92432a895cc0d35fe8cc558c328c76e",
+  "origin_local_reference": ".validation/reconstruction-replay-41768f6bda4c/qualification.json",
+  "disclosure": "Path-redacted structured evidence; raw local originals retained, hash identifies unmodified original. Redacted text is not claimed byte-identical to raw. Historical experiment identity remains distinct from final artifact qualification.",
+  "observed": {
+    "status": "passed-public-replay",
+    "pairs": [
+      {
+        "pair": "reference1-candidate1",
+        "status": "pass",
+        "case_id": "case_3e57bbf089784a35988c230907cb2b5f",
+        "verdict_id": "verdict_3851cd427f834ddf9f5f08d7315c387e",
+        "candidate_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
+        "reference_sha256": "055a8f445f8ef3359efe5a3fb5f1e5e68c9747519e30f6f722f7bc9e464ec8c4",
+        "fixtures": 7,
+        "runs": 14
+      },
+      {
+        "pair": "reference2-candidate1",
+        "status": "fail",
+        "case_id": "case_edc82508fe6f4b309b21dced76756ad9",
+        "verdict_id": "verdict_9181eeb5880d4354813612fdfb3af6cd",
+        "candidate_sha256": "9792652c7b428d057e0714226181af39d1a7b86085ef101d8bab93489085bcec",
+        "reference_sha256": "03359238a9f93a9a4b74825e61f4f2563cdf5087fc2d008c071938b20b3ef094",
+        "fixtures": 7,
+        "runs": 14
+      },
+      {
+        "pair": "reference2-candidate2",
+        "status": "pass",
+        "case_id": "case_69ff0748ce22407099214535019480ba",
+        "verdict_id": "verdict_b16d1436472f415d9f8833796e42589c",
+        "candidate_sha256": "4b98699beb77c4fdcfe831688c9f97d96bac200afe750bb2788cd6848e6f380a",
+        "reference_sha256": "03359238a9f93a9a4b74825e61f4f2563cdf5087fc2d008c071938b20b3ef094",
+        "fixtures": 7,
+        "runs": 14
+      }
+    ],
+    "total_actual_process_runs": 42,
+    "scope": "Actual frozen independent revisions replayed after assessment. All inputs public now; not a new blind-host score. No deliberate bad candidate: V1 fails only against owner-changed V2 reference."
+  }
+}

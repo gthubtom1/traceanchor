@@ -598,6 +598,267 @@
         "tests/test_http.py",
         "tests/test_acceptance_integrity.py"
       ]
+    },
+    {
+      "id": "TA-013",
+      "title": "Native machine-code and actual breakpoint professional chain",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "reverse",
+          "path": "skills/reverse-engineering/tools.md",
+          "lines": [
+            53,
+            91
+          ],
+          "symbol": "professional native tool selection",
+          "url": "https://github.com/gthubtom1/reverse-skill/blob/ce675096e6a2cd4789a76f9bd618feddc2b6f333/skills/reverse-engineering/tools.md#L53-L91"
+        },
+        {
+          "source": "rea",
+          "path": "src/ghidra/GhidraTargetSnapshot.ts",
+          "lines": [
+            36,
+            138
+          ],
+          "symbol": "identity-bound actual tool snapshot",
+          "url": "https://github.com/morluto/rea/blob/05be423acbdf3a56673bdbd3004e4b500c0f5217/src/ghidra/GhidraTargetSnapshot.ts#L36-L138"
+        }
+      ],
+      "local": [
+        {
+          "module": "traceanchor/professional.py",
+          "symbol": "R3 professional/workflow implementation"
+        },
+        {
+          "module": "traceanchor/tool_runner.py",
+          "symbol": "R3 professional/workflow implementation"
+        },
+        {
+          "module": "docs/knowledge/native.md",
+          "symbol": "R3 professional/workflow implementation"
+        }
+      ],
+      "contract": [
+        "FOUR-SOURCE-PRODUCT-R3",
+        "P01"
+      ],
+      "rationale": "Deliver usable professional reverse analysis and host-driven independent development, not only management state.",
+      "differences": "Use mature objdump and GDB, not just headers/strings. No copied provider or native scripts; own process and raw evidence authority.",
+      "tests": [
+        {
+          "path": "tests/test_tool_runner.py",
+          "symbol": "R3 actual qualification or regression",
+          "level": "See bound raw evidence; not every test is a real tool test"
+        },
+        {
+          "path": "tools/qualify_professional.py",
+          "symbol": "R3 actual qualification or regression",
+          "level": "See bound raw evidence; not every test is a real tool test"
+        }
+      ],
+      "implemented_test_paths": [
+        "tests/test_tool_runner.py",
+        "tools/qualify_professional.py"
+      ],
+      "limitations": "Finite declared tool/input/environment scope; G gates and raw evidence decide qualification.",
+      "maintenance": "Product integrator owns shared admission, adapter maintainer owns tool/version qualification; source snapshots remain independent.",
+      "falsification": "Concrete input demonstrates a false successful professional claim, stale acceptance or lost protected material."
+    },
+    {
+      "id": "TA-014",
+      "title": "DEX semantic decompilation and independent bytecode cross-check",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "seep",
+          "path": "Tool/skill/apkseep/references/toolchain.md",
+          "lines": [
+            29,
+            40
+          ],
+          "symbol": "mature DEX tools",
+          "url": "https://github.com/angusdevgo/Seep-Reverse-Lab/blob/1ea9399ccb4dd8db5849a5ff62d963bf4abbe35e/Tool/skill/apkseep/references/toolchain.md#L29-L40"
+        }
+      ],
+      "local": [
+        {
+          "module": "traceanchor/apk_adapter.py",
+          "symbol": "R3 professional/workflow implementation"
+        },
+        {
+          "module": "docs/knowledge/apk.md",
+          "symbol": "R3 professional/workflow implementation"
+        }
+      ],
+      "contract": [
+        "FOUR-SOURCE-PRODUCT-R3",
+        "P02"
+      ],
+      "rationale": "Deliver usable professional reverse analysis and host-driven independent development, not only management state.",
+      "differences": "JADX explicit CLI with isolated home/cache and raw generated Java. DEX invoke cross-check in qualification; no APK device/runtime claim.",
+      "tests": [
+        {
+          "path": "tests/test_apk_adapter.py",
+          "symbol": "R3 actual qualification or regression",
+          "level": "See bound raw evidence; not every test is a real tool test"
+        },
+        {
+          "path": "tools/qualify_apk.py",
+          "symbol": "R3 actual qualification or regression",
+          "level": "See bound raw evidence; not every test is a real tool test"
+        }
+      ],
+      "implemented_test_paths": [
+        "tests/test_apk_adapter.py",
+        "tools/qualify_apk.py"
+      ],
+      "limitations": "Finite declared tool/input/environment scope; G gates and raw evidence decide qualification.",
+      "maintenance": "Product integrator owns shared admission, adapter maintainer owns tool/version qualification; source snapshots remain independent.",
+      "falsification": "Concrete input demonstrates a false successful professional claim, stale acceptance or lost protected material."
+    },
+    {
+      "id": "TA-015",
+      "title": "Actual JS runtime interaction and request causality",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "seep",
+          "path": "Tool/mcp/Tool/safe/js-reverse-mcp/src/PageCollector.ts",
+          "lines": [
+            742,
+            879
+          ],
+          "symbol": "runtime observations and initiator mapping",
+          "url": "https://github.com/angusdevgo/Seep-Reverse-Lab/blob/1ea9399ccb4dd8db5849a5ff62d963bf4abbe35e/Tool/mcp/Tool/safe/js-reverse-mcp/src/PageCollector.ts#L742-L879"
+        }
+      ],
+      "local": [
+        {
+          "module": "traceanchor/web_adapter.py",
+          "symbol": "R3 professional/workflow implementation"
+        },
+        {
+          "module": "traceanchor/resources/inspect_web.cjs",
+          "symbol": "R3 professional/workflow implementation"
+        },
+        {
+          "module": "docs/knowledge/web.md",
+          "symbol": "R3 professional/workflow implementation"
+        }
+      ],
+      "contract": [
+        "FOUR-SOURCE-PRODUCT-R3",
+        "P03"
+      ],
+      "rationale": "Deliver usable professional reverse analysis and host-driven independent development, not only management state.",
+      "differences": "Independent Node inspector request-ID/stack/state implementation, not endpoint regex or URL+method fallback. Browser DOM/extension qualification remains separate.",
+      "tests": [
+        {
+          "path": "tests/test_web_adapter.py",
+          "symbol": "R3 actual qualification or regression",
+          "level": "See bound raw evidence; not every test is a real tool test"
+        },
+        {
+          "path": "tools/qualify_web.py",
+          "symbol": "R3 actual qualification or regression",
+          "level": "See bound raw evidence; not every test is a real tool test"
+        }
+      ],
+      "implemented_test_paths": [
+        "tests/test_web_adapter.py",
+        "tools/qualify_web.py"
+      ],
+      "limitations": "Finite declared tool/input/environment scope; G gates and raw evidence decide qualification.",
+      "maintenance": "Product integrator owns shared admission, adapter maintainer owns tool/version qualification; source snapshots remain independent.",
+      "falsification": "Concrete input demonstrates a false successful professional claim, stale acceptance or lost protected material."
+    },
+    {
+      "id": "TA-016",
+      "title": "Real host implementation, retained differences and unexposed final inputs",
+      "adoption": "independent-implementation",
+      "sources": [
+        {
+          "source": "craft",
+          "path": "crates/ai/src/rebuild/mod.rs",
+          "lines": [
+            1049,
+            1101
+          ],
+          "symbol": "actual check-to-refine feedback",
+          "url": "https://github.com/storytold/craft-anything/blob/e3af36f2f355284c81f5a387852e3171d5ec1ccc/crates/ai/src/rebuild/mod.rs#L1049-L1101"
+        }
+      ],
+      "local": [
+        {
+          "module": "tools/assess_native.py",
+          "symbol": "R3 professional/workflow implementation"
+        },
+        {
+          "module": "tools/qualify_development.py",
+          "symbol": "R3 professional/workflow implementation"
+        }
+      ],
+      "contract": [
+        "FOUR-SOURCE-PRODUCT-R3",
+        "P04/P05"
+      ],
+      "rationale": "Deliver usable professional reverse analysis and host-driven independent development, not only management state.",
+      "differences": "Existing host and fresh candidate worker, no internal model loop. Do not inject a prewritten bad candidate; version updates can produce real differences. Cooperative isolation disclosed, not claimed OS secrecy.",
+      "tests": [
+        {
+          "path": "tests/test_acceptance_integrity.py",
+          "symbol": "R3 actual qualification or regression",
+          "level": "See bound raw evidence; not every test is a real tool test"
+        }
+      ],
+      "implemented_test_paths": [
+        "tests/test_acceptance_integrity.py"
+      ],
+      "limitations": "Finite declared tool/input/environment scope; G gates and raw evidence decide qualification.",
+      "maintenance": "Product integrator owns shared admission, adapter maintainer owns tool/version qualification; source snapshots remain independent.",
+      "falsification": "Concrete input demonstrates a false successful professional claim, stale acceptance or lost protected material."
+    },
+    {
+      "id": "TA-017",
+      "title": "Whole-workspace census and monitored tool growth",
+      "adoption": "original",
+      "sources": [],
+      "local": [
+        {
+          "module": "traceanchor/workspace.py",
+          "symbol": "R3 professional/workflow implementation"
+        },
+        {
+          "module": "traceanchor/tool_runner.py",
+          "symbol": "R3 professional/workflow implementation"
+        }
+      ],
+      "contract": [
+        "FOUR-SOURCE-PRODUCT-R3",
+        "G06"
+      ],
+      "rationale": "Deliver usable professional reverse analysis and host-driven independent development, not only management state.",
+      "differences": "R3 original requirement: database/work/checkpoint/cache/unknown census, reservations, real open-file growth monitoring and actual recovery payload archive; not an OS filesystem quota.",
+      "tests": [
+        {
+          "path": "tests/test_workspace.py",
+          "symbol": "R3 actual qualification or regression",
+          "level": "See bound raw evidence; not every test is a real tool test"
+        },
+        {
+          "path": "tests/test_r3_integrity.py",
+          "symbol": "R3 actual qualification or regression",
+          "level": "See bound raw evidence; not every test is a real tool test"
+        }
+      ],
+      "implemented_test_paths": [
+        "tests/test_workspace.py",
+        "tests/test_r3_integrity.py"
+      ],
+      "limitations": "Finite declared tool/input/environment scope; G gates and raw evidence decide qualification.",
+      "maintenance": "Product integrator owns shared admission, adapter maintainer owns tool/version qualification; source snapshots remain independent.",
+      "falsification": "Concrete input demonstrates a false successful professional claim, stale acceptance or lost protected material."
     }
   ],
   "source_to_mechanisms": {
@@ -605,23 +866,28 @@
       "TA-003",
       "TA-005",
       "TA-007",
-      "TA-009"
+      "TA-009",
+      "TA-013"
     ],
     "rea": [
       "TA-001",
-      "TA-002"
+      "TA-002",
+      "TA-013"
     ],
     "craft": [
       "TA-003",
       "TA-004",
       "TA-005",
-      "TA-006"
+      "TA-006",
+      "TA-016"
     ],
     "seep": [
       "TA-006",
       "TA-007",
       "TA-008",
-      "TA-009"
+      "TA-009",
+      "TA-014",
+      "TA-015"
     ]
   },
   "local_to_mechanisms": {
@@ -675,6 +941,40 @@
     ],
     "docs/provenance/review-template.md": [
       "TA-011"
+    ],
+    "traceanchor/professional.py": [
+      "TA-013"
+    ],
+    "traceanchor/tool_runner.py": [
+      "TA-013",
+      "TA-017"
+    ],
+    "docs/knowledge/native.md": [
+      "TA-013"
+    ],
+    "traceanchor/apk_adapter.py": [
+      "TA-014"
+    ],
+    "docs/knowledge/apk.md": [
+      "TA-014"
+    ],
+    "traceanchor/web_adapter.py": [
+      "TA-015"
+    ],
+    "traceanchor/resources/inspect_web.cjs": [
+      "TA-015"
+    ],
+    "docs/knowledge/web.md": [
+      "TA-015"
+    ],
+    "tools/assess_native.py": [
+      "TA-016"
+    ],
+    "tools/qualify_development.py": [
+      "TA-016"
+    ],
+    "traceanchor/workspace.py": [
+      "TA-017"
     ]
   }
 }

@@ -1,3 +1,5 @@
+> Historical core guide (0.1.x). For current FOUR-SOURCE-PRODUCT-R3 professional usage and whole-workspace governance, read [professional-guide.md](professional-guide.md), [r3-support.md](r3-support.md), [r3-maintenance.md](r3-maintenance.md), and goal/CONTRACT-R3.md. Old limited support statements are retained history, not the current capability matrix.
+
 # 版本维护与发布验收门
 
 ## 1. 当前状态

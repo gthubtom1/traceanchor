@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "origin_sha256": "e0da40ef50076154792dc43de7b7c352e4473de67f8ca04dd71aaf53dacd4819",
+  "origin_local_reference": ".validation/r3-review-20261118-3f891d/after-fix-summary.json",
+  "disclosure": "Path-redacted structured evidence; raw local originals retained, hash identifies unmodified original. Redacted text is not claimed byte-identical to raw. Historical experiment identity remains distinct from final artifact qualification.",
+  "observed": {
+    "native_status": "partial",
+    "native_hits": [],
+    "child_revise_error": "effect-not-granted",
+    "child_capture_error": "effect-not-granted",
+    "parent_before": "pass",
+    "parent_after": "stale",
+    "parent_close_error": "acceptance-not-passed",
+    "quota_error": "workspace-budget",
+    "quota_after_bytes": 69734,
+    "quota_hard_bytes": 269734,
+    "recovered_residual_bytes": 9000,
+    "compare_error": "integrity-error",
+    "source_changes": {},
+    "summary": {
+      "original_findings": 6,
+      "fixed_counterexamples": 6,
+      "new_audit_scope": false,
+      "shared_source_writes": false
+    }
+  }
+}

@@ -6,7 +6,7 @@
 
 默认只研究和建议，不授权修改产品实现、安装依赖/宿主、执行下载内容、合并、发布、改变凭据/认证、系统/全局设置或启动额外模型循环。用户另有当次明确授权时，仅在该范围内增加工作；复评结论本身不是实施授权。遵守现有权限和预算，不绕过失败或拒绝。
 
-先读取产品当前 README、docs/IMPLEMENTATION-CONTRACT.md、实际模块/API、相关测试及资格记录、docs/provenance/README.md、baselines.json、mechanisms.json、decisions.md、notices.md、review-template.md 与上次复评。检查产品版本、Git 提交和工作树状态；保留用户改动，脏树不重置/覆写。没有历史复评则明确 none。若某文件缺失，记录缺口，避免把规划当作已实现。
+先读取产品当前 README、docs/goal/CONTRACT-R3.md、docs/goal/status.json、docs/goal/RESUME.md；docs/IMPLEMENTATION-CONTRACT.md仅为0.1.x历史核心合同，不裁决当前产品门。再读取实际模块/API、相关测试及资格记录、docs/provenance/README.md、baselines.json、mechanisms.json、decisions.md、notices.md、review-template.md 与上次复评。检查产品版本、Git 提交和工作树状态；保留用户改动，脏树不重置/覆写。没有历史复评则明确 none。若某文件缺失，记录缺口，避免把规划当作已实现。
 
 四方固定研究输入（历史不自动更新）：
 

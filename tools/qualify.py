@@ -63,9 +63,13 @@ def identity():
         paths.extend((ROOT / directory).rglob('*.py'))
     manifest = {path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
                 for path in sorted(set(paths)) if path.is_file()}
+    for directory in ('traceanchor/resources', 'examples'):
+        for path in sorted((ROOT / directory).rglob('*')):
+            if path.is_file() and '__pycache__' not in path.parts and path.suffix != '.pyc':
+                manifest[path.relative_to(ROOT).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
     encoded = json.dumps(manifest, sort_keys=True, separators=(',', ':')).encode()
     return {'sha256': hashlib.sha256(encoded).hexdigest(), 'files': manifest,
-            'scope': 'Python product/tests, build configuration, qualifier and CI; not dependencies or documentation'}
+            'scope': 'Python product/tests/tools, runtime resources, original examples, build configuration and CI; not external dependencies'}
 
 
 @contextlib.contextmanager

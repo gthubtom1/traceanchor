@@ -1,0 +1,1118 @@
+{
+  "schema_version": 1,
+  "origin_sha256": "b2e775bda5ca131b45e76aafda31bee257eee4284dd066ecd11fb722ffa16c0d",
+  "origin_local_reference": ".validation/apk-fe9f3ef27c95472493432bf3debbaf9c/qualification.json",
+  "disclosure": "Path-redacted structured evidence; raw local originals retained, hash identifies unmodified original. Redacted text is not claimed byte-identical to raw. Historical experiment identity remains distinct from final artifact qualification.",
+  "observed": {
+    "schema": 1,
+    "status": "observed-finite-static-chain",
+    "scope": "P02 self-authored APK static analysis only",
+    "started_at": 1794955647.0919492,
+    "commands": [
+      {
+        "status": "succeeded",
+        "exit_code": 0,
+        "elapsed_seconds": 0.11,
+        "pid": 27136,
+        "target_pid": 36496,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": null,
+        "argv": [
+          "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\java.exe",
+          "-Duser.home=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "-Djava.io.tmpdir=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "-version"
+        ],
+        "environment_overrides": {
+          "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "USERPROFILE": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "APPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\appdata",
+          "LOCALAPPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\localappdata",
+          "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\config",
+          "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\cache",
+          "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp"
+        },
+        "stdout": {
+          "path": "command-00.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        "stderr": {
+          "path": "command-00.stderr",
+          "sha256": "c09b3f6e7993628681d0f0e0fdfa12ccbfef6d7798ad260ec13807486db8b267",
+          "size": 208
+        }
+      },
+      {
+        "status": "succeeded",
+        "exit_code": 0,
+        "elapsed_seconds": 0.187,
+        "pid": 33568,
+        "target_pid": 26392,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": null,
+        "argv": [
+          "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\javac.exe",
+          "-J-Duser.home=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "-J-Djava.io.tmpdir=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "-version"
+        ],
+        "environment_overrides": {
+          "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "USERPROFILE": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "APPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\appdata",
+          "LOCALAPPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\localappdata",
+          "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\config",
+          "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\cache",
+          "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp"
+        },
+        "stdout": {
+          "path": "command-01.stdout",
+          "sha256": "1e2362c50d175bcb27f536900509d73d43aec73358800f197e8d94ae0ec2a24b",
+          "size": 17
+        },
+        "stderr": {
+          "path": "command-01.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      },
+      {
+        "status": "succeeded",
+        "exit_code": 0,
+        "elapsed_seconds": 0.157,
+        "pid": 35056,
+        "target_pid": 19480,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": null,
+        "argv": [
+          "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\java.exe",
+          "-Duser.home=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "-Djava.io.tmpdir=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "-cp",
+          "D:\\Tools\\android-sdk\\build-tools\\34.0.0\\lib\\d8.jar",
+          "com.android.tools.r8.D8",
+          "--version"
+        ],
+        "environment_overrides": {
+          "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "USERPROFILE": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "APPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\appdata",
+          "LOCALAPPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\localappdata",
+          "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\config",
+          "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\cache",
+          "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp"
+        },
+        "stdout": {
+          "path": "command-02.stdout",
+          "sha256": "ff2084f8110bff35919caf231a17789e6a72d0a8e8a0c25fe6199e90317e4f6f",
+          "size": 111
+        },
+        "stderr": {
+          "path": "command-02.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      },
+      {
+        "status": "succeeded",
+        "exit_code": 0,
+        "elapsed_seconds": 0.078,
+        "pid": 16760,
+        "target_pid": 12304,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": null,
+        "argv": [
+          "D:\\Tools\\android-sdk\\build-tools\\34.0.0\\aapt2.exe",
+          "version"
+        ],
+        "environment_overrides": {
+          "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "USERPROFILE": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "APPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\appdata",
+          "LOCALAPPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\localappdata",
+          "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\config",
+          "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\cache",
+          "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp"
+        },
+        "stdout": {
+          "path": "command-03.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        "stderr": {
+          "path": "command-03.stderr",
+          "sha256": "76fe8e2227182802e43cd4f271ecef8bab9eafe76957c0199631cb0619972b25",
+          "size": 51
+        }
+      },
+      {
+        "status": "succeeded",
+        "exit_code": 0,
+        "elapsed_seconds": 0.625,
+        "pid": 34196,
+        "target_pid": 31844,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": null,
+        "argv": [
+          "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\javac.exe",
+          "-J-Duser.home=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "-J-Djava.io.tmpdir=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "--release",
+          "8",
+          "-g",
+          "-classpath",
+          "D:\\Tools\\android-sdk\\platforms\\android-28\\android.jar",
+          "-d",
+          "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\classes",
+          "[PRODUCT]\\examples\\apk\\src\\study\\shipping\\ShipmentSession.java",
+          "[PRODUCT]\\examples\\apk\\src\\study\\shipping\\ShippingActivity.java",
+          "[PRODUCT]\\examples\\apk\\src\\study\\shipping\\ShippingRules.java"
+        ],
+        "environment_overrides": {
+          "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "USERPROFILE": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "APPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\appdata",
+          "LOCALAPPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\localappdata",
+          "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\config",
+          "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\cache",
+          "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp"
+        },
+        "stdout": {
+          "path": "command-04.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        "stderr": {
+          "path": "command-04.stderr",
+          "sha256": "0776deeb6ace85f83d60a9ba535cbe73a21566505b5aec2fd5c75b2bde065172",
+          "size": 188
+        }
+      },
+      {
+        "status": "succeeded",
+        "exit_code": 0,
+        "elapsed_seconds": 0.703,
+        "pid": 14772,
+        "target_pid": 33760,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": null,
+        "argv": [
+          "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\java.exe",
+          "-Duser.home=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "-Djava.io.tmpdir=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "-Xmx512m",
+          "-cp",
+          "D:\\Tools\\android-sdk\\build-tools\\34.0.0\\lib\\d8.jar",
+          "com.android.tools.r8.D8",
+          "--release",
+          "--min-api",
+          "21",
+          "--lib",
+          "D:\\Tools\\android-sdk\\platforms\\android-28\\android.jar",
+          "--output",
+          "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\dex",
+          "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\classes\\study\\shipping\\ShipmentSession.class",
+          "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\classes\\study\\shipping\\ShippingActivity.class",
+          "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\classes\\study\\shipping\\ShippingRules.class"
+        ],
+        "environment_overrides": {
+          "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "USERPROFILE": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "APPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\appdata",
+          "LOCALAPPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\localappdata",
+          "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\config",
+          "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\cache",
+          "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp"
+        },
+        "stdout": {
+          "path": "command-05.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        "stderr": {
+          "path": "command-05.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      },
+      {
+        "status": "succeeded",
+        "exit_code": 0,
+        "elapsed_seconds": 0.109,
+        "pid": 40624,
+        "target_pid": 484,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": null,
+        "argv": [
+          "D:\\Tools\\android-sdk\\build-tools\\34.0.0\\aapt2.exe",
+          "link",
+          "--manifest",
+          "[PRODUCT]\\examples\\apk\\AndroidManifest.xml",
+          "-I",
+          "D:\\Tools\\android-sdk\\platforms\\android-28\\android.jar",
+          "-o",
+          "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\resources.ap_"
+        ],
+        "environment_overrides": {
+          "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "USERPROFILE": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "APPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\appdata",
+          "LOCALAPPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\localappdata",
+          "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\config",
+          "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\cache",
+          "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp"
+        },
+        "stdout": {
+          "path": "command-06.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        "stderr": {
+          "path": "command-06.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      },
+      {
+        "status": "succeeded",
+        "exit_code": 0,
+        "elapsed_seconds": 0.063,
+        "pid": 30524,
+        "target_pid": 40112,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": null,
+        "argv": [
+          "D:\\Tools\\android-sdk\\build-tools\\34.0.0\\dexdump.exe",
+          "-d",
+          "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\dex\\classes.dex"
+        ],
+        "environment_overrides": {
+          "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp",
+          "USERPROFILE": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "APPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\appdata",
+          "LOCALAPPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\localappdata",
+          "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\config",
+          "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\cache",
+          "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\tmp"
+        },
+        "stdout": {
+          "path": "command-07.stdout",
+          "sha256": "1dadcbf3e4bd522afe6faf595ce832c681a43d9dff09f9f2f54dbbfd3fbbb3e2",
+          "size": 22918
+        },
+        "stderr": {
+          "path": "command-07.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      },
+      {
+        "status": "succeeded",
+        "exit_code": 0,
+        "elapsed_seconds": 0.359,
+        "pid": 35168,
+        "target_pid": 33036,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": null,
+        "argv": [
+          "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\java.exe",
+          "-Xmx512m",
+          "-Duser.home=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\home",
+          "-Djava.io.tmpdir=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+          "-cp",
+          "D:\\Tools\\jadx\\lib\\jadx-1.5.6-all.jar",
+          "jadx.cli.JadxCLI",
+          "--config",
+          "none",
+          "--version"
+        ],
+        "environment_overrides": {
+          "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+          "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+          "USERPROFILE": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "APPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\appdata",
+          "LOCALAPPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\localappdata",
+          "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\config",
+          "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\cache",
+          "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp"
+        },
+        "stdout": {
+          "path": "command-08.stdout",
+          "sha256": "8e6db9a531d5334e47a76f28a1859f0b04c238c2937321b7b915d1360826659f",
+          "size": 7
+        },
+        "stderr": {
+          "path": "command-08.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      },
+      {
+        "status": "succeeded",
+        "exit_code": 0,
+        "elapsed_seconds": 1.406,
+        "pid": 16696,
+        "target_pid": 32476,
+        "containment": "windows-job",
+        "cleanup": {
+          "state": "complete",
+          "details": [
+            "job active process count confirmed zero"
+          ]
+        },
+        "output_truncated": false,
+        "error": null,
+        "argv": [
+          "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\java.exe",
+          "-Xmx512m",
+          "-Duser.home=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\home",
+          "-Djava.io.tmpdir=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+          "-cp",
+          "D:\\Tools\\jadx\\lib\\jadx-1.5.6-all.jar",
+          "jadx.cli.JadxCLI",
+          "--config",
+          "none",
+          "--no-res",
+          "--threads-count",
+          "1",
+          "-d",
+          "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\sources",
+          "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\shipping.apk"
+        ],
+        "environment_overrides": {
+          "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+          "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+          "USERPROFILE": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\home",
+          "APPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\appdata",
+          "LOCALAPPDATA": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\environment\\localappdata",
+          "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\config",
+          "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\cache",
+          "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp"
+        },
+        "stdout": {
+          "path": "command-09.stdout",
+          "sha256": "faaf36d12a475bd228a99e91ce6b6a881fde387669134b0b6cffc947c55d314a",
+          "size": 151
+        },
+        "stderr": {
+          "path": "command-09.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      }
+    ],
+    "tools": {
+      "java": {
+        "path": "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\java.exe",
+        "sha256": "82051fdab26319d77d20cc0065045d05ec00b3e3d05f44935d7c06b96b621d55"
+      },
+      "javac": {
+        "path": "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\javac.exe",
+        "sha256": "00f7c6f9ec89ebba4bb96cf8760403cccf1268df2eae8685900ba38e58a7aff9"
+      },
+      "jadx_jar": {
+        "path": "D:\\Tools\\jadx\\lib\\jadx-1.5.6-all.jar",
+        "sha256": "fe3e12c45acf75f92369685fd02d1d7a7323385dc725680a9b98a0dac0ea554b"
+      },
+      "d8_jar": {
+        "path": "D:\\Tools\\android-sdk\\build-tools\\34.0.0\\lib\\d8.jar",
+        "sha256": "d43c8a94c9b1f1da1a7cc49c32b81e8cee1708b37ee8b530a81a0688222b42c0"
+      },
+      "aapt2": {
+        "path": "D:\\Tools\\android-sdk\\build-tools\\34.0.0\\aapt2.exe",
+        "sha256": "4c7300d84054aa5e970323166cd078c88cf653110e15a30fbe9f8fe55a6857c0"
+      },
+      "android_jar": {
+        "path": "D:\\Tools\\android-sdk\\platforms\\android-28\\android.jar",
+        "sha256": "d20853d289a5161d9cf1c1268d7923076487d4fa68c970b0733e2d5a0ccfc3c5"
+      },
+      "dexdump": {
+        "path": "D:\\Tools\\android-sdk\\build-tools\\34.0.0\\dexdump.exe",
+        "sha256": "b8e063c3b5f3c5cf10e5a79f331e2cde0f6e2fb0379e91134883b2a4c18697ed"
+      }
+    },
+    "limitations": [
+      "APK is unsigned and was not installed or run.",
+      "Reference Java builds this disclosed fixture; this is not P04 blind reconstruction.",
+      "No qualification of arbitrary APKs, native boundaries or device behavior."
+    ],
+    "implementation_inputs": [
+      {
+        "path": "traceanchor/apk_adapter.py",
+        "sha256": "5acb7257d475360e581e28a29cb7abfd7f29aa9c6b25a522649ada0f7cbd1f30"
+      },
+      {
+        "path": "tools/qualify_apk.py",
+        "sha256": "1f3f891dcfa52e9fc9dd66d3b4974c6ccdc226ed1a36a04d051516c3dc46a37e"
+      }
+    ],
+    "fixture_inputs": [
+      {
+        "path": "examples/apk/src/study/shipping/ShipmentSession.java",
+        "sha256": "700dc977fc9305c553cec200fc59874837d7a236a689e218e3c679f3df45abba"
+      },
+      {
+        "path": "examples/apk/src/study/shipping/ShippingActivity.java",
+        "sha256": "af501fac1c8f4f09eb4b02571db3b27ce52edda0b7c97f05d613362ea78c3540"
+      },
+      {
+        "path": "examples/apk/src/study/shipping/ShippingRules.java",
+        "sha256": "e037799a3dfec5081f072e973f246aea099951756e65abad07192aaf43c59628"
+      },
+      {
+        "path": "examples/apk/AndroidManifest.xml",
+        "sha256": "96e924830ace60268fbf3590b91420adbe967f1f6fb2ac21e19905a145cbaf7c"
+      }
+    ],
+    "target": {
+      "path": "shipping.apk",
+      "sha256": "bc8d2556bcd2949b565f2fab28fadccb3472ce86d74e7d40ac38286338740e1a",
+      "size": 2667
+    },
+    "analysis": {
+      "status": "complete",
+      "facts": [
+        {
+          "kind": "decompiled-source",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "sha256": "9b2c9bf217babb9b5c3f6de1d693101dd3bf2fb017ff2175b6b6a9485cab5d81",
+          "producer": "jadx",
+          "evidence": "static-decompiler-output"
+        },
+        {
+          "kind": "java-method",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 9,
+          "name": "requestQuote",
+          "signature": "public int requestQuote(String str, int i, boolean z) {",
+          "evidence": "decompiled-declaration"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 10,
+          "callee": "requireState",
+          "method_context": "requestQuote",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 11,
+          "callee": "ShippingRules.quote",
+          "method_context": "requestQuote",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-method",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 17,
+          "name": "confirm",
+          "signature": "public String confirm(int i, String str) {",
+          "evidence": "decompiled-declaration"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 18,
+          "callee": "requireState",
+          "method_context": "confirm",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 20,
+          "callee": "IllegalArgumentException",
+          "method_context": "confirm",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 22,
+          "callee": "str.length",
+          "method_context": "confirm",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 23,
+          "callee": "IllegalArgumentException",
+          "method_context": "confirm",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-method",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 31,
+          "name": "reset",
+          "signature": "public void reset() {",
+          "evidence": "decompiled-declaration"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 32,
+          "callee": "equals",
+          "method_context": "reset",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 33,
+          "callee": "IllegalStateException",
+          "method_context": "reset",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-method",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 39,
+          "name": "requireState",
+          "signature": "private void requireState(String str) {",
+          "evidence": "decompiled-declaration"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 40,
+          "callee": "str.equals",
+          "method_context": "requireState",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "line": 43,
+          "callee": "IllegalStateException",
+          "method_context": "requireState",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "decompiled-source",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingActivity.java",
+          "sha256": "144480970f2152903fe7ab6119fc0122572e7d85530276a4cacd1b4a516f4883",
+          "producer": "jadx",
+          "evidence": "static-decompiler-output"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingActivity.java",
+          "line": 9,
+          "callee": "ShipmentSession",
+          "method_context": null,
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-method",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingActivity.java",
+          "line": 12,
+          "name": "onCreate",
+          "signature": "public void onCreate(Bundle bundle) {",
+          "evidence": "decompiled-declaration"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingActivity.java",
+          "line": 13,
+          "callee": "super.onCreate",
+          "method_context": "onCreate",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingActivity.java",
+          "line": 14,
+          "callee": "this.session.confirm",
+          "method_context": "onCreate",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingActivity.java",
+          "line": 14,
+          "callee": "this.session.requestQuote",
+          "method_context": "onCreate",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "decompiled-source",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+          "sha256": "bcc37de24d56cd314f3915a010dcd82d3181973a744b1baea78311d4e39d03fb",
+          "producer": "jadx",
+          "evidence": "static-decompiler-output"
+        },
+        {
+          "kind": "java-method",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+          "line": 5,
+          "name": "quote",
+          "signature": "public static int quote(String str, int i, boolean z) {",
+          "evidence": "decompiled-declaration"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+          "line": 8,
+          "callee": "IllegalArgumentException",
+          "method_context": "quote",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+          "line": 10,
+          "callee": "equals",
+          "method_context": "quote",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+          "line": 13,
+          "callee": "equals",
+          "method_context": "quote",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+          "line": 14,
+          "callee": "IllegalArgumentException",
+          "method_context": "quote",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+          "line": 22,
+          "callee": "equals",
+          "method_context": "quote",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "java-call-hint",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+          "line": 25,
+          "callee": "IllegalArgumentException",
+          "method_context": "quote",
+          "evidence": "syntactic/inferred; dispatch unresolved"
+        },
+        {
+          "kind": "decompiled-source",
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/defpackage/R.java",
+          "sha256": "c907769f1e46e2651895a0963a5ea9b9a1bd7bb89275379a4955bcc05d458b20",
+          "producer": "jadx",
+          "evidence": "static-decompiler-output"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "jadx-87433270443d4ee78db1264b1114c978/version.stdout",
+          "kind": "tool-stdout",
+          "size": 7,
+          "sha256": "8e6db9a531d5334e47a76f28a1859f0b04c238c2937321b7b915d1360826659f"
+        },
+        {
+          "path": "jadx-87433270443d4ee78db1264b1114c978/version.stderr",
+          "kind": "tool-stderr",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "jadx-87433270443d4ee78db1264b1114c978/decompile.stdout",
+          "kind": "tool-stdout",
+          "size": 151,
+          "sha256": "faaf36d12a475bd228a99e91ce6b6a881fde387669134b0b6cffc947c55d314a"
+        },
+        {
+          "path": "jadx-87433270443d4ee78db1264b1114c978/decompile.stderr",
+          "kind": "tool-stderr",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+          "kind": "decompiled-java",
+          "size": 1342,
+          "sha256": "9b2c9bf217babb9b5c3f6de1d693101dd3bf2fb017ff2175b6b6a9485cab5d81"
+        },
+        {
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingActivity.java",
+          "kind": "decompiled-java",
+          "size": 533,
+          "sha256": "144480970f2152903fe7ab6119fc0122572e7d85530276a4cacd1b4a516f4883"
+        },
+        {
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+          "kind": "decompiled-java",
+          "size": 820,
+          "sha256": "bcc37de24d56cd314f3915a010dcd82d3181973a744b1baea78311d4e39d03fb"
+        },
+        {
+          "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/defpackage/R.java",
+          "kind": "decompiled-java",
+          "size": 100,
+          "sha256": "c907769f1e46e2651895a0963a5ea9b9a1bd7bb89275379a4955bcc05d458b20"
+        }
+      ],
+      "unknowns": [],
+      "qualification_level": "static-decompiler-output; runtime-unobserved",
+      "limitations": [
+        "Static JADX output only; Android runtime, installation and business execution not observed.",
+        "Java call hints are syntactic navigation in decompiled output, not resolved dispatch or reachability.",
+        "Reflection, dynamic DEX, JNI/native, Kotlin coroutine/lambda reconstruction and decompiler errors may leave gaps.",
+        "Artifact budgets are checked after tool return; the executor must enforce timeout and monitor directory growth."
+      ],
+      "tool": {
+        "kind": "jadx",
+        "version": "1.5.6",
+        "jar_sha256": "fe3e12c45acf75f92369685fd02d1d7a7323385dc725680a9b98a0dac0ea554b"
+      },
+      "runs": [
+        {
+          "status": "succeeded",
+          "exit_code": 0,
+          "elapsed_seconds": 0.359,
+          "pid": 35168,
+          "target_pid": 33036,
+          "containment": "windows-job",
+          "cleanup": {
+            "state": "complete",
+            "details": [
+              "job active process count confirmed zero"
+            ]
+          },
+          "output_truncated": false,
+          "error": null,
+          "environment_overrides": {
+            "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\config",
+            "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\cache",
+            "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+            "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+            "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp"
+          },
+          "argv": [
+            "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\java.exe",
+            "-Xmx512m",
+            "-Duser.home=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\home",
+            "-Djava.io.tmpdir=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+            "-cp",
+            "D:\\Tools\\jadx\\lib\\jadx-1.5.6-all.jar",
+            "jadx.cli.JadxCLI",
+            "--config",
+            "none",
+            "--version"
+          ],
+          "label": "version",
+          "stdout_artifact": "jadx-87433270443d4ee78db1264b1114c978/version.stdout",
+          "stderr_artifact": "jadx-87433270443d4ee78db1264b1114c978/version.stderr"
+        },
+        {
+          "status": "succeeded",
+          "exit_code": 0,
+          "elapsed_seconds": 1.406,
+          "pid": 16696,
+          "target_pid": 32476,
+          "containment": "windows-job",
+          "cleanup": {
+            "state": "complete",
+            "details": [
+              "job active process count confirmed zero"
+            ]
+          },
+          "output_truncated": false,
+          "error": null,
+          "environment_overrides": {
+            "JADX_CONFIG_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\config",
+            "JADX_CACHE_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\cache",
+            "JADX_TMP_DIR": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+            "TEMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+            "TMP": "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp"
+          },
+          "argv": [
+            "D:\\Tools\\runtime\\jdk21\\jdk-21.0.12.1+1\\bin\\java.exe",
+            "-Xmx512m",
+            "-Duser.home=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\home",
+            "-Djava.io.tmpdir=[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\tmp",
+            "-cp",
+            "D:\\Tools\\jadx\\lib\\jadx-1.5.6-all.jar",
+            "jadx.cli.JadxCLI",
+            "--config",
+            "none",
+            "--no-res",
+            "--threads-count",
+            "1",
+            "-d",
+            "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\jadx-87433270443d4ee78db1264b1114c978\\sources",
+            "[PRODUCT]\\.validation\\apk-fe9f3ef27c95472493432bf3debbaf9c\\shipping.apk"
+          ],
+          "label": "decompile",
+          "stdout_artifact": "jadx-87433270443d4ee78db1264b1114c978/decompile.stdout",
+          "stderr_artifact": "jadx-87433270443d4ee78db1264b1114c978/decompile.stderr"
+        }
+      ],
+      "coverage": {
+        "files_examined": 4,
+        "bytes_read": 2795,
+        "truncated": false
+      },
+      "target": {
+        "sha256": "bc8d2556bcd2949b565f2fab28fadccb3472ce86d74e7d40ac38286338740e1a",
+        "size": 2667,
+        "name": "shipping.apk"
+      },
+      "attempt": "jadx-87433270443d4ee78db1264b1114c978"
+    },
+    "critical_chain": [
+      {
+        "kind": "java-call-hint",
+        "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingActivity.java",
+        "line": 14,
+        "callee": "this.session.requestQuote",
+        "method_context": "onCreate",
+        "evidence": "syntactic/inferred; dispatch unresolved"
+      },
+      {
+        "kind": "java-call-hint",
+        "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingActivity.java",
+        "line": 14,
+        "callee": "this.session.confirm",
+        "method_context": "onCreate",
+        "evidence": "syntactic/inferred; dispatch unresolved"
+      },
+      {
+        "kind": "java-call-hint",
+        "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+        "line": 10,
+        "callee": "requireState",
+        "method_context": "requestQuote",
+        "evidence": "syntactic/inferred; dispatch unresolved"
+      },
+      {
+        "kind": "java-call-hint",
+        "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+        "line": 11,
+        "callee": "ShippingRules.quote",
+        "method_context": "requestQuote",
+        "evidence": "syntactic/inferred; dispatch unresolved"
+      }
+    ],
+    "independent_dex_edges": [
+      {
+        "caller": "study.shipping.ShipmentSession.confirm:(ILjava/lang/String;)Ljava/lang/String;",
+        "line": 89,
+        "path": "command-07.stdout",
+        "instruction": "000368: 7020 0f00 0100                         |0002: invoke-direct {v1, v0}, Lstudy/shipping/ShipmentSession;.requireState:(Ljava/lang/String;)V // method@000f"
+      },
+      {
+        "caller": "study.shipping.ShipmentSession.requestQuote:(Ljava/lang/String;IZ)I",
+        "line": 143,
+        "path": "command-07.stdout",
+        "instruction": "000338: 7020 0f00 0100                         |0002: invoke-direct {v1, v0}, Lstudy/shipping/ShipmentSession;.requireState:(Ljava/lang/String;)V // method@000f"
+      },
+      {
+        "caller": "study.shipping.ShipmentSession.requestQuote:(Ljava/lang/String;IZ)I",
+        "line": 144,
+        "path": "command-07.stdout",
+        "instruction": "00033e: 7130 1400 3204                         |0005: invoke-static {v2, v3, v4}, Lstudy/shipping/ShippingRules;.quote:(Ljava/lang/String;IZ)I // method@0014"
+      },
+      {
+        "caller": "study.shipping.ShippingActivity.<init>:()V",
+        "line": 225,
+        "path": "command-07.stdout",
+        "instruction": "0004b2: 7010 0c00 0000                         |0005: invoke-direct {v0}, Lstudy/shipping/ShipmentSession;.<init>:()V // method@000c"
+      },
+      {
+        "caller": "study.shipping.ShippingActivity.onCreate:(Landroid/os/Bundle;)V",
+        "line": 251,
+        "path": "command-07.stdout",
+        "instruction": "0004e4: 6e40 0e00 2410                         |000a: invoke-virtual {v4, v2, v0, v1}, Lstudy/shipping/ShipmentSession;.requestQuote:(Ljava/lang/String;IZ)I // method@000e"
+      },
+      {
+        "caller": "study.shipping.ShippingActivity.onCreate:(Landroid/os/Bundle;)V",
+        "line": 255,
+        "path": "command-07.stdout",
+        "instruction": "0004f4: 6e30 0d00 4001                         |0012: invoke-virtual {v0, v4, v1}, Lstudy/shipping/ShipmentSession;.confirm:(ILjava/lang/String;)Ljava/lang/String; // method@000d"
+      }
+    ],
+    "input_and_state_conditions": [
+      {
+        "marker": "weight-out-of-range",
+        "locations": [
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+            "line": 8,
+            "text": "throw new IllegalArgumentException(\"weight-out-of-range\");"
+          }
+        ]
+      },
+      {
+        "marker": "unknown-zone",
+        "locations": [
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+            "line": 14,
+            "text": "throw new IllegalArgumentException(\"unknown-zone\");"
+          }
+        ]
+      },
+      {
+        "marker": "express-unavailable",
+        "locations": [
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShippingRules.java",
+            "line": 25,
+            "text": "throw new IllegalArgumentException(\"express-unavailable\");"
+          }
+        ]
+      },
+      {
+        "marker": "DRAFT",
+        "locations": [
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+            "line": 7,
+            "text": "private String state = \"DRAFT\";"
+          },
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+            "line": 10,
+            "text": "requireState(\"DRAFT\");"
+          },
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+            "line": 36,
+            "text": "this.state = \"DRAFT\";"
+          }
+        ]
+      },
+      {
+        "marker": "QUOTED",
+        "locations": [
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+            "line": 13,
+            "text": "this.state = \"QUOTED\";"
+          },
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+            "line": 18,
+            "text": "requireState(\"QUOTED\");"
+          }
+        ]
+      },
+      {
+        "marker": "CONFIRMED",
+        "locations": [
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+            "line": 27,
+            "text": "this.state = \"CONFIRMED\";"
+          },
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+            "line": 32,
+            "text": "if (\"CONFIRMED\".equals(this.state)) {"
+          }
+        ]
+      },
+      {
+        "marker": "price-mismatch",
+        "locations": [
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+            "line": 20,
+            "text": "throw new IllegalArgumentException(\"price-mismatch\");"
+          }
+        ]
+      },
+      {
+        "marker": "invalid-order-id",
+        "locations": [
+          {
+            "path": "jadx-87433270443d4ee78db1264b1114c978/sources/sources/study/shipping/ShipmentSession.java",
+            "line": 23,
+            "text": "throw new IllegalArgumentException(\"invalid-order-id\");"
+          }
+        ]
+      }
+    ],
+    "finished_at": 1794955651.1203573
+  }
+}

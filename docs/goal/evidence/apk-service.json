@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "origin_sha256": "0c6ac9c9d2d439a5e77afded5224b82aa6e3f68618668277df045f115fc39ab1",
+  "origin_local_reference": ".validation/apk-service-23b5d0cb49db/qualification.json",
+  "disclosure": "Path-redacted structured evidence; raw local originals retained, hash identifies unmodified original. Redacted text is not claimed byte-identical to raw. Historical experiment identity remains distinct from final artifact qualification.",
+  "observed": {
+    "status": "pass-static-semantic-chain",
+    "case_id": "case_565b8b773d834c6da0c90a5f8c78c233",
+    "source_id": "source_53e8826323d74a6b9864486a87e40837",
+    "observation_id": "observation_d0cfee5fa0c940fdba81dbf477a828cc",
+    "facts": 30,
+    "artifacts": 8,
+    "qualification_level": "static-decompiler-output; runtime-unobserved",
+    "scope": "Real service -> optional JADX CLI -> Java semantics and raw evidence; no Android runtime claim"
+  }
+}

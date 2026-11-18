@@ -141,7 +141,7 @@
         "evidence/independent-review.json",
         "evidence/independent-review-replay.json"
       ],
-      "facts": "Current199pass0skip includes integrity,role/freshness,comparison,ownercrash,timeout,cancel,EOF/process-tree cleanup and six reviewer counterexamples. Captured business dimensions independently judged; unrequested visual is explicit not-applicable, not fabricated success.",
+      "facts": "Current200pass0skip includes integrity,role/freshness,comparison,ownercrash,timeout,cancel,EOF/process-tree cleanup and six reviewer counterexamples. Captured business dimensions independently judged; unrequested visual is explicit not-applicable, not fabricated success.",
       "limits": ""
     },
     "G06": {
@@ -197,14 +197,15 @@
       "limits": ""
     },
     "G10": {
-      "status": "local-pass-remote-pending",
+      "status": "actual-CI-failed-current-diagnostic-verification-pending",
       "criterion": "Fresh review, exact source qualification and actual publication",
       "evidence": [
         "evidence/independent-review.json",
         "evidence/independent-review-replay.json",
         "evidence/engineering.json",
         "../public-audit.json",
-        "../release-verification.json"
+        "../release-verification.json",
+        "evidence/ci-first-attempt.json"
       ],
       "facts": "Fresh reviewer6real counterexamples verified/fixed and original6replayed; withdrawn Read mixup explicitly retained. Current frozen executable qualification and local public preflight pass. Actual remote CI/0.2.0release/download pending.",
       "limits": ""
@@ -214,7 +215,7 @@
   "workers": {
     "main-r3": "only active integration writer; all delegated workers completed"
   },
-  "next_action": "Canonical LF bytes now match Git. Current199/199,42process replay and parent-version reuse passed. Freeze final byte-exact package,52step installed qualification,commit/push and actualCI before release/download. G10 remains remote-pending.",
+  "next_action": "Current200/200 and11Web tests pass. Diagnostic-only process outcome exposure does not claim original CI cause repaired. Freeze matching52step artifact use and one bounded current-source CI run; no Release until actual CI succeeds.",
   "failures_retained": [
     "Original evidence-corruption and recovery-delete negative controls failed before fixes",
     "Native Windows GDB startup-with-shell command rejected; compatible commands then passed",
@@ -243,7 +244,7 @@
     "traceanchor/professional.py": "f64682dfa59b1d280ab22d0da3b59c5aa3fcd46d14d8c4f2f39e75bfef440013",
     "traceanchor/service.py": "db788dfd3eef6f14bd14b450e6cf81ace8642602359977a443068fc549ebd1cf",
     "traceanchor/tool_runner.py": "84aac5aed279943609a65b43f2d5888af492113a9ed4f8d1534522f0905801f6",
-    "traceanchor/web_adapter.py": "abe2204b3aa072abc8ce784451e132be55be9188eaa073c84810690881299fe4",
+    "traceanchor/web_adapter.py": "605fb6f95af4a51cd202cbc22c7a6c3b6b6203c06ca24617fff469be7b172cab",
     "traceanchor/winjob.py": "5a42c6c844f779d2f3a964232b7d5b819d4f44b7556b2b21c2768ff729e03f81",
     "traceanchor/workspace.py": "b2e9d2f5070b1db98470174df0692ad7e7116596da6089fc0fc0af40e687b853",
     "traceanchor/__init__.py": "5f964509ccb30eca19479df1c5e35fe72edea2b20513c52490eb7c2740a359f0",
@@ -263,12 +264,13 @@
   "gate_index": "gates.json",
   "current_qualification": {
     "evidence": "evidence/engineering.json",
-    "tests": 199,
-    "passed": 199,
+    "tests": 200,
+    "passed": 200,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "source_identity": "02eec62dc9ff87d8ed3e0abf172f864edeb10ab1e7f378c8b8e42c0d69e618a7",
+    "source_identity": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7",
     "source_unchanged_during_run": true
-  }
+  },
+  "qualification_binding": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7"
 }

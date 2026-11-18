@@ -17,7 +17,7 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.5,
+      "elapsed_seconds": 0.469,
       "streams": {
         "stdout": {
           "size": 203,
@@ -34,11 +34,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.062,
+      "elapsed_seconds": 0.078,
       "streams": {
         "stdout": {
           "size": 117,
-          "sha256": "de1e3f18cb79f46a8debd460ecbf0e59fe8236e0e7808bdc29f837c7f5124e46"
+          "sha256": "112f2761377e48b03f3430dfa1d11cc1834fe9384df58a734205be9d00d18549"
         },
         "stderr": {
           "size": 0,
@@ -55,7 +55,7 @@
       "streams": {
         "stdout": {
           "size": 713,
-          "sha256": "9ffb50387e8b36281d2318d1fe7d909e1ab74de2874a343a6252dbd6757b5ad5"
+          "sha256": "1690ed9824c1f239f724965274523f27c7b19452eb393df3d0283a82cbbb7afb"
         },
         "stderr": {
           "size": 0,
@@ -73,7 +73,7 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.515,
+      "elapsed_seconds": 0.484,
       "streams": {
         "stdout": {
           "size": 379,
@@ -94,7 +94,7 @@
       "streams": {
         "stdout": {
           "size": 768,
-          "sha256": "a01dda9a05a5e2ede1764329423b80b10f0c5c7df1844c3f008f8673e88ac5f7"
+          "sha256": "10cc84567fb0efeb40477281f2e75baeaf5222eabb1f22a6d3e87c860de70fb1"
         },
         "stderr": {
           "size": 0,
@@ -124,7 +124,7 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.047,
+      "elapsed_seconds": 0.046,
       "streams": {
         "stdout": {
           "size": 7,
@@ -141,7 +141,7 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.047,
+      "elapsed_seconds": 0.063,
       "streams": {
         "stdout": {
           "size": 3293,
@@ -162,7 +162,7 @@
       "streams": {
         "stdout": {
           "size": 117,
-          "sha256": "de1e3f18cb79f46a8debd460ecbf0e59fe8236e0e7808bdc29f837c7f5124e46"
+          "sha256": "112f2761377e48b03f3430dfa1d11cc1834fe9384df58a734205be9d00d18549"
         },
         "stderr": {
           "size": 0,
@@ -175,11 +175,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.063,
+      "elapsed_seconds": 0.078,
       "streams": {
         "stdout": {
           "size": 701,
-          "sha256": "5f4f8435f8c09b4fb4ddaa93bfa96893d63d8d2ba3c1b717faac0865cb572c6e"
+          "sha256": "75de6f98267089640ada92cdd3a9422c6f9929852299fdde45ae5bff428d2e2e"
         },
         "stderr": {
           "size": 0,
@@ -196,7 +196,7 @@
       "streams": {
         "stdout": {
           "size": 486,
-          "sha256": "84a1283c783f4ba70ff896ce972ee27bb30a5e58c2cf8f283159c32a40073e5b"
+          "sha256": "ca07e37c774c97bd7521197f955958d5c55b2c5bad1c63687b14e2705e34b1b9"
         },
         "stderr": {
           "size": 0,
@@ -209,11 +209,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.062,
+      "elapsed_seconds": 0.063,
       "streams": {
         "stdout": {
           "size": 684,
-          "sha256": "6ca30a9e68f97874f61ef2eade3eec90a49d2de8156afce309a9963eec5b40b9"
+          "sha256": "c8542be0532c272c41a85b58760414accd09e51a1314a8c1a4e625931955a6c8"
         },
         "stderr": {
           "size": 0,
@@ -226,11 +226,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.125,
+      "elapsed_seconds": 0.14,
       "streams": {
         "stdout": {
           "size": 350,
-          "sha256": "9ddd2c9d43d299b8f5d99e91e389759e479d505362fd8a3b34c3e084a4f16cb9"
+          "sha256": "f0407d5a0f71cffa503693bac2268f06edd88d879222baac2b70f22678ac4d62"
         },
         "stderr": {
           "size": 0,
@@ -243,11 +243,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.063,
+      "elapsed_seconds": 0.047,
       "streams": {
         "stdout": {
           "size": 756,
-          "sha256": "3f2fadf9c3b17c796b531b86977c0eae17356a343149a0f7297206b3416b3e64"
+          "sha256": "d48e48c0b266c9fa34c74ebb9071a095b6c833404605358c5a648d63ae179707"
         },
         "stderr": {
           "size": 0,
@@ -260,11 +260,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 8.141,
+      "elapsed_seconds": 8.25,
       "streams": {
         "stdout": {
           "size": 558,
-          "sha256": "21b0b25760b40f4df13e4200e88ddb3000738ea0771858016544c75e0769e510"
+          "sha256": "b3b01dd0bc46efb38445c1e4d97864b500f955fa023364b14d6d78b9a7af712f"
         },
         "stderr": {
           "size": 0,
@@ -277,11 +277,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.063,
+      "elapsed_seconds": 0.078,
       "streams": {
         "stdout": {
           "size": 117,
-          "sha256": "da4560ef5b4df7b079a9fb6faed5cdea9f9ec00647353bb7c20f535a55576f3e"
+          "sha256": "391411eef061c713e1d1879c5f98ed895c9791193e165028194f1f787ffcd492"
         },
         "stderr": {
           "size": 0,
@@ -294,11 +294,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.062,
+      "elapsed_seconds": 0.063,
       "streams": {
         "stdout": {
-          "size": 872,
-          "sha256": "f5a2b7b5979677fd7526853848c37c3c434acf9b3efb667ed2e7f27ec054dadb"
+          "size": 873,
+          "sha256": "e8fa6f88295408a747d7189268cea82fbc6eea6e1ca5d97c105bb1b9b3cc9c5f"
         },
         "stderr": {
           "size": 0,
@@ -311,11 +311,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.063,
+      "elapsed_seconds": 0.062,
       "streams": {
         "stdout": {
-          "size": 665,
-          "sha256": "346ee2c3217e4caea2fde29f538fb14a4878939a06a4cad033c66f4436f16e69"
+          "size": 666,
+          "sha256": "567328fcfaa3c03ee4dc99c8d0948b52d2d3b7efff02ad9f6527ddee6c79f83f"
         },
         "stderr": {
           "size": 0,
@@ -328,11 +328,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.172,
+      "elapsed_seconds": 0.219,
       "streams": {
         "stdout": {
           "size": 5530,
-          "sha256": "526884448d7917ad0dd184d4fc7e9e3b6ee1d46c75be48e9f27323140185e5b8"
+          "sha256": "7423738caa634b9d9433658ccdbf40cff600ccefaf4ea7225ce4698d93702a18"
         },
         "stderr": {
           "size": 0,
@@ -345,11 +345,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.125,
+      "elapsed_seconds": 0.141,
       "streams": {
         "stdout": {
-          "size": 2414,
-          "sha256": "c60b97c4e23e0f9b46af17cedac6c373c7c57a48bf29dfcf1b563190203c2305"
+          "size": 2418,
+          "sha256": "f9f5134576de101da02bbe1319c464998887830ae9b3155c578980529e917464"
         },
         "stderr": {
           "size": 0,
@@ -362,11 +362,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.078,
+      "elapsed_seconds": 0.062,
       "streams": {
         "stdout": {
           "size": 666,
-          "sha256": "089032fc7c5a001da56c03f36ff7d3b2b8e50e798d445c6df341bd9317d1398a"
+          "sha256": "693d1db90a8786707ad9996ad2d366b57a455214001ecbfeba0c974a220335a3"
         },
         "stderr": {
           "size": 0,
@@ -383,7 +383,7 @@
       "streams": {
         "stdout": {
           "size": 10869,
-          "sha256": "a9f344b8173caa67806cd74ca69fc6e9a20fc868c4e7f27cb0ce1b8aff5c159e"
+          "sha256": "c71c6375fa6227538af8d3b94ff862bdfc2be32295fb2dd172f55c9f58195bc6"
         },
         "stderr": {
           "size": 0,
@@ -396,11 +396,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 1.157,
+      "elapsed_seconds": 1.125,
       "streams": {
         "stdout": {
-          "size": 1030,
-          "sha256": "8bcb4fc4d228c12ed308d93381874e97445cf68e88465b042b8e565fa89811ba"
+          "size": 1031,
+          "sha256": "3214ed29a6b89806a2e06ae5a98b544207aea645b4425c41fc2fc8c2587ec378"
         },
         "stderr": {
           "size": 0,
@@ -413,11 +413,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.046,
+      "elapsed_seconds": 0.063,
       "streams": {
         "stdout": {
           "size": 651,
-          "sha256": "d82598dd22d1503b41ce4be3676810ee854a702f0f4624d2e89377982216462c"
+          "sha256": "b9d86649c20ecb725b45b2a3891fb59b5dc41239e1ee30fcad7c2baf09c1bd2d"
         },
         "stderr": {
           "size": 0,
@@ -430,11 +430,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.079,
+      "elapsed_seconds": 0.078,
       "streams": {
         "stdout": {
           "size": 650,
-          "sha256": "cb13640e431f9ed3757798b42046540cfc3fcf4073420ca799d1e96bce796cba"
+          "sha256": "9da5f2e2295a84be848919fd43ab5c1799e0fcccc4f43d711f3aadbba9248840"
         },
         "stderr": {
           "size": 0,
@@ -451,7 +451,7 @@
       "streams": {
         "stdout": {
           "size": 653,
-          "sha256": "2c88d30b5e45cd5876fd65ae8887a6d9999c7f049c610389b9be8531fd3d2268"
+          "sha256": "676e99e8b6b923bfc0dd3c44dd611ace20ef48acf1aedb7505dcb592f55dbb46"
         },
         "stderr": {
           "size": 0,
@@ -468,7 +468,7 @@
       "streams": {
         "stdout": {
           "size": 265,
-          "sha256": "44a5aa4dd2ffd66f8f00ca6ba66cb1702578d614026ca4bc20c96d4f3e939e75"
+          "sha256": "ac79bc172de1ec5e66803f12218b81a5d8037faee3573342cd90edd8e34f9876"
         },
         "stderr": {
           "size": 0,
@@ -485,7 +485,7 @@
       "streams": {
         "stdout": {
           "size": 638,
-          "sha256": "21a92166d520da69399ff319c970710e34070c291bd9773b00a8c877a3012ccd"
+          "sha256": "03199843e326a68e2c9b6ec2c48f44bcea3b9add05e16d570efaeb1ae7807b19"
         },
         "stderr": {
           "size": 0,
@@ -498,11 +498,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.078,
+      "elapsed_seconds": 0.063,
       "streams": {
         "stdout": {
           "size": 637,
-          "sha256": "f5bd19730ebcc5fedc913e4f9a5362225cf3ebb1a22019c2a8d63687c36ae445"
+          "sha256": "3da8450f651dddac8e869cabe9b4a0071ee08245753c22fb667c830b2f5c3240"
         },
         "stderr": {
           "size": 0,
@@ -515,11 +515,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.063,
+      "elapsed_seconds": 0.062,
       "streams": {
         "stdout": {
           "size": 640,
-          "sha256": "519766fd22a5afa1caac8c9e3fdf3444769ef6f0fffe7a3bc74f0c764d1dd2ed"
+          "sha256": "245ac1071a5bbd9a2c89547543db4d4abc74af9dc70122d106d51c46e67c57e8"
         },
         "stderr": {
           "size": 0,
@@ -532,11 +532,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.062,
+      "elapsed_seconds": 0.079,
       "streams": {
         "stdout": {
           "size": 273,
-          "sha256": "cb21c37bba2354115429bda7f6abe2dc35e6493beea78f71f3f8f683f0814efd"
+          "sha256": "ff1c9cb4d27b66e738b788b0b60379543e28187097cdf1baea0ae7e874284842"
         },
         "stderr": {
           "size": 0,
@@ -549,7 +549,7 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.047,
+      "elapsed_seconds": 0.046,
       "streams": {
         "stdout": {
           "size": 0,
@@ -566,11 +566,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.875,
+      "elapsed_seconds": 0.907,
       "streams": {
         "stdout": {
-          "size": 17285,
-          "sha256": "db97d8ffd4deb9625b02a2a3b095aafabb5aed2b4f07e74dc10ba5635e8bff8c"
+          "size": 17734,
+          "sha256": "f8b7bf9575d6d42846c0b2d637b96641012ea604dbd3ef018136eb546279bc1c"
         },
         "stderr": {
           "size": 0,
@@ -600,11 +600,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.735,
+      "elapsed_seconds": 0.703,
       "streams": {
         "stdout": {
-          "size": 38799,
-          "sha256": "d4d097385853a4c9e3c53080c4460cb21f214de78e13fdfe476c2023e87ae61b"
+          "size": 38800,
+          "sha256": "169e2efd17777ed416ed3aa3fc1a68e37432d58bb61df553ed361429d6db3fcf"
         },
         "stderr": {
           "size": 0,
@@ -617,11 +617,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.937,
+      "elapsed_seconds": 0.953,
       "streams": {
         "stdout": {
-          "size": 6151,
-          "sha256": "837027cb91e04d07a76e1eac8aaf877fc443c98966e24eaa9c6c68e193d08191"
+          "size": 6155,
+          "sha256": "35873578ac931da4de9816b6806928a69d2cea69adf5e0c103ed62b73ec9f0a4"
         },
         "stderr": {
           "size": 0,
@@ -634,11 +634,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 2.766,
+      "elapsed_seconds": 2.797,
       "streams": {
         "stdout": {
-          "size": 21812,
-          "sha256": "7c9137123c174cb185edd70cf6777a266ae0d6a5db776ed5946047274e856917"
+          "size": 21811,
+          "sha256": "14446a603155b9c9eb1e3802924a548fca05f460373f50da0c493c80215ac257"
         },
         "stderr": {
           "size": 0,
@@ -651,7 +651,7 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.5,
+      "elapsed_seconds": 0.516,
       "streams": {
         "stdout": {
           "size": 379,
@@ -668,11 +668,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.062,
+      "elapsed_seconds": 0.046,
       "streams": {
         "stdout": {
           "size": 756,
-          "sha256": "3f2fadf9c3b17c796b531b86977c0eae17356a343149a0f7297206b3416b3e64"
+          "sha256": "d48e48c0b266c9fa34c74ebb9071a095b6c833404605358c5a648d63ae179707"
         },
         "stderr": {
           "size": 0,
@@ -685,7 +685,7 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.375,
+      "elapsed_seconds": 0.36,
       "streams": {
         "stdout": {
           "size": 127,
@@ -702,7 +702,7 @@
       "status": "pass",
       "exit_code": 1,
       "expected_exit_code": 1,
-      "elapsed_seconds": 0.031,
+      "elapsed_seconds": 0.015,
       "streams": {
         "stdout": {
           "size": 0,
@@ -719,11 +719,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.766,
+      "elapsed_seconds": 0.782,
       "streams": {
         "stdout": {
           "size": 1024,
-          "sha256": "9dd828ec44883692d17b4c019f9d4bdec0e64423d0db13ce09e8971350a2f9f4"
+          "sha256": "7c1fe7b607cc4dc7c5d0026f3ee64fe1a36c993ef071c42f87a4f43341773df4"
         },
         "stderr": {
           "size": 0,
@@ -736,11 +736,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.047,
+      "elapsed_seconds": 0.062,
       "streams": {
         "stdout": {
           "size": 756,
-          "sha256": "3f2fadf9c3b17c796b531b86977c0eae17356a343149a0f7297206b3416b3e64"
+          "sha256": "d48e48c0b266c9fa34c74ebb9071a095b6c833404605358c5a648d63ae179707"
         },
         "stderr": {
           "size": 0,
@@ -753,11 +753,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.062,
+      "elapsed_seconds": 0.063,
       "streams": {
         "stdout": {
           "size": 1179,
-          "sha256": "85328a8cf9b286871b69e5976df762c915519cccf0d0ce1f396dcd2f64fc0626"
+          "sha256": "1930589ad53e5287d9cbdf24043b7d28daecf50a8572cbc7ede4e8bf2ccf2833"
         },
         "stderr": {
           "size": 0,
@@ -770,11 +770,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.094,
+      "elapsed_seconds": 0.078,
       "streams": {
         "stdout": {
           "size": 117,
-          "sha256": "aa3884b25d8b95a59dabffac02d2a17bfe7feebdf2adffaa5aff10d3148b52a7"
+          "sha256": "e8ebcc840f29d2cd4f7216effd1b07ed15be7d30beeae9507f57f8ccbcd938a7"
         },
         "stderr": {
           "size": 0,
@@ -787,7 +787,7 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.078,
+      "elapsed_seconds": 0.062,
       "streams": {
         "stdout": {
           "size": 154,
@@ -804,7 +804,7 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.485,
+      "elapsed_seconds": 0.469,
       "streams": {
         "stdout": {
           "size": 379,
@@ -821,11 +821,11 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.062,
+      "elapsed_seconds": 0.063,
       "streams": {
         "stdout": {
           "size": 713,
-          "sha256": "9ffb50387e8b36281d2318d1fe7d909e1ab74de2874a343a6252dbd6757b5ad5"
+          "sha256": "1690ed9824c1f239f724965274523f27c7b19452eb393df3d0283a82cbbb7afb"
         },
         "stderr": {
           "size": 0,
@@ -843,7 +843,7 @@
       "status": "pass",
       "exit_code": 0,
       "expected_exit_code": 0,
-      "elapsed_seconds": 0.485,
+      "elapsed_seconds": 0.5,
       "streams": {
         "stdout": {
           "size": 379,
@@ -864,7 +864,7 @@
       "streams": {
         "stdout": {
           "size": 756,
-          "sha256": "3f2fadf9c3b17c796b531b86977c0eae17356a343149a0f7297206b3416b3e64"
+          "sha256": "d48e48c0b266c9fa34c74ebb9071a095b6c833404605358c5a648d63ae179707"
         },
         "stderr": {
           "size": 0,
@@ -901,18 +901,18 @@
     "traceanchor/resources/inspect_web.cjs": "5a6ad9d1ec25aa7db91c9b724bfe8cf28c0770c32ab7d6345cde18603cccf780",
     "traceanchor/service.py": "db788dfd3eef6f14bd14b450e6cf81ace8642602359977a443068fc549ebd1cf",
     "traceanchor/tool_runner.py": "84aac5aed279943609a65b43f2d5888af492113a9ed4f8d1534522f0905801f6",
-    "traceanchor/web_adapter.py": "abe2204b3aa072abc8ce784451e132be55be9188eaa073c84810690881299fe4",
+    "traceanchor/web_adapter.py": "605fb6f95af4a51cd202cbc22c7a6c3b6b6203c06ca24617fff469be7b172cab",
     "traceanchor/winjob.py": "5a42c6c844f779d2f3a964232b7d5b819d4f44b7556b2b21c2768ff729e03f81",
     "traceanchor/workspace.py": "b2e9d2f5070b1db98470174df0692ad7e7116596da6089fc0fc0af40e687b853"
   },
   "artifacts": {
     "traceanchor-0.2.0-py3-none-any.whl": {
-      "sha256": "97584f750e2f0be470f610294a9a400060f3e747f80d27c4fbdbfb75b3bcc98f",
-      "size": 317619
+      "sha256": "37907a7f877cd88820d30c9e31ea9dfbcfb5761b0ed5b0c310771254dad44c86",
+      "size": 320184
     },
     "traceanchor-0.2.0.tar.gz": {
-      "sha256": "bd4c2c2401ba82d064550d09a697a512abc2f08e0bf2fdc11e48724d79b1d4d1",
-      "size": 337305
+      "sha256": "1a59fef6e106849704a0f59c4831bc8d6faa9eaee33993014da664026e391008",
+      "size": 339805
     }
   },
   "previous_artifact": {

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-18T00:19:05.539448+00:00",
+  "generated_at": "2026-11-18T00:34:40.905937+00:00",
   "environment": {
     "python": "3.12.0",
     "implementation": "CPython",
@@ -8,11 +8,11 @@
     "architecture": "AMD64",
     "os_release": "10"
   },
-  "artifact_directory": ".validation/qualification-a661598a8c7d",
+  "artifact_directory": ".validation/qualification-15a64eb83f0b",
   "model_calls": 0,
   "build_install_release": "not-run; owned by separate release qualification",
   "source_identity": {
-    "sha256": "02eec62dc9ff87d8ed3e0abf172f864edeb10ab1e7f378c8b8e42c0d69e618a7",
+    "sha256": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7",
     "files": {
       ".github/workflows/qualification.yml": "c1cae991897b212cae9f7ec0e1fbb0aec549eaecfac9457e884bca07a804a659",
       "_build.py": "441798509ee190526a89c428c73f670a03a5a5dbd5ca5de9780b9c80a06a9f52",
@@ -34,7 +34,7 @@
       "tests/test_regressions.py": "d5b0402bf1cf18877bf5bafeecc6722c12b8511e17af4e9676ca34c156749ad7",
       "tests/test_service.py": "46c19f94a172be61d0a3b5cb19643ff3364c03169556bd61d5805441dc1537d2",
       "tests/test_tool_runner.py": "2b71aa450edd0233bfcdac91fb6c2ee3e8d28c06459b5bef9e6aaa75d844e217",
-      "tests/test_web_adapter.py": "a6e3fd18f47fe5793fbcfc58e2388b84e700031e4b931dc34cbbe440eb407198",
+      "tests/test_web_adapter.py": "885920e32d4f25fdb2c4736aca2db95a8283857ee67d3feee5a52984bc1d4526",
       "tests/test_workspace.py": "0cce6d22e73a1906197d3c12fbbc0d3e18394f4cd3630ef419f80bb3a0a243c1",
       "tools/assess_native.py": "d7e97460631220e9f821d27bcdb21244dc23436b9cf49143a68ef6d66d4740ab",
       "tools/claims.py": "f3a15c745eec8abc9221db9c109ab7e94eca734ad8d742a7ea00f89dc5ad2d3c",
@@ -65,7 +65,7 @@
       "traceanchor/professional.py": "f64682dfa59b1d280ab22d0da3b59c5aa3fcd46d14d8c4f2f39e75bfef440013",
       "traceanchor/service.py": "db788dfd3eef6f14bd14b450e6cf81ace8642602359977a443068fc549ebd1cf",
       "traceanchor/tool_runner.py": "84aac5aed279943609a65b43f2d5888af492113a9ed4f8d1534522f0905801f6",
-      "traceanchor/web_adapter.py": "abe2204b3aa072abc8ce784451e132be55be9188eaa073c84810690881299fe4",
+      "traceanchor/web_adapter.py": "605fb6f95af4a51cd202cbc22c7a6c3b6b6203c06ca24617fff469be7b172cab",
       "traceanchor/winjob.py": "5a42c6c844f779d2f3a964232b7d5b819d4f44b7556b2b21c2768ff729e03f81",
       "traceanchor/workspace.py": "b2e9d2f5070b1db98470174df0692ad7e7116596da6089fc0fc0af40e687b853",
       "traceanchor/resources/inspect_web.cjs": "5a6ad9d1ec25aa7db91c9b724bfe8cf28c0770c32ab7d6345cde18603cccf780",
@@ -88,14 +88,14 @@
     "status": "passed",
     "complete_suite": true,
     "pattern": "test*.py",
-    "tests_run": 199,
-    "passed": 199,
+    "tests_run": 200,
+    "passed": 200,
     "failed": 0,
     "errors": 0,
     "skipped": 0,
     "expected_failures": 0,
     "unexpected_successes": 0,
-    "elapsed_seconds": 45.445075,
+    "elapsed_seconds": 43.161695,
     "outcomes": [
       {
         "id": "tests.test_acceptance_integrity.IntegrityTests.test_child_refresh_and_reviewed_result_can_replace_stale_dependency",
@@ -830,6 +830,10 @@
         "status": "pass"
       },
       {
+        "id": "tests.test_web_adapter.WebAdapterTests.test_empty_failed_trace_preserves_managed_process_cause",
+        "status": "pass"
+      },
+      {
         "id": "tests.test_web_adapter.WebAdapterTests.test_inspector_evidence_is_required_not_status_alone",
         "status": "pass"
       },
@@ -901,16 +905,16 @@
     "naive_files": {
       "before_bytes": 151552,
       "after_bytes": 49152,
-      "write_seconds": 0.000387,
-      "cleanup_seconds": 0.000188
+      "write_seconds": 0.000443,
+      "cleanup_seconds": 0.000197
     },
     "cas_objects": {
       "before_bytes": 102400,
       "after_bytes": 49152,
       "registered_before_bytes": 102400,
       "registered_after_bytes": 49152,
-      "registration_seconds": 0.050595,
-      "cleanup_seconds": 0.016753,
+      "registration_seconds": 0.066016,
+      "cleanup_seconds": 0.016505,
       "estimated_reclaim_bytes": 53248,
       "actual_reclaimed_bytes": 53248
     },
@@ -934,13 +938,13 @@
   },
   "demo": {
     "status": "passed",
-    "elapsed_seconds": 8.0491,
-    "artifact_directory": ".validation/qualification-a661598a8c7d/demo",
+    "elapsed_seconds": 8.189716,
+    "artifact_directory": ".validation/qualification-15a64eb83f0b/demo",
     "summary": {
       "status": "passed-finite-scope",
-      "case_id": "case_47b9d9ba06084c6caa06cadeed375e44",
-      "negative_control": "verdict_9d6f4390a6c841e2841367118dd7d1b2",
-      "final_verdict": "verdict_52b4bf2d4cd34ee3aba031cac48b2c3c",
+      "case_id": "case_b407fa6602964d0dad272891ad66dc7b",
+      "negative_control": "verdict_4a0267c4245b4914b542cfa526ec0c06",
+      "final_verdict": "verdict_32156da8f410477f9cb7333f2e3f915c",
       "disposition": "accepted",
       "fixtures": 3,
       "actual_process_runs": 12,
@@ -959,23 +963,23 @@
     "timing": {
       "raw_subprocess": {
         "samples_seconds": [
-          0.016794,
-          0.016449,
-          0.016815
+          0.017597,
+          0.016203,
+          0.015857
         ],
-        "median_seconds": 0.016794
+        "median_seconds": 0.016203
       },
       "managed_runner": {
         "samples_seconds": [
-          0.068205,
-          0.06749,
-          0.066697
+          0.0665,
+          0.056588,
+          0.055942
         ],
-        "median_seconds": 0.06749
+        "median_seconds": 0.056588
       }
     },
-    "median_overhead_seconds": 0.050696,
-    "median_managed_over_raw_ratio": 4.019,
+    "median_overhead_seconds": 0.040385,
+    "median_managed_over_raw_ratio": 3.493,
     "output_equal": true,
     "stdout_bytes": 4096,
     "stderr_bytes": 14,

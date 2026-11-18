@@ -2,13 +2,13 @@
   "schema_version": 2,
   "version": "0.2.0",
   "repository": "https://github.com/gthubtom1/traceanchor",
-  "status": "local-qualified-awaiting-actual-CI",
+  "status": "first-CI-failed-diagnostic-current-CI-pending",
   "full_goal_complete": false,
   "historical_revision2_release": "history/r2-release-verification.json",
-  "current_executable_identity": "02eec62dc9ff87d8ed3e0abf172f864edeb10ab1e7f378c8b8e42c0d69e618a7",
+  "current_executable_identity": "5ef6249428003845dc6bb88f1c56a676fecc48672a3adc1658fcc2b4db7094b7",
   "local_qualification": {
-    "tests": 199,
-    "passed": 199,
+    "tests": 200,
+    "passed": 200,
     "skipped": 0,
     "windows_dynamic_qualified": true,
     "source_unchanged": true,
@@ -32,16 +32,19 @@
   },
   "reproducible_artifacts": {
     "traceanchor-0.2.0-py3-none-any.whl": {
-      "sha256": "97584f750e2f0be470f610294a9a400060f3e747f80d27c4fbdbfb75b3bcc98f",
-      "size": 317619
+      "sha256": "37907a7f877cd88820d30c9e31ea9dfbcfb5761b0ed5b0c310771254dad44c86",
+      "size": 320184
     },
     "traceanchor-0.2.0.tar.gz": {
-      "sha256": "bd4c2c2401ba82d064550d09a697a512abc2f08e0bf2fdc11e48724d79b1d4d1",
-      "size": 337305
+      "sha256": "1a59fef6e106849704a0f59c4831bc8d6faa9eaee33993014da664026e391008",
+      "size": 339805
     }
   },
   "ci": {
-    "status": "pending-remote-run"
+    "status": "failure",
+    "run": "https://github.com/gthubtom1/traceanchor/actions/runs/44207938328",
+    "evidence": "goal/evidence/ci-first-attempt.json",
+    "next": "One current diagnostic-source CI verification; original cause unknown, criteria unchanged"
   },
   "release": {
     "status": "not-created"

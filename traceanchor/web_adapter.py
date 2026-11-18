@@ -92,6 +92,9 @@ def observe(target: Path, directory: Path, execute, *, node: str | None, scenari
     for name, raw in (("node.stdout.bin", raw_out), ("node.stderr.bin", raw_err)):
         result["artifacts"].append(_write(directory, name, raw))
     outcome = {k: v for k, v in run.items() if k not in {"stdout", "stderr"}}
+    # Preserve the managed process outcome even when no JSON can be decoded.
+    # Otherwise a startup failure/cancellation/timeout is obscured as parsing.
+    result["execution"] = outcome
     result["artifacts"].append(_write(directory, "node-run.json", canonical(outcome).encode("utf-8")))
     result["tool"] = {"name": "node", "executable": node, "helper_sha256": hashlib.sha256(helper).hexdigest()}
     quality = (run.get("status") in {"succeeded", "completed"} and run.get("exit_code") == 0
@@ -103,7 +106,9 @@ def observe(target: Path, directory: Path, execute, *, node: str | None, scenari
     try:
         trace = parse_json(raw_out)
     except TraceError as exc:
-        result["unknowns"].append({"question": "Runtime observation", "reason": exc.code})
+        result["unknowns"].append({"question": "Runtime observation", "reason": exc.code,
+                                   "process_status": run.get("status"), "exit_code": run.get("exit_code"),
+                                   "cleanup": run.get("cleanup"), "process_error": run.get("error")})
         return result
     if not isinstance(trace, dict) or trace.get("schema_version") != 1:
         result["unknowns"].append({"question": "Runtime observation", "reason": "Invalid helper trace schema"})

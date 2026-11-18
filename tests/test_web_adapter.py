@@ -102,6 +102,19 @@ class WebAdapterTests(unittest.TestCase):
         self.assertTrue((self.output / "web-trace.json").is_file())
         self.assertFalse((self.output / "web-contract.json").exists())
 
+    def test_empty_failed_trace_preserves_managed_process_cause(self):
+        for status in ('timed_out', 'cancelled', 'failed'):
+            with self.subTest(status=status):
+                directory=self.output/status;directory.mkdir()
+                def empty(argv,input_bytes=b''):
+                    return {'stdout':b'', 'stderr':b'', 'status':status, 'exit_code':None,
+                            'cleanup':{'state':'complete'}, 'error':{'code':'fixture-process-cause'}}
+                observed=observe(self.target,directory,empty,node='node',scenario=self.scenario)
+                self.assertEqual(observed['status'],'blocked')
+                self.assertEqual(observed['execution']['status'],status)
+                self.assertEqual(observed['unknowns'][0]['process_error']['code'],'fixture-process-cause')
+                self.assertFalse((directory/'web-trace.json').exists())
+
     def test_inspector_evidence_is_required_not_status_alone(self):
         def no_inspector(argv, input_bytes=b""):
             return {"stdout": b'{"schema_version":1,"status":"completed","inspector":{}}', "stderr": b"",
@@ -141,6 +154,7 @@ class WebAdapterTests(unittest.TestCase):
         self.target.write_bytes(b"export const createSession = () => ({});\n")
         result = observe(self.target, self.output, self.execute, node=shutil.which("node"), scenario=self.scenario)
         self.assertEqual(result["status"], "blocked")
+        self.assertTrue((self.output / "web-trace.json").is_file(),result)
         trace = json.loads((self.output / "web-trace.json").read_bytes())
         self.assertEqual(trace["status"], "failed")
         self.assertIn("createService", trace["error"]["message"])
@@ -161,6 +175,7 @@ class WebAdapterTests(unittest.TestCase):
         self.target.write_bytes(b"export function createService(){return {snapshot(){return {}},handle(){return {status:200,body:{}}}}}\nexport function createSession(){return {snapshot(){return {}},async dispatch(){return {value:NaN}}}}\n")
         result = observe(self.target, self.output, self.execute, node=shutil.which("node"), scenario={"steps": [{"id": "non-json", "action": {}}]})
         self.assertEqual(result["status"], "blocked")
+        self.assertTrue((self.output / "web-trace.json").is_file(),result)
         trace = json.loads((self.output / "web-trace.json").read_bytes())
         self.assertEqual(trace["status"], "failed")
         self.assertIn("Non-finite", trace["error"]["message"])
